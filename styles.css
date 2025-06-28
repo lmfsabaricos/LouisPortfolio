@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Space Mono", monospace;
+  overflow-x: hidden;
+  color: #00ffff;
+  background-image: linear-gradient(-70deg, #0f0c29 53%, #302b63 100%);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.louis-main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 40px;
+  position: relative;
+}
+
+.louis-title {
+  font-size: 5vw;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  color: #00ffff;
+  margin-bottom: 0;
+  transition: transform 0.7s ease;
+}
+
+.louis-title:hover {
+  color: #ff0099;
+  transform: scale(1.05);
+}
+
+.louis-subtitle {
+  font-size: 2.5vw;
+  letter-spacing: 1.5px;
+  margin-top: 5px;
+  color: #00ffff;
+  transition: transform 0.7s ease;
+}
+
+.louis-subtitle:hover {
+  color: #ff0099;
+  transform: scale(1.03);
+}
+
+.louis-work-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.louis-work {
+  color: #0ff;
+  border: 2px solid #0ff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font: bold 1.2rem "Space Mono", monospace;
+  width: fit-content;
+  transition: 0.7s;
+}
+
+.louis-work:hover {
+  color: #ff0099;
+  transform: scale(1.2);
+}
