@@ -276,6 +276,30 @@ body {
   color: #00ffff;
 }
 
+/* Resume Section*/
+.louis-resume-section {
+   margin-top: 80px;
+  padding: 50px 20px;
+  background-color: #000;
+  color: #00ffff;
+  text-align: center;
+}
+
+.louis-resume-download {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: #00ffff;
+  border: 4px solid #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.louis-resume-download:hover {
+  background-color: #00ffff;
+  color: #000;
+}
+
 /* Footer*/
 .louis-footer {
   text-align: center;
@@ -299,9 +323,9 @@ body {
   margin-top: 5px;
 }
 
-
 /* Mobile Fix Layout*/
 @media (max-width: 768px) {
+
   .louis-main {
     padding-left: 30px;
     align-items: center;
@@ -352,4 +376,14 @@ body {
   #about p {
     font-size: 1rem;
   }
+  .louis-resume-section {
+    padding: 40px 20px;
+    margin-top: 40px;
+  }
+
+  .louis-resume-download {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
 }
+
