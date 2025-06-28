@@ -1,3 +1,4 @@
+// Makes Particles.js run
 particlesJS("particles-js", {
   particles: {
     number: {

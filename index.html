@@ -17,9 +17,14 @@
             <li><a href="#about">About</a></li>
             <li><a href="#project">Projects</a></li>
             <li><a href="#resume">Resume</a></li>
+            <li><a href="#certifications">Certification</a></li>
             <li><a href="#practice-page">Practice Page</a></li>
             </ul>
         </nav>
+        <!-- Widgets ; ) -->
+        <p class="louis-now-learning">📘 Currently learning: HTML/CSS/JavaScript</p>
+        <p id="louis-clock" class="louis-clock"></p>
+
 
             <!-- Front page contents -->
         <main>
@@ -80,7 +85,7 @@ as I learn more as a developer.
     <div class="project-box">
       <img src="images/portfolio.png" alt="Portfolio Screenshot" class="project-image">
       <h2>Portfolio Website</h2>
-      <p>Built with HTML, CSS, JavaScript. Fully responsive and animated using particles.js.</p>
+      <p>Built a portfolio using HTML5, CSS3, and JavaScript. It’s fully responsive with animated effects using particles.js.</p>
       <a href="https://github.com/lmfsabaricos/LouisPortfolio" target="_blank">View Project</a>
     </div>
 
@@ -88,7 +93,7 @@ as I learn more as a developer.
     <div class="project-box">
       <img src="images/tank.png" alt="Tank Game Screenshot" class="project-image">
       <h2>Multiplayer Game</h2>
-      <p>Real-time tank battle using Node.js and Socket.io. Play with friends online.</p>
+      <p>Built a two-player 2D tank battle game using Java and Object-Oriented Programming principles.</p>
       <a href="https://github.com/lmfsabaricos/2DMultiplayerTankGame.git" target="_blank">View Project</a>
     </div>
 
@@ -96,7 +101,7 @@ as I learn more as a developer.
     <div class="project-box">
       <img src="images/poker.png" alt="Poker Game Screenshot" class="project-image">
       <h2>Poker Game</h2>
-      <p>Simple poker game coded in JavaScript. UI mimics real card layout and player turns.</p>
+      <p>Collaborated on a real-time 5-card poker game built with JavaScript, TypeScript, and Node.js</p>
       <a href="https://github.com/sfsu-csc-667-spring-2025-roberts/term-project-team-jkls.git" target="_blank">View Project</a>
     </div>
 
@@ -104,14 +109,14 @@ as I learn more as a developer.
     <div class="project-box">
       <img src="images/grandpa.png" alt="Grandpa Tribute Screenshot" class="project-image">
       <h2>Tribute Page</h2>
-      <p>A heartfelt tribute page. One of my first HTML & CSS practice projects.</p>
+      <p>A personal project honoring my grandfather, built a tribute page using HTML5, CSS3, and JavaScript.</p>
       <a href="https://github.com/lmfsabaricos/TributePageGramps" target="_blank">View Project</a>
     </div>
     <!-- Database -->
 <div class="project-box">
   <img src="images/database.png" alt="Netflix-style Database Screenshot" class="project-image">
   <h2>Netflix-Style Database</h2>
-  <p>Relational database built with MySQL. Mimics a streaming platform backend with normalized tables and real-world queries.</p>
+  <p>Contributed to the design and implementation of a MySQL database for a Netflix-style platform.</p>
   <a href="https://github.com/lmfsabaricos/netflix-style-relational-database" target="_blank">View Project</a>
 </div>
 
@@ -121,7 +126,8 @@ as I learn more as a developer.
     <!--My Resume -->
     <section id="resume">
         <h1 class="resume-louis">Resume</h1>
-    </section>  
+    </section>
+
     <!--Pratice Page Coding contents -->
     <section id="practice-page">
         <h1 class="practice-louis">Louis Coding Practice Page </h1>
@@ -129,8 +135,21 @@ as I learn more as a developer.
 
     </section>
 </main>
+
+<!-- Particles Background Script -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="script.js"></script>
+
+<!-- Widget Script -->
+<script>
+  function updateClock() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    document.getElementById("louis-clock").textContent = `⏰ Local time: ${timeString}`;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
 
 <!-- Footer-->
 

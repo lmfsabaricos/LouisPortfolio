@@ -119,7 +119,7 @@ body {
 
 /* Navbar Styling */
 .louis-navbar {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -286,7 +286,18 @@ body {
   margin-top: 80px;
   border-top: 1px solid #00ffff20;
 }
+/* Widget Styles*/
+.louis-now-learning {
+  font-size: 1rem;
+  color: #00ffff;
+  margin-top: 10px;
+}
 
+.louis-clock {
+  font-size: 1rem;
+  color: #ff0099;
+  margin-top: 5px;
+}
 
 
 /* Mobile Fix Layout*/
