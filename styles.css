@@ -39,7 +39,7 @@ body {
 
 /* Title Styles */
 .louis-title {
-  font-size: 5vw;
+  font-size: 5.0vw;
   font-weight: bold;
   letter-spacing: 0.5px;
   line-height: 1.1;
@@ -55,7 +55,7 @@ body {
 
 /* Subtitle Styles */
 .louis-subtitle {
-  font-size: 2.5vw;
+  font-size: 3vw;
   letter-spacing: 1.5px;
   margin-top: 5px;
   color: #00ffff;
@@ -154,7 +154,7 @@ body {
   line-height: 1.8;
   font-size: 1.2rem;
   background: transparent;
-  margin-top: 50vh;
+  margin-top: 30vh;
 }
 
 .about-louis {
@@ -171,10 +171,11 @@ body {
 }
 .about-box {
   background-color: rgba(0, 0, 0, 0.4);
-  padding: 40px;
+  padding: 60px;
   border-radius: 12px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
+  margin-bottom: 155px;
   backdrop-filter: blur(3px);
    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -182,6 +183,108 @@ body {
 .about-box:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3); 
+}
+
+
+
+/* Project Section Title */
+.project-louis {
+  font-size: 3rem;
+  color: #00ffff;
+  border-bottom: 2px solid #00ffff;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 40px;
+}
+
+.project-box {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.project-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3);
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.project-box {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  text-align: center;
+  color: #00ffff;
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(3px);
+}
+
+.project-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+}
+
+.project-box img.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-box h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.project-box p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.project-box a {
+  color: #ff0099;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.project-box a:hover {
+  color: #00ffff;
+}
+
+/* Footer*/
+.louis-footer {
+  text-align: center;
+  padding: 20px;
+  color: #00ffff;
+  font-size: 0.9rem;
+  background: transparent;
+  margin-top: 80px;
+  border-top: 1px solid #00ffff20;
 }
 
 
