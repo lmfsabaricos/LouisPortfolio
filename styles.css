@@ -197,25 +197,6 @@ body {
   font-weight: bold;
   letter-spacing: 1px;
 }
-.project-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 0 40px;
-}
-
-.project-box {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  border-radius: 12px;
-  width: 300px;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
 .project-box:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3);
@@ -239,11 +220,6 @@ body {
   color: #00ffff;
   transition: transform 0.3s ease;
   backdrop-filter: blur(3px);
-}
-
-.project-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
 }
 
 .project-box img.project-image {
@@ -376,6 +352,10 @@ body {
   #about p {
     font-size: 1rem;
   }
+  .project-box {
+    width: 90%;
+  }
+
   .louis-resume-section {
     padding: 40px 20px;
     margin-top: 40px;
