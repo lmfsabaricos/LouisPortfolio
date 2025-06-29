@@ -265,12 +265,16 @@ body {
   padding: 50px 20px;
   color: #00ffff;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.6rem;
 
 }
 .louis-resume-title {
   text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
   transition: text-shadow 0.3s ease-in-out;
+  -webkit-transition: text-shadow 0.3s ease-in-out;
+  -moz-transition: text-shadow 0.3s ease-in-out;
+  -ms-transition: text-shadow 0.3s ease-in-out;
+  -o-transition: text-shadow 0.3s ease-in-out;
 }
 
 .louis-resume-download {
@@ -539,3 +543,10 @@ gap: 8px;
   }
 }
 
+.scroll-fade {
+  transition: opacity 0.6s ease-out;
+  opacity: 1;
+}
+.scroll-fade.hidden {
+  opacity: 0;
+}
