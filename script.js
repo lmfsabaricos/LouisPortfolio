@@ -43,3 +43,13 @@ particlesJS("particles-js", {
   retina_detect: true
 });
 
+
+// Touched effect fot mobile devices //
+const elements = document.querySelectorAll('.about-box, .cert-image-box, .louis-resume-download, .louis-practice-list a, .louis-work, .project-box');
+
+elements.forEach(el => {
+  el.addEventListener('touchstart', () => {
+    elements.forEach(e => e.classList.remove('touched'));
+    el.classList.add('touched');
+  });
+});
