@@ -446,16 +446,12 @@ gap: 8px;
 }
 
 /* Tap/click effect for mobile users */
-.about-box:active,
-.cert-image-box:active,
-.louis-resume-download:active,
-.louis-practice-list a:active,
-.louis-work:active,
-.project-box:active {
-  transform: scale(1.03);
-  box-shadow: 0 0 10px #00ffff80;
-  transition: transform 0.2s ease;
+.touched {
+  transform: scale(1.04);
+  box-shadow: 0 0 12px #00ffff80;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 
 @keyframes redPulseSoft {
   0%, 100% {
