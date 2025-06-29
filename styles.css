@@ -308,6 +308,10 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 255, 255, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -ms-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .louis-resume-title:hover {
