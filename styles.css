@@ -445,6 +445,18 @@ gap: 8px;
   animation: redPulseSoft 2.5s infinite;
 }
 
+/* Tap/click effect for mobile users */
+.about-box:active,
+.cert-image-box:active,
+.louis-resume-download:active,
+.louis-practice-list a:active,
+.louis-work:active,
+.project-box:active {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px #00ffff80;
+  transition: transform 0.2s ease;
+}
+
 @keyframes redPulseSoft {
   0%, 100% {
     text-shadow: 0 0 2px #ff0099, 0 0 5px #ff0099;
