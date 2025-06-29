@@ -5,6 +5,9 @@
   box-sizing: border-box;
   border: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* Body edit */
 body {
@@ -39,7 +42,7 @@ body {
 
 /* Title Styles */
 .louis-title {
-  font-size: 5.0vw;
+  font-size: 4.5vw;
   font-weight: bold;
   letter-spacing: 0.5px;
   line-height: 1.1;
@@ -55,7 +58,7 @@ body {
 
 /* Subtitle Styles */
 .louis-subtitle {
-  font-size: 3vw;
+  font-size: 2.5vw;
   letter-spacing: 1.5px;
   margin-top: 5px;
   color: #00ffff;
@@ -152,7 +155,7 @@ body {
   padding: 60px 80px;
   color: #00ffff;
   line-height: 1.8;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   background: transparent;
   margin-top: 30vh;
 }
@@ -183,7 +186,9 @@ body {
 
 .about-box:hover {
   transform: translateY(-10px);
+  border: 2px solid #00ffff;
   box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3); 
+  
 }
 
 
@@ -197,6 +202,8 @@ body {
   text-align: center;
   font-weight: bold;
   letter-spacing: 1px;
+  text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
+  transition: text-shadow 0.3s ease-in-out;
 }
 .project-box:hover {
   transform: translateY(-10px);
@@ -252,14 +259,18 @@ body {
 .project-box a:hover {
   color: #00ffff;
 }
-
 /* Resume Section*/
 .louis-resume-section {
-   margin-top: 80px;
+  margin-top: 80px;
   padding: 50px 20px;
-  background-color: #000;
   color: #00ffff;
   text-align: center;
+  font-size: 2rem;
+
+}
+.louis-resume-title {
+  text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
+  transition: text-shadow 0.3s ease-in-out;
 }
 
 .louis-resume-download {
@@ -275,6 +286,128 @@ body {
 .louis-resume-download:hover {
   background-color: #00ffff;
   color: #000;
+}
+
+/* Resume Glow Box*/
+.louis-section-box {
+  background-color: #000;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 900px;
+}
+
+.louis-section-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 255, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.louis-resume-title:hover {
+  text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc;
+}
+
+/* Certifications Section*/
+.louis-certifications-section {
+  padding: 40px 20px;
+  text-align: center;
+  color: #00ffff;
+}
+
+.louis-certifications-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #00ffff;
+  font-weight: bold;
+  text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
+  transition: text-shadow 0.3s ease-in-out;
+  -webkit-transition: text-shadow 0.3s ease-in-out;
+  -moz-transition: text-shadow 0.3s ease-in-out;
+  -ms-transition: text-shadow 0.3s ease-in-out;
+  -o-transition: text-shadow 0.3s ease-in-out;
+}
+.cert-image-box{
+  max-width: 500px;
+  margin: auto;
+  padding: 15px;
+  background: #111;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.cert-image-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px #00ffff50;
+}
+
+.cert-image {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.cert-caption {
+  margin-top: 8px;
+  color: #ff0099;
+  font-size: 0.95rem;
+}
+
+
+/* Practice Section Styles */
+.louis-practice-section {
+  padding: 60px 20px;
+  text-align: center;
+  color: #00ffff;
+}
+
+.louis-practice-title {
+  font-size: 2.3rem;
+  color: #00ffff;
+  text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099;
+  margin-bottom: 1.5rem;
+}
+
+.louis-practice-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.louis-practice-list li {
+  margin: 10px 0;
+}
+
+.louis-practice-list a {
+  color: #ff0099;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+  font-size: 1.3rem;
+gap: 8px;
+}
+
+.louis-practice-list li a:hover {
+  color: #00ffff;
+  transform: scale(1.1);
+   text-shadow: 0 0 8px #ff00aa, 0 0 15px #00ffff;
+}
+
+/* HTML/CSS Codes Section */
+.html-css-container {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.html-css-title {
+  font-size: 1.8rem;
+  color: #00ffff;
+  margin-bottom: 20px;
+  text-align:center;
 }
 
 /* Footer*/
@@ -300,22 +433,36 @@ body {
   margin-top: 5px;
 }
 
+.glow-pulse {
+  animation: redPulseSoft 2.5s infinite;
+}
+
+@keyframes redPulseSoft {
+  0%, 100% {
+    text-shadow: 0 0 2px #ff0099, 0 0 5px #ff0099;
+  }
+  50% {
+    text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
+  }
+}
+
+
 /* Mobile Fix Layout*/
 @media (max-width: 768px) {
-
   .louis-main {
-    padding-left: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     align-items: center;
     text-align: center;
   }
 
   .louis-title {
-    font-size: 8vw;
-    margin-top: -50px;
+    font-size: 7vw;
+    margin-top: -30px;
   }
 
   .louis-subtitle {
-    font-size: 4.5vw;
+    font-size: 4vw;
   }
 
   .louis-work {
@@ -337,7 +484,7 @@ body {
   }
 
   #about {
-    padding: 40px 20px;
+    padding: 30px 15px;
     margin-top: 20vh;
   }
 
@@ -353,18 +500,42 @@ body {
   #about p {
     font-size: 1rem;
   }
+
   .project-box {
-    width: 90%;
+    width: 100%;
   }
 
   .louis-resume-section {
-    padding: 40px 20px;
+    padding: 30px 15px;
     margin-top: 40px;
   }
 
   .louis-resume-download {
-    font-size: 1rem;
-    padding: 8px 16px;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+  }
+
+  .louis-certifications-title,
+  .louis-practice-title {
+    font-size: 1.5rem;
+  }
+
+  .cert-image-box {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .louis-practice-list a {
+    font-size: 1.1rem;
+  }
+
+  .html-css-container {
+    padding: 20px;
+    margin: 30px 10px 0;
+  }
+
+  .html-css-title {
+    font-size: 1.5rem;
   }
 }
 
