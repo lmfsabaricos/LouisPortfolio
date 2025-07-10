@@ -191,8 +191,6 @@ body {
   
 }
 
-
-
 /* Project Section Title */
 .project-louis {
   font-size: 3rem;
@@ -398,11 +396,9 @@ body {
   font-size: 1.3rem;
 gap: 8px;
 }
-
-.louis-practice-list li a:hover {
-  color: #00ffff;
-  transform: scale(1.1);
-   text-shadow: 0 0 8px #ff00aa, 0 0 15px #00ffff;
+.louis-practice-list a:hover {
+  text-shadow: 0 0 12px #ff2e63, 0 0 18px #ff2e63;
+  transform: scale(1.02);
 }
 
 /* HTML/CSS Codes Section */
@@ -462,18 +458,95 @@ gap: 8px;
   }
 }
 
+/* Gojo-Sukuna split*/
 
-/* Gojo-Sukuna Page*/
+.gojo-sukuna-badge {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
 
+.gojo-sukuna-badge img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  transition: transform 0.3s ease;
+}
 
+.gojo-sukuna-badge img:first-child {
+  border-color: #00bfff; /* Gojo = blue */
+  box-shadow: 0 0 10px #00bfff88;
+}
 
+.gojo-sukuna-badge img:last-child {
+  border-color: #ff2e63; /* Sukuna = red */
+  box-shadow: 0 0 10px #ff2e6388;
+}
 
+.gojo-sukuna-badge img:hover {
+  transform: scale(1.2);
+}
 
+.inline-badge img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-left: 6px;
+  margin-right: -2px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  animation: pulse 2s infinite ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -ms-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.inline-badge img:first-child {
+  border-color: #00bfff;
+  box-shadow: 0 0 8px #00bfff;
+}
 
+.inline-badge img:last-child {
+  border-color: #ff2e63;
+  box-shadow: 0 0 8px #ff2e63;
+}
 
+.inline-badge img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px #fff, 0 0 25px currentColor;
+}
 
+/* Stronger color on hover for gojo-sukuna*/
+.inline-badge img:first-child:hover {
+  box-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff;
+}
 
+.inline-badge img:last-child:hover {
+  box-shadow: 0 0 15px #ff2e63, 0 0 30px #ff2e63;
+}
+/* Pulse for gojo-sukuna*/
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
 
 /* Mobile Fix Layout*/
