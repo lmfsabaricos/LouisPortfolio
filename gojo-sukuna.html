@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anime Twist: Gojo vs Sukuna</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <canvas id="bgCanvas"></canvas>
+
+    <h1 class="main-title">Anime Twist</h1>
+
+    <!-- Character Cards Section -->
+    <section class="characters-section">
+      <div class="strongest-box">
+        <h2 class="section-title">The Strongest</h2>
+        <img class="gojo2" src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/01/infinity-entry-image.jpg" alt="Gojo Satoru">
+        <h3 class="gojo">Gojo Satoru</h3>
+        <p class="gojo-quote">“Throughout bugs and broken code, I alone debug the strongest”</p>
+        <h4 class="gojo-techniques">Gojo's Debugging Techniques</h4>
+        <ul class="gojo-list">
+          <li>Infinite Loop Defense</li>
+          <li>Domain Expansion: Clean Code Edition</li>
+          <li>Six Eyes for Spotting Bugs</li>
+          <li>Hollow Purple — Deletes legacy code</li>
+          <li>Reverse Curse — Turns crashes into clean runs</li>
+        </ul>
+      </div>
+
+      <div class="most-cursed-box">
+        <h2 class="section-title">The Most Cursed</h2>
+        <img class="sukuna2" src="https://static2.cbrimages.com/wordpress/wp-content/uploads/2021/03/Jujutsu-Kaisen-Sukuna-smile.jpg" alt="Ryomen Sukuna">
+        <h3 class="sukuna">Ryomen Sukuna</h3>
+        <p class="sukuna-quote">“Even cursed code bows before me.”</p>
+        <h4 class="sukuna-techniques">Sukuna's Code Destruction Techniques</h4>
+        <ul class="sukuna-list">
+          <li>Cleaving Unused Functions</li>
+          <li>Dismantle: Legacy Bug Removal</li>
+          <li>Reverse Cursed Patch Fix</li>
+          <li>Domain Expansion: Full Stack Mayhem</li>
+          <li>Binding Vow: One-Take Deployments</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Voting Form -->
+    <section class="form-section">
+      <div class="strongest-form">
+        <h2>Strongest Form</h2>
+        <form action="#" method="POST">
+          <fieldset>
+            <legend>Who truly is the strongest?</legend>
+            <label for="first-name">Enter Your First Name:
+              <input id="first-name" type="text" name="first-name" required />
+            </label>
+
+            <label for="last-name">Enter Your Last Name:
+              <input id="last-name" type="text" name="last-name" required />
+            </label>
+
+            <label for="email">Enter Your Email:
+              <input id="email" type="text" name="email" required />
+            </label>
+
+            <label for="gojo">Gojo Satoru</label>
+            <input id="gojo" type="radio" name="gojo-sukuna" value="Gojo" checked>
+
+            <label for="sukuna">Ryomen Sukuna</label>
+            <input id="sukuna" type="radio" name="gojo-sukuna" value="Sukuna">
+          </fieldset>
+
+          <textarea name="comments" rows="5" placeholder="Thoughts here"></textarea>
+          <br>
+          <button type="submit">Vote</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Cafes Section -->
+    <section class="cafes-section">
+      <div class="menu-card" id="gojo-menu">
+        <img src="https://cdn3.emoji.gg/emojis/1564-maskedgojode.png" alt="Gojo Icon" />
+        <h1>Gojo's Menu 🌀</h1>
+        <article><p>Infinity Latte</p><p>$5.00</p></article>
+        <article><p>Six Eyes Espresso</p><p>$4.25</p></article>
+        <article><p>Hollow Mocha</p><p>$4.75</p></article>
+        <article><p>Reverse Cursed Cold Brew</p><p>$4.50</p></article>
+        <article><p>Domain Cappuccino</p><p>$4.00</p></article>
+      </div>
+
+      <div class="menu-card" id="sukuna-menu">
+        <img src="https://cdn3.emoji.gg/emojis/9491-sukunade.png" alt="Sukuna Icon" />
+        <h1>Sukuna's Menu 💀</h1>
+        <article><p>Cursed Glazed Donut</p><p>$3.00</p></article>
+        <article><p>Dismantle Cheesecake</p><p>$3.50</p></article>
+        <article><p>Binding Vow Brownie</p><p>$3.25</p></article>
+        <article><p>Malevolent Roll Cake</p><p>$3.75</p></article>
+        <article><p>Cursed Energy Churro</p><p>$3.00</p></article>
+      </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz-section">
+      <div id="gojo-sukuna-quiz">
+        <h2>Who Said It?</h2>
+        <form id="quiz-form">
+          <fieldset>
+            <legend>“Throughout Heaven and Earth, I Alone Am The Honored One”</legend>
+            <label for="gojo-choice"><input type="radio" id="gojo-choice" name="quiz-answer" value="Gojo" /> Gojo Satoru</label><br>
+            <label for="sukuna-choice"><input type="radio" id="sukuna-choice" name="quiz-answer" value="Sukuna" /> Ryomen Sukuna</label><br>
+          </fieldset>
+          <button type="button" onclick="checkGojoQuiz()">Submit Answer</button>
+          <p id="quiz-feedback" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+
+<section class="battle-section" id="battle-container">
+  <h2>Gojo vs Sukuna: Battle!</h2>
+
+  <div class="battle-characters">
+    <div class="fighter gojo-fighter">
+      <img src="https://cdn3.emoji.gg/emojis/1564-maskedgojode.png" alt="Gojo">
+      <button onclick="attack('Gojo')">Hollow Purple</button>
+      <div class="health-bar" id="gojo-health"></div>
+    </div>
+
+    <div class="fighter sukuna-fighter">
+      <img src="https://cdn3.emoji.gg/emojis/9491-sukunade.png" alt="Sukuna">
+      <button onclick="attack('Sukuna')">Dismantle</button>
+      <div class="health-bar" id="sukuna-health"></div>
+    </div>
+  </div>
+
+  <p id="battle-result" class="battle-result">Choose your attack!</p>
+</section>
+
+
+
+
+
+
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    function checkGojoQuiz() {
+      const answer = document.querySelector('input[name="quiz-answer"]:checked').value;
+      const feedback = document.getElementById("quiz-feedback");
+      feedback.textContent = answer === "Gojo"
+        ? "Correct! Gojo said it."
+        : "Nope, that was Gojo. Try again!";
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
