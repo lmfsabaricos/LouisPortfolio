@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div id="particles-js"></div>
+
+    <!-- header row with logo -->
+    <div class="header">
+        <img id="tentacles" src="assets/tentacles.png">
+        <h1 class="header-text">Louis Games Hub </h1>
+    </div>
+
+    <!-- background info about company -->
+    <h2>👋 Welcome to Louis' Games Hub!</h2>
+    <div id="description-container">
+        <p>At Louis' Games Hub, we’re passionate about empowering independent game creators. 
+    For over 12 years, we’ve helped bring bold and creative games to life through community support and crowdfunding..</p>
+    </div>
+
+    <!-- top games & other interesting stats -->
+  <h2 class="section-title">📊 Stats</h2>
+    <div class="stats-container">
+        <div class="stats-card">
+            <h3>Individual Contributions</h3>
+            <p id="num-contributions">
+            </p>
+        </div>
+        <div class="stats-card">
+            <h3>Total Raised</h3>
+            <p id="total-raised">
+            </p>
+        </div>
+        <div class="stats-card">
+            <h3>Total Number of Games</h3>
+            <p id="num-games">
+            </p>
+        </div>
+    </div>
+
+    <!-- Chart container -->
+    <div id="chart-container">
+  <canvas id="fundedChart" width="400" height="200"></canvas>
+</div>
+
+
+<div class="stats-container" id="top-games">
+        <div class="stats-card" id="first-game">
+            <h3>🥇 Top Funded Game</h3>
+        </div>
+        <div class="stats-card" id="second-game">
+            <h3>🥈 Runner Up</h3>
+        </div>
+    </div>
+
+    <!-- list of games funded by Sea Monster -->
+ <h2 class="section-title">🎮 Our Games</h2>
+    <div id="button-container">
+        <button id="unfunded-btn">Show Unfunded Only</button>
+        <button id="funded-btn">Show Funded Only</button>
+        <button id="all-btn">Show All Games</button>
+    </div>
+    <div id="games-container">
+
+    </div>
+
+    <script type="module" src="index.js"></script>
+    <!-- particles.js library -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<!-- particles.js config loader -->
+<script>
+  particlesJS.load('particles-js', 'particles.json', function() {
+    console.log('Particles loaded');
+  });
+</script>
+
+<!-- Chart.js loader -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<footer style="text-align: center; padding: 1rem; color: #ccc;">
+  © 2025 Louis Miguel Sabaricos • For CodePath WEB102 Prework
+</footer>
+
+
+  </body>
+</html>
