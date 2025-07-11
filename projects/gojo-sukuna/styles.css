@@ -15,12 +15,21 @@
   background: radial-gradient(circle at center, #0a0a23, #000015);
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Outfit', 'Segoe UI', sans-serif;
   background: radial-gradient(circle at center, #1a1a40, #0a0a23);
   color: #fff;
   line-height: 1.6;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+body.fade-in {
+  opacity: 1;
 }
 
 h1.main-title {
@@ -29,6 +38,18 @@ h1.main-title {
   color: #ff4de7;
   margin-bottom: 2rem;
 }
+
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* Character Cards */
 

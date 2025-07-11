@@ -52,7 +52,7 @@
     </section>
 
     <!-- Voting Form -->
-    <section class="form-section">
+   <section class="form-section fade-in-scroll">
       <div class="strongest-form">
         <h2>Strongest Form</h2>
         <form action="#" method="POST">
@@ -85,7 +85,7 @@
     </section>
 
     <!-- Cafes Section -->
-    <section class="cafes-section">
+   <section class="cafes-section fade-in-scroll">
       <div class="menu-card" id="gojo-menu">
         <img src="https://cdn3.emoji.gg/emojis/1564-maskedgojode.png" alt="Gojo Icon" />
         <h1>Gojo's Menu 🌀</h1>
@@ -108,7 +108,7 @@
     </section>
 
     <!-- Quiz Section -->
-    <section class="quiz-section">
+<section class="quiz-section fade-in-scroll">
       <div id="gojo-sukuna-quiz">
         <h2>Who Said It?</h2>
         <form id="quiz-form">
@@ -124,7 +124,7 @@
     </section>
 
 
-<section class="battle-section" id="battle-container">
+<section class="battle-section fade-in-scroll" id="battle-container">
   <h2>Gojo vs Sukuna: Battle!</h2>
 
   <div class="battle-characters">
@@ -146,17 +146,8 @@
 
   </main>
 
-  <!-- JavaScript -->
-  <script>
-    function checkGojoQuiz() {
-      const answer = document.querySelector('input[name="quiz-answer"]:checked').value;
-      const feedback = document.getElementById("quiz-feedback");
-      feedback.textContent = answer === "Gojo"
-        ? "Correct! Gojo said it."
-        : "Nope, that was Gojo. Try again!";
-    }
-  </script>
- <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>

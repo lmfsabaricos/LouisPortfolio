@@ -99,3 +99,24 @@ function attack(attacker) {
     resultText.textContent += ` ${gojoHealth === 0 ? "Sukuna wins!" : "Gojo wins!"}`;
   }
 }
+
+//Fade in on load -->
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+// Fade-in on scroll
+const fadeEls = document.querySelectorAll('.fade-in-scroll');
+
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target); // remove this line if you want repeated animation
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+fadeEls.forEach(el => fadeObserver.observe(el));
