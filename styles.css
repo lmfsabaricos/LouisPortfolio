@@ -16,6 +16,26 @@ body {
   font-family: "Space Mono", monospace;
   background-image: linear-gradient(-70deg, #0f0c29 53%, #302b63 100%);
   color: #00ffff;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade In Slowly All */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
 /* Particle Background */

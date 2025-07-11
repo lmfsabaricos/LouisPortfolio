@@ -53,3 +53,19 @@ elements.forEach(el => {
     el.classList.add('touched');
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll('.fade-in-section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // optional: only animate once
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+});
