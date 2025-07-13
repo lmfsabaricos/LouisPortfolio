@@ -69,3 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach(section => observer.observe(section));
 });
+
+
+// Widget Script //
+ function updateClock() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    document.getElementById("louis-clock").textContent = `⏰ Local time: ${timeString}`;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();

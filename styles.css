@@ -19,11 +19,6 @@ body {
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
 }
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
 
 /* Fade In Slowly All */
 .fade-in-section {
@@ -36,6 +31,12 @@ body {
 .fade-in-section.is-visible {
   opacity: 1;
   transform: none;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 /* Particle Background */
@@ -74,6 +75,10 @@ body {
 .louis-title:hover {
   color: #ff0099;
   transform: scale(1.05);
+}
+
+.glow-pulse {
+  animation: redPulseSoft 2.5s infinite;
 }
 
 /* Subtitle Styles */
@@ -207,8 +212,7 @@ body {
 .about-box:hover {
   transform: translateY(-10px);
   border: 2px solid #00ffff;
-  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3); 
-  
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
 }
 
 /* Project Section Title */
@@ -326,10 +330,6 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 255, 255, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
-  -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
-  -ms-transition: transform 0.3s ease, box-shadow 0.3s ease;
-  -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .louis-resume-title:hover {
@@ -422,19 +422,6 @@ gap: 8px;
   transform: scale(1.02);
 }
 
-/* HTML/CSS Codes Section */
-.html-css-container {
-  text-align: center;
-  margin: 3rem auto;
-}
-
-.html-css-title {
-  font-size: 1.8rem;
-  color: #00ffff;
-  margin-bottom: 20px;
-  text-align:center;
-}
-
 /* Footer*/
 .louis-footer {
   text-align: center;
@@ -456,27 +443,6 @@ gap: 8px;
   font-size: 1rem;
   color: #ff0099;
   margin-top: 5px;
-}
-
-.glow-pulse {
-  animation: redPulseSoft 2.5s infinite;
-}
-
-/* Tap/click effect for mobile users */
-.touched {
-  transform: scale(1.04);
-  box-shadow: 0 0 12px #00ffff80;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-
-@keyframes redPulseSoft {
-  0%, 100% {
-    text-shadow: 0 0 2px #ff0099, 0 0 5px #ff0099;
-  }
-  50% {
-    text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
-  }
 }
 
 /* Gojo-Sukuna section*/
@@ -524,10 +490,6 @@ gap: 8px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   animation: pulse 2s infinite ease-in-out;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
-  -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
-  -ms-transition: transform 0.3s ease, box-shadow 0.3s ease;
-  -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .inline-badge img:first-child {
@@ -599,6 +561,22 @@ gap: 8px;
   line-height: 1.5;
 }
 
+/* Tap/click effect for mobile users */
+.touched {
+  transform: scale(1.04);
+  box-shadow: 0 0 12px #00ffff80;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+@keyframes redPulseSoft {
+  0%, 100% {
+    text-shadow: 0 0 2px #ff0099, 0 0 5px #ff0099;
+  }
+  50% {
+    text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
+  }
+}
 
 /* Mobile Fix Layout*/
 @media (max-width: 768px) {

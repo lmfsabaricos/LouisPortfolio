@@ -9,21 +9,23 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
+       <!-- Particle Background Container -->
         <div id="particles-js"></div>
-        <!-- Navbar contents -->
+
+        <!-- Navbar Contents -->
         <nav class="louis-navbar">
             <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#project">Projects</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#resume">Resume</a></li>
             <li><a href="#certifications">Certification</a></li>
             <li><a href="#practice-page">Practice Page</a></li>
             </ul>
         </nav>
+
         <!-- Widgets ; ) -->
         <p class="louis-now-learning">📘 Currently learning: HTML/CSS/JavaScript</p>
         <p id="louis-clock" class="louis-clock"></p>
-
 
             <!-- Front page contents -->
         <main>
@@ -143,13 +145,12 @@ as I learn more as a developer.
 </div>
 </section>
 
-
   <!-- Side Projects -->
 <section id="practice" class="louis-practice-section fade-in-section">
   <h2 class="louis-practice-title">Side Projects</h2>
   <ul class="louis-practice-list">
 
-    <!-- Gojo vs Sukuna Project -->
+  <!-- Gojo vs Sukuna Project -->
     <li>
     <a href="projects/gojo-sukuna/gojo-sukuna.html" target="_blank">
       <div class="practice-item">
@@ -181,22 +182,10 @@ as I learn more as a developer.
   </ul>
 </section>
 
-
 </main>
 <!-- Particles Background Script -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="script.js"></script>
-
-<!-- Widget Script -->
-<script>
-  function updateClock() {
-    const now = new Date();
-    const timeString = now.toLocaleTimeString();
-    document.getElementById("louis-clock").textContent = `⏰ Local time: ${timeString}`;
-  }
-  setInterval(updateClock, 1000);
-  updateClock();
-</script>
 
 <!-- Footer-->
 <footer class="louis-footer">

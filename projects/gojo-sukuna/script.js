@@ -100,6 +100,15 @@ function attack(attacker) {
   }
 }
 
+// Quiz check logic
+function checkGojoQuiz() {
+  const answer = document.querySelector('input[name="quiz-answer"]:checked').value;
+  const feedback = document.getElementById("quiz-feedback");
+  feedback.textContent = answer === "Gojo"
+    ? "Correct! Gojo said it."
+    : "Nope, that was Gojo. Try again!";
+}
+
 //Fade in on load -->
   window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("fade-in");
