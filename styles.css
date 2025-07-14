@@ -116,10 +116,6 @@ body {
 .louis-work:hover {
   color: #ff0099;
   transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
 }
 /* Louis socials Icons*/
 .louis-socials-container{
@@ -293,10 +289,6 @@ body {
 .louis-resume-title {
   text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
   transition: text-shadow 0.3s ease-in-out;
-  -webkit-transition: text-shadow 0.3s ease-in-out;
-  -moz-transition: text-shadow 0.3s ease-in-out;
-  -ms-transition: text-shadow 0.3s ease-in-out;
-  -o-transition: text-shadow 0.3s ease-in-out;
 }
 
 .louis-resume-download {
@@ -350,10 +342,6 @@ body {
   font-weight: bold;
   text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
   transition: text-shadow 0.3s ease-in-out;
-  -webkit-transition: text-shadow 0.3s ease-in-out;
-  -moz-transition: text-shadow 0.3s ease-in-out;
-  -ms-transition: text-shadow 0.3s ease-in-out;
-  -o-transition: text-shadow 0.3s ease-in-out;
 }
 .cert-image-box{
   max-width: 500px;
@@ -379,7 +367,6 @@ body {
   color: #ff0099;
   font-size: 0.95rem;
 }
-
 
 /* Practice Section Styles */
 .louis-practice-section {
@@ -568,7 +555,6 @@ gap: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-
 @keyframes redPulseSoft {
   0%, 100% {
     text-shadow: 0 0 2px #ff0099, 0 0 5px #ff0099;
@@ -658,15 +644,6 @@ gap: 8px;
 
   .louis-practice-list a {
     font-size: 1.1rem;
-  }
-
-  .html-css-container {
-    padding: 20px;
-    margin: 30px 10px 0;
-  }
-
-  .html-css-title {
-    font-size: 1.5rem;
   }
 }
 
