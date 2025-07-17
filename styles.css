@@ -144,8 +144,15 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
   transform: scale(1.2);
 }
 
+/* Hamburger menu for nav in mobile */
+.hamburger {
+  display: none;
+}
+
+
 /* Navbar Styling */
-.louis-navbar {
+
+.nav-container{
   display: inline-block;
   padding: 10px 30px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -156,8 +163,7 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
   position:fixed;
   z-index: 9999;
 }
-
-.nav-container {
+.louis-navbar{
   position: relative;
   top: 0;
   left: 0;
@@ -200,6 +206,7 @@ nav a:hover {
   border-color: #00ffff;
   box-shadow: 0 0 10px #00ffff;
 }
+
 
 /*About Me Section*/
 #about {
@@ -377,6 +384,7 @@ color: #e0f7f7;
   transform: translateY(-5px);
   box-shadow: 0 0 20px #00ffff, 0 0 30px #ff0099;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 /* Certifications Section*/
@@ -657,8 +665,6 @@ color: #e0f7f7;
   vertical-align: middle;
 }
 
-
-
 /* Tap/click effect for mobile users */
 .touched {
   transform: scale(1.04);
@@ -705,6 +711,43 @@ color: #e0f7f7;
   padding: 8px 16px;
   border-radius: 20px;
 }
+/* Hamburger on mobile */
+.hamburger {
+    display: flex;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #00ffff;
+    padding: 10px;
+    z-index: 10000;
+  }
+
+/* Hamburger lines */
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 4px 0;
+  background-color: #00ffff;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hide nav links by default on mobile */
+#nav-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 16px;
+  border-radius: 16px;
+  margin-top: 12px;
+  box-shadow: 0 0 10px #00ffff88;
+}
+
+/* Show nav links when active */
+#nav-menu.active {
+  display: flex;
+}
 
 .louis-navbar {
     display: flex;
@@ -712,13 +755,6 @@ color: #e0f7f7;
     align-items: center;
     gap: 10px;
   }
-
-  .louis-navbar ul {
-    display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 10px;
-}
 
   .louis-navbar li a {
     font-size: 1.1rem;

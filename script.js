@@ -92,3 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+// Hamburger script//
+function toggleMenu() {
+  const menu = document.querySelector(".louis-navbar ul");
+  menu.classList.toggle("active");
+}
+
