@@ -14,7 +14,7 @@ body {
   height: 100vh;
   width: 100%;
   font-family: "Space Mono", monospace;
-  background-image: linear-gradient(-70deg, #0f0c29 53%, #302b63 100%);
+background: radial-gradient(circle, #0f0c29, #1f1f3f);
   color: #00ffff;
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
@@ -142,6 +142,16 @@ body {
 }
 
 /* Navbar Styling */
+.nav-container {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 40px;
+  box-shadow: 0 0 20px #00ffff88;
+  border: 2px solid #00ffff33;
+  backdrop-filter: blur(8px);
+}
+
 .louis-navbar {
   position: relative;
   top: 0;
@@ -154,6 +164,7 @@ body {
   z-index: 1000;
 }
 
+
 .louis-navbar ul {
   list-style: none;
   display: flex;
@@ -165,11 +176,27 @@ body {
   font-size: 1.2rem;
   color: #00ffff;
   transition: color 0.3s;
+  white-space: nowrap;
 }
 
 .louis-navbar li a:hover {
   color: #ff0099;
+  
 }
+
+nav a {
+  padding: 8px 16px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+
+nav a:hover {
+  border-color: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+}
+
 
 /*About Me Section*/
 #about {
@@ -183,7 +210,7 @@ body {
 
 .about-louis {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   color: #00ffff;
   border-bottom: 2px solid #00ffff;
@@ -213,7 +240,7 @@ body {
 
 /* Project Section Title */
 .project-louis {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #00ffff;
   border-bottom: 2px solid #00ffff;
   margin-bottom: 30px;
@@ -289,6 +316,7 @@ body {
 .louis-resume-title {
   text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
   transition: text-shadow 0.3s ease-in-out;
+  font-size: 2.5rem;
 }
 
 .louis-resume-download {
@@ -336,7 +364,7 @@ body {
 }
 
 .louis-certifications-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   border-bottom: 2px solid #00ffff;
   font-weight: bold;
@@ -376,7 +404,7 @@ body {
 }
 
 .louis-practice-title {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   color: #00ffff;
   text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099;
   margin-bottom: 1.5rem;
@@ -423,13 +451,13 @@ gap: 8px;
 .louis-now-learning {
   font-size: 1rem;
   color: #00ffff;
-  margin-top: 10px;
+  margin-top:4.0rem;
 }
 
 .louis-clock {
   font-size: 1rem;
   color: #ff0099;
-  margin-top: 5px;
+
 }
 
 /* Gojo-Sukuna section*/
@@ -646,4 +674,5 @@ gap: 8px;
     font-size: 1.1rem;
   }
 }
+
 
