@@ -160,7 +160,7 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
   box-shadow: 0 0 20px #00ffff88;
   border: 2px solid #00ffff33;
   backdrop-filter: blur(10px);
-  position:fixed;
+  position:relative;
   z-index: 9999;
 }
 .louis-navbar{
