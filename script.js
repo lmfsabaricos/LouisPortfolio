@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Hamburger script//
 function toggleMenu() {
-  const menu = document.querySelector(".louis-navbar ul");
+  const menu = document.getElementById("nav-menu");
   menu.classList.toggle("active");
 }
 

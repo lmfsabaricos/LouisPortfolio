@@ -742,6 +742,7 @@ color: #e0f7f7;
   border-radius: 16px;
   margin-top: 12px;
   box-shadow: 0 0 10px #00ffff88;
+  z-index: 9999;
 }
 
 /* Show nav links when active */
