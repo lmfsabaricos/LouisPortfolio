@@ -1,4 +1,4 @@
-/* Global Reset */
+/* ===================== GLOBAL RESET ===================== */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Body edit */
+/* ===================== BODY STYLES ===================== */
 body {
   height: 100vh;
   width: 100%;
@@ -20,7 +20,7 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
   animation: fadeIn 1s ease-in forwards;
 }
 
-/* Fade In Slowly All */
+/* ===================== FADE-IN EFFECT ===================== */
 .fade-in-section {
   opacity: 0;
   transform: translateY(30px);
@@ -39,7 +39,7 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
   }
 }
 
-/* Particle Background */
+/* ===================== PARTICLE BACKGROUND ===================== */
 #particles-js {
   position: fixed;
   top: 0;
@@ -50,7 +50,7 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
   pointer-events: none;
 }
 
-/* Main Intro Section */
+/* ===================== MAIN INTRO SECTION ===================== */
 .louis-main {
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
   position: relative;
 }
 
-/* Title Styles */
+/* ===================== TITLE & SUBTITLE ===================== */
 .louis-title {
   font-size: 4.2vw;
   font-weight: bold;
@@ -74,16 +74,9 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
 
 .louis-title:hover {
  color: #ff6f00;
-
   transform: scale(1.05);
 }
 
-.glow-pulse {
-  animation: redPulseSoft 2.5s infinite;
-  -webkit-animation: redPulseSoft 2.5s infinite;
-}
-
-/* Subtitle Styles */
 .louis-subtitle {
   font-size: 2.5vw;
   letter-spacing: 1.5px;
@@ -94,11 +87,16 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
 
 .louis-subtitle:hover {
   color: #ff6f00;
-;
   transform: scale(1.03);
 }
 
-/* Work Button */
+/* ===================== GLOW ANIMATION ===================== */
+.glow-pulse {
+  animation: redPulseSoft 2.5s infinite;
+  -webkit-animation: redPulseSoft 2.5s infinite;
+}
+
+/* ===================== WORK BUTTON ===================== */
 .louis-work-container {
   margin-top: 20px;
   display: flex;
@@ -120,7 +118,8 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
   color: #ff0099;
   transform: scale(1.2);
 }
-/* Louis socials Icons*/
+
+/* ===================== SOCIAL ICONS ===================== */
 .louis-socials-container{
   margin-top:20px;
 }
@@ -144,13 +143,10 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
   transform: scale(1.2);
 }
 
-/* Hamburger menu for nav in mobile */
-.hamburger {
+/* ===================== NAVIGATION BAR ===================== */
+.hamburger {  /* For Mobile Only Hamburger Menu */
   display: none;
 }
-
-
-/* Navbar Styling */
 
 .nav-container{
   display: inline-block;
@@ -191,7 +187,7 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
 
 .louis-navbar li a:hover {
   color: #ff0099;
-  
+
 }
 
 nav a {
@@ -207,8 +203,7 @@ nav a:hover {
   box-shadow: 0 0 10px #00ffff;
 }
 
-
-/*About Me Section*/
+/* ===================== ABOUT SECTION ===================== */
 #about {
   padding: 60px 80px;
   color: #00ffff;
@@ -251,7 +246,7 @@ nav a:hover {
   box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
 }
 
-/* Project Section Title */
+/* ===================== PROJECT SECTION ===================== */
 .project-louis {
   font-size: 2.5rem;
   color: #00ffff;
@@ -320,8 +315,7 @@ color: #e0f7f7;
   box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3);
 }
 
-
-/* Experience Section*/
+/* ===================== EXPERIENCE SECTION ===================== */
 .louis-experience-section {
   padding: 60px 20px;
   color: #00ffff;
@@ -386,8 +380,7 @@ color: #e0f7f7;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 }
-
-/* Certifications Section*/
+/* ===================== CERTIFICATIONS SECTION ===================== */
 .louis-certifications-section {
   padding: 40px 20px;
   text-align: center;
@@ -427,7 +420,7 @@ color: #e0f7f7;
   font-size: 0.95rem;
 }
 
-/* Side Projects */
+/* ===================== SIDE PROJECTS SECTION ===================== */
 .louis-practice-section {
   padding: 60px 20px;
   text-align: center;
@@ -480,7 +473,7 @@ color: #e0f7f7;
   max-width: 500px;
 }
 
-/* Footer*/
+/* ===================== FOOTER ===================== */
 .louis-footer {
   text-align: center;
   padding: 20px;
@@ -490,7 +483,7 @@ color: #e0f7f7;
   margin-top: 80px;
   border-top: 1px solid #00ffff20;
 }
-/* Widget Styles*/
+/* ===================== WIDGETS ===================== */
 .louis-now-learning {
   font-size: 1.2rem;
   color: #00ffff;
@@ -503,9 +496,7 @@ color: #e0f7f7;
 
 }
 
-/* Anime Section*/
-/* Gojo-Sukuna */
-
+/* ===================== ANIME SECTION ===================== */
 .gojo-sukuna-badge {
   position: fixed;
   bottom: 40px;
@@ -590,12 +581,13 @@ color: #e0f7f7;
     opacity: 1;
   }
 }
-/* Anime Section*/ /* Anime Section*/
+
+/* ===================== ANIME SECTION: PRACTICE BOX ===================== */
 .practice-item {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
   max-width: 500px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -670,6 +662,14 @@ color: #e0f7f7;
   transform: scale(1.04);
   box-shadow: 0 0 12px #00ffff80;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -webkit-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -moz-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -ms-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -o-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -webkit-transform: scale(1.04);
+  -moz-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  -o-transform: scale(1.04);
 }
 
 @keyframes redPulseSoft {

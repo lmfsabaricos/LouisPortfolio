@@ -45,7 +45,7 @@ particlesJS("particles-js", {
 
 
 // Touched effect fot mobile devices //
-const elements = document.querySelectorAll('.about-box, .cert-image-box, .louis-resume-download, .louis-practice-list a, .louis-work, .project-box');
+const elements = document.querySelectorAll('.about-box, .cert-image-box, .louis-resume-download, .louis-practice-list a, .project-box, .job-experience');
 
 elements.forEach(el => {
   el.addEventListener('touchstart', () => {
