@@ -145,7 +145,7 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
 }
 
 /* Navbar Styling */
-.nav-container {
+.louis-navbar {
   display: inline-block;
   padding: 10px 30px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -157,7 +157,7 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
   z-index: 9999;
 }
 
-.louis-navbar {
+.nav-container {
   position: relative;
   top: 0;
   left: 0;
