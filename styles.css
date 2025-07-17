@@ -710,15 +710,19 @@ color: #e0f7f7;
   .nav-container {
   padding: 8px 16px;
   border-radius: 20px;
+  position: relative;
 }
 /* Hamburger on mobile */
 .hamburger {
     display: flex;
+    flex-direction:column;
     font-size: 1.8rem;
     cursor: pointer;
     color: #00ffff;
     padding: 10px;
-    z-index: 10000;
+    z-index: 10001;
+    right: 16px;
+ width: fit-content;
   }
 
 /* Hamburger lines */
@@ -738,9 +742,12 @@ color: #e0f7f7;
   flex-direction: column;
   align-items: center;
   background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 82px;
+  right: -50px;
+  width:200px;
   padding: 16px;
   border-radius: 16px;
-  margin-top: 12px;
   box-shadow: 0 0 10px #00ffff88;
   z-index: 9999;
 }
@@ -749,6 +756,17 @@ color: #e0f7f7;
 #nav-menu.active {
   display: flex;
 }
+
+  #nav-menu li {
+    list-style: none;
+    margin: 10px 0;
+  }
+
+  #nav-menu li a {
+    color: #00ffff;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
 
 .louis-navbar {
     display: flex;
