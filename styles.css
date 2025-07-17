@@ -629,6 +629,7 @@ color: #e0f7f7;
   gap: 3rem;
   animation: scrollMarquee 25s linear infinite;
   width: fit-content;
+  -webkit-animation: scrollMarquee 25s linear infinite;
 }
 
 .marquee-track img {
@@ -706,12 +707,14 @@ color: #e0f7f7;
 }
 
 .louis-navbar {
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
 
   .louis-navbar ul {
+    display: flex;
    flex-direction: column;
    align-items: center;
    gap: 10px;
