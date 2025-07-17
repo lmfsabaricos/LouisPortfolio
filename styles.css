@@ -63,7 +63,7 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
 
 /* Title Styles */
 .louis-title {
-  font-size: 4.5vw;
+  font-size: 4.2vw;
   font-weight: bold;
   letter-spacing: 0.5px;
   line-height: 1.1;
@@ -73,12 +73,14 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
 }
 
 .louis-title:hover {
-  color: #ff0099;
+ color: #ff6f00;
+
   transform: scale(1.05);
 }
 
 .glow-pulse {
   animation: redPulseSoft 2.5s infinite;
+  -webkit-animation: redPulseSoft 2.5s infinite;
 }
 
 /* Subtitle Styles */
@@ -91,7 +93,8 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
 }
 
 .louis-subtitle:hover {
-  color: #ff0099;
+  color: #ff6f00;
+;
   transform: scale(1.03);
 }
 
@@ -145,11 +148,13 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
 .nav-container {
   display: inline-block;
   padding: 10px 30px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 40px;
   box-shadow: 0 0 20px #00ffff88;
   border: 2px solid #00ffff33;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  position:fixed;
+  z-index: 9999;
 }
 
 .louis-navbar {
@@ -164,7 +169,6 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
   z-index: 1000;
 }
 
-
 .louis-navbar ul {
   list-style: none;
   display: flex;
@@ -173,7 +177,7 @@ background: radial-gradient(circle, #0f0c29, #1f1f3f);
 
 .louis-navbar li a {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #00ffff;
   transition: color 0.3s;
   white-space: nowrap;
@@ -197,7 +201,6 @@ nav a:hover {
   box-shadow: 0 0 10px #00ffff;
 }
 
-
 /*About Me Section*/
 #about {
   padding: 60px 80px;
@@ -218,8 +221,11 @@ nav a:hover {
 }
 
 #about p {
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
   max-width: 800px;
+  line-height: 2;
+  color: #e0f7f7;
+
 }
 .about-box {
   background-color: rgba(0, 0, 0, 0.4);
@@ -250,10 +256,6 @@ nav a:hover {
   text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
   transition: text-shadow 0.3s ease-in-out;
 }
-.project-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3);
-}
 
 .project-container {
   display: flex;
@@ -270,7 +272,7 @@ nav a:hover {
   border-radius: 12px;
   width: 280px;
   text-align: center;
-  color: #00ffff;
+color: #e0f7f7;
   transition: transform 0.3s ease;
   backdrop-filter: blur(3px);
 }
@@ -285,10 +287,11 @@ nav a:hover {
 .project-box h2 {
   font-size: 1.4rem;
   margin-bottom: 10px;
+  color: #00ffff;
 }
 
 .project-box p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin-bottom: 15px;
   line-height: 1.5;
 }
@@ -304,56 +307,76 @@ nav a:hover {
 .project-box a:hover {
   color: #00ffff;
 }
-/* Resume Section*/
-.louis-resume-section {
-  margin-top: 80px;
-  padding: 50px 20px;
+
+.project-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3);
+}
+
+
+/* Experience Section*/
+.louis-experience-section {
+  padding: 60px 20px;
   color: #00ffff;
   text-align: center;
-  font-size: 1.6rem;
-
 }
-.louis-resume-title {
-  text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
-  transition: text-shadow 0.3s ease-in-out;
+
+.louis-section-title {
   font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-shadow: 0 0 4px #ff0099, 0 0 12px #ff0099;
 }
 
-.louis-resume-download {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  color: #00ffff;
-  border: 4px solid #00ffff;
-  text-decoration: none;
-  font-weight: bold;
+/* Container for each job */
+.job-experience {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
 }
 
-.louis-resume-download:hover {
-  background-color: #00ffff;
-  color: #000;
+/* Logo */
+.company-logo {
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 5px;
 }
 
-/* Resume Glow Box*/
-.louis-section-box {
-  background-color: #000;
-  border: 2px solid #00ffff;
-  box-shadow: 0 0 10px #00ffff;
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin: 3rem auto;
-  width: 90%;
-  max-width: 900px;
+/* Job text */
+.job-details {
+  text-align: left;
 }
 
-.louis-section-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 255, 255, 0.4);
+.job-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.job-details p {
+  margin: 4px 0;
+  font-size: 1rem;
+  font-weight:500;
+  letter-spacing: 0.4px;
+  color: #e0f7f7;
+
+}
+
+/* Hovering For Experiences */
+.job-experience:hover,
+#other-experience .job-experience:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00ffff, 0 0 30px #ff0099;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.louis-resume-title:hover {
-  text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc;
 }
 
 /* Certifications Section*/
@@ -430,12 +453,20 @@ nav a:hover {
   text-decoration: none;
   transition: color 0.3s, transform 0.3s;
   font-size: 1.3rem;
-gap: 8px;
 }
 .louis-practice-list a:hover {
   text-shadow: 0 0 12px #ff2e63, 0 0 18px #ff2e63;
   transform: scale(1.02);
 }
+
+.project-name {
+  color: #00ffff !important; /* bright cyan-blue */
+}
+
+
+
+
+
 
 /* Footer*/
 .louis-footer {
@@ -449,18 +480,19 @@ gap: 8px;
 }
 /* Widget Styles*/
 .louis-now-learning {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #00ffff;
   margin-top:4.0rem;
 }
 
 .louis-clock {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #ff0099;
 
 }
 
-/* Gojo-Sukuna section*/
+/* Anime Section*/
+/* Gojo-Sukuna */
 
 .gojo-sukuna-badge {
   position: fixed;
@@ -530,6 +562,7 @@ gap: 8px;
 .inline-badge img:last-child:hover {
   box-shadow: 0 0 15px #ff2e63, 0 0 30px #ff2e63;
 }
+
 /* Pulse for gojo-sukuna*/
 @keyframes pulse {
   0% {
@@ -545,7 +578,7 @@ gap: 8px;
     opacity: 1;
   }
 }
-
+/* Anime Section*//* Anime Section*/
 .practice-item {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 20px;
@@ -581,6 +614,10 @@ gap: 8px;
   transform: scale(1.04);
   box-shadow: 0 0 12px #00ffff80;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -webkit-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -moz-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -ms-transition: transform 0.2s ease, box-shadow 0.2s ease;
+  -o-transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 @keyframes redPulseSoft {
