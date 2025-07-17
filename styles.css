@@ -419,7 +419,7 @@ color: #e0f7f7;
   font-size: 0.95rem;
 }
 
-/* Practice Section Styles */
+/* Side Projects */
 .louis-practice-section {
   padding: 60px 20px;
   text-align: center;
@@ -434,7 +434,6 @@ color: #e0f7f7;
 }
 
 .louis-practice-list {
-  list-style: none;
   padding: 0;
   margin: 20px 0;
   display: flex;
@@ -443,30 +442,35 @@ color: #e0f7f7;
   gap: 2rem;
 }
 
-.louis-practice-list li {
+.practice-item-wrapper {
   margin: 10px 0;
 }
 
-.louis-practice-list a {
+.practice-item-wrapper a {
   color: #ff0099;
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s, transform 0.3s;
   font-size: 1.3rem;
 }
-.louis-practice-list a:hover {
+.practice-item-wrapper a:hover {
   text-shadow: 0 0 12px #ff2e63, 0 0 18px #ff2e63;
   transform: scale(1.02);
 }
 
 .project-name {
-  color: #00ffff !important; /* bright cyan-blue */
+  color: #00ffff !important;
 }
 
-
-
-
-
+.side-projects-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.practice-item-wrapper {
+  max-width: 500px;
+}
 
 /* Footer*/
 .louis-footer {
@@ -578,7 +582,7 @@ color: #e0f7f7;
     opacity: 1;
   }
 }
-/* Anime Section*//* Anime Section*/
+/* Anime Section*/ /* Anime Section*/
 .practice-item {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 20px;
@@ -609,15 +613,56 @@ color: #e0f7f7;
   line-height: 1.5;
 }
 
+/* Tech Stack Slider */
+.tech-stack-marquee {
+  overflow: hidden;
+  width: 100%;
+  padding: 2rem 0;
+  margin-top:4rem;
+  padding: 0.5rem 0;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  animation: scrollMarquee 25s linear infinite;
+  width: fit-content;
+}
+
+.marquee-track img {
+  height: 48px;
+  margin: 0;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 5px #00ffff);
+}
+
+.marquee-track img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 15px #ff00cc);
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track img {
+  vertical-align: middle;
+}
+
+
+
 /* Tap/click effect for mobile users */
 .touched {
   transform: scale(1.04);
   box-shadow: 0 0 12px #00ffff80;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  -webkit-transition: transform 0.2s ease, box-shadow 0.2s ease;
-  -moz-transition: transform 0.2s ease, box-shadow 0.2s ease;
-  -ms-transition: transform 0.2s ease, box-shadow 0.2s ease;
-  -o-transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 @keyframes redPulseSoft {
@@ -655,14 +700,26 @@ color: #e0f7f7;
   .louis-socials {
     justify-content: center;
   }
+  .nav-container {
+  padding: 8px 16px;
+  border-radius: 20px;
+}
 
-  .louis-navbar {
-    justify-content: center;
-    padding: 10px 20px;
+.louis-navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 
+  .louis-navbar ul {
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+}
+
   .louis-navbar li a {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    padding: 6px 12px;
   }
 
   #about {
@@ -711,5 +768,4 @@ color: #e0f7f7;
     font-size: 1.1rem;
   }
 }
-
 

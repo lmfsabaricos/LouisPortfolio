@@ -79,3 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   setInterval(updateClock, 1000);
   updateClock();
+
+
+// Tech Script //
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+  });
+
