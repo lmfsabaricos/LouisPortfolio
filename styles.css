@@ -816,6 +816,119 @@ h1.main-title {
   animation: shake 0.4s ease;
 }
 
+
+
+/* ===================== GOKU & SUPERMAN IMAGE ===================== */
+.goku2,
+.superman2 {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+  border: 3px solid #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(111, 227, 255, 0.4);
+  display: block;
+}
+
+/* ===================== GOKU & SUPERMAN CARD BOXES ===================== */
+.kryptonian-box,
+.saiyan-box {
+  background-color: #12112b;
+  border: 2px solid #3f3f66;
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 300px;
+  box-shadow: 0 0 20px rgba(111, 227, 255, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* ===================== GOKU & SUPERMAN CARD TEXT ===================== */
+.goku {
+  color: #00bfff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.superman {
+  color: #ffcc00;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Quotes */
+.goku-quote,
+.superman-quote {
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: #ccc;
+}
+
+/* Subtitles */
+.goku-techniques,
+.superman-techniques {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+/* Lists */
+.goku-list li,
+.superman-list li {
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+  color: #fff;
+  text-align: left;
+}
+
+/* ===================== GOKU & SUPERMAN BUTTONS ===================== */
+#goku-superman .play-voice {
+  margin-top: 1rem;
+  background: linear-gradient(to right, #00bfff, #1e90ff);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+#goku-superman .play-voice:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #1e90ff, #00bfff);
+}
+
+/* ===================== GOKU & SUPERMAN BOX GLOW EFFECT ===================== */
+.saiyan.box::before,
+.kryptonian-box::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 20px;
+  background: radial-gradient(circle, #6fe3ff33, transparent 60%);
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* ===================== GOKU & SUPERMAN PULSE ANIMATION ===================== */
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+
 /* ===================== RESPONSIVE MOBILE ===================== */
 @media (max-width: 768px) {
   .characters-section,
