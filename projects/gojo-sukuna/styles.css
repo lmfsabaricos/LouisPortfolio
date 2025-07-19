@@ -149,6 +149,7 @@ h1.main-title {
   left: -15px;
   right: -15px;
   bottom: -15px;
+  pointer-events: none;
   z-index: 0;
   border-radius: 20px;
   background: radial-gradient(circle, #6fe3ff33, transparent 60%);
@@ -158,6 +159,27 @@ h1.main-title {
   0%, 100% { opacity: 0.4; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.05); }
 }
+
+/* ===================== GOJO SUKUNA AUDIO BUTTON ===================== */
+.play-voice {
+  margin-top: 1rem;
+  background: linear-gradient(to right, #ff4de7, #b94fff);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.play-voice:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #ff66cc, #d36bff);
+}
+
+
+
 
 /* ===================== GOJO SUKUNA IMAGES ===================== */
 .gojo2,
@@ -349,6 +371,18 @@ button[type="submit"] {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ========== FORM FADE OUT ========== */
+.strongest-form form.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.vote-result.visible {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
 
 
 
