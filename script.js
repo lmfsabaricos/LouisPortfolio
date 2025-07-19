@@ -129,3 +129,18 @@ const fadeObserver = new IntersectionObserver((entries) => {
 });
 
 fadeEls.forEach(el => fadeObserver.observe(el));
+
+
+//Toggle Logic -->
+
+function showMatchup(id) {
+  document.querySelectorAll('.matchup-section').forEach(section => {
+    section.classList.remove('visible');
+  });
+
+  const selected = document.getElementById(id);
+  if (selected) {
+    selected.classList.add('visible');
+  }
+}
+

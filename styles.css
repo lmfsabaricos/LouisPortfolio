@@ -55,6 +55,59 @@ h1.main-title {
   transform: translateY(0);
 }
 
+
+
+
+/* ===================== VS TOGGLE BUTTONS ===================== */
+.vs-toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.vs-toggle-buttons button {
+  background: linear-gradient(135deg, #6f44ff, #b94fff);
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #b94fff88;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.vs-toggle-buttons button:hover {
+  background: linear-gradient(135deg, #b94fff, #6f44ff);
+  transform: scale(1.05);
+}
+
+/* ===================== MATCHUP SECTION TOGGLE ===================== */
+.matchup-section {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  position: absolute;
+  width: 100%;
+}
+
+.matchup-section.visible {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
 /* ===================== GOJO SUKUNA HOVERS ===================== */
 .gojo-container {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -284,10 +337,6 @@ button[type="submit"] {
   cursor: pointer;
   margin-top: 0.5rem;
   transition: background 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background: linear-gradient(to right, #ff88ee, #ca7fff);
 }
 
 /* ===================== GOJO SUKUNA QUIZ ===================== */
@@ -770,3 +819,4 @@ textarea {
   }
 
 }
+

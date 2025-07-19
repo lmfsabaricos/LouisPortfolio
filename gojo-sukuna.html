@@ -18,8 +18,15 @@
   <main>
     <h1 class="main-title">Anime Twist</h1>
 
+    <!-- MATCHUP TOGGLE BUTTONS -->
+<div class="vs-toggle-buttons">
+  <button onclick="showMatchup('gojo-sukuna')">Gojo vs Sukuna</button>
+  <button onclick="showMatchup('goku-superman')">Goku vs Superman</button>
+</div>
+
     <!-- Gojo Sukuna Character Cards Section -->
-    <section class="characters-section">
+  <div id="gojo-sukuna" class ="matchup-section visible">
+  <section class="characters-section vs-matchup">
       <div class="gojo-container">
       <div class="strongest-box">
         <h2 class="section-title">The Strongest</h2>
@@ -52,7 +59,8 @@
         </ul>
       </div>
     </div>
-    </section>
+  </section>
+    </div>
 
     <!-- Gojo Sukuna Voting Form -->
    <section class="form-section fade-in-scroll">
