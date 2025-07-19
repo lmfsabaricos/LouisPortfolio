@@ -132,7 +132,6 @@ fadeEls.forEach(el => fadeObserver.observe(el));
 
 
 //Toggle Logic -->
-
 function showMatchup(id) {
   document.querySelectorAll('.matchup-section').forEach(section => {
     section.classList.remove('visible');
@@ -144,3 +143,25 @@ function showMatchup(id) {
   }
 }
 
+//Interactive Form -->
+const form = document.getElementById("gojoform");
+const resultDiv = document.getElementById("formResult");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("first-name").value;
+  const choice = document.querySelector('input[name="gojo-sukuna"]:checked').value;
+
+  resultDiv.innerHTML = `✅ <strong>Thank you, ${name}!</strong> You voted for <strong>${choice}</strong>.`;
+  resultDiv.classList.remove("hidden");
+  resultDiv.classList.add("visible");
+
+
+  form.classList.add("fade-out");
+
+
+  setTimeout(() => {
+    form.style.display = "none";
+  }, 500);
+});

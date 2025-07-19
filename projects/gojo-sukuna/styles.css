@@ -36,8 +36,6 @@ body.fade-in {
 }
 
 
-
-
 /* ===================== HEADINGS ===================== */
 h1.main-title {
   text-align: center;
@@ -101,15 +99,6 @@ h1.main-title {
   pointer-events: auto;
   position: relative;
 }
-
-
-
-
-
-
-
-
-
 
 /* ===================== GOJO SUKUNA HOVERS ===================== */
 .gojo-container {
@@ -343,6 +332,25 @@ button[type="submit"] {
   margin-top: 0.5rem;
   transition: background 0.3s ease;
 }
+
+.vote-result {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #7df9ff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
 
 /* ===================== GOJO SUKUNA QUIZ ===================== */
 .quiz-section {
