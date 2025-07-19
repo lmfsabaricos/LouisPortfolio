@@ -35,6 +35,9 @@ body.fade-in {
   opacity: 1;
 }
 
+
+
+
 /* ===================== HEADINGS ===================== */
 h1.main-title {
   text-align: center;
@@ -145,6 +148,8 @@ h1.main-title {
   box-shadow: 0 0 20px rgba(111, 227, 255, 0.3);
   text-align: center;
   flex: 1;
+  z-index: 1;
+  position:relative;
 }
 
 .strongest-box::before,
@@ -155,7 +160,7 @@ h1.main-title {
   left: -15px;
   right: -15px;
   bottom: -15px;
-  z-index: -1;
+  z-index: 0;
   border-radius: 20px;
   background: radial-gradient(circle, #6fe3ff33, transparent 60%);
   animation: pulse 2s infinite ease-in-out;
