@@ -66,7 +66,7 @@
    <section class="form-section fade-in-scroll">
       <div class="strongest-form">
         <h2>Strongest Form</h2>
-        <form action="#" method="POST">
+        <form id ="gojoform" novalidate >
           <fieldset>
             <legend>Who truly is the strongest?</legend>
             <label for="first-name">Enter Your First Name:
@@ -88,10 +88,11 @@
             <input id="sukuna" type="radio" name="gojo-sukuna" value="Sukuna">
           </fieldset>
 
-          <textarea name="comments" rows="5" placeholder="Thoughts here"></textarea>
+          <textarea name="comments" rows="5" placeholder="Form Submits and is interactive but not yet fully working"></textarea>
           <br>
           <button type="submit">Vote</button>
         </form>
+          <div id="formResult" class="vote-result hidden"></div>
       </div>
     </section>
 
