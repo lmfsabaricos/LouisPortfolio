@@ -160,8 +160,8 @@ form.addEventListener("submit", function (e) {
 
   form.classList.add("fade-out");
 
-
   setTimeout(() => {
     form.style.display = "none";
   }, 500);
 });
+
