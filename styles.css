@@ -1,9 +1,11 @@
+/* ===================== GLOBAL RESET ===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===================== PARTICLES BACKGROUND ===================== */
 #particles-js {
   position: fixed;
   top: 0;
@@ -15,6 +17,7 @@
   background: radial-gradient(circle at center, #0a0a23, #000015);
 }
 
+/* ===================== HTML & BODY ===================== */
 html {
   scroll-behavior: smooth;
 }
@@ -32,6 +35,7 @@ body.fade-in {
   opacity: 1;
 }
 
+/* ===================== HEADINGS ===================== */
 h1.main-title {
   text-align: center;
   font-size: 2.8rem;
@@ -39,6 +43,7 @@ h1.main-title {
   margin-bottom: 2rem;
 }
 
+/* ===================== SCROLL FADE-IN ===================== */
 .fade-in-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -50,9 +55,7 @@ h1.main-title {
   transform: translateY(0);
 }
 
-
-/* Character Cards */
-
+/* ===================== GOJO SUKUNA HOVERS ===================== */
 .gojo-container {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -63,14 +66,14 @@ h1.main-title {
 
 .sukuna-container {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 .sukuna-container:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px #ff0040, 0 0 50px #ff0040;
 }
 
-
-
+/* ===================== GOJO SUKUNA CARDS ===================== */
 .characters-section {
   display: flex;
   justify-content: center;
@@ -109,7 +112,7 @@ h1.main-title {
   50% { opacity: 1; transform: scale(1.05); }
 }
 
-
+/* ===================== GOJO SUKUNA IMAGES ===================== */
 .gojo2,
 .sukuna2 {
   width: 120px;
@@ -119,7 +122,7 @@ h1.main-title {
   object-fit: cover;
   box-shadow: 0 0 15px rgba(111, 227, 255, 0.3);
 }
-
+/* ===================== GOJO SUKUNA LABELS ===================== */
 .section-title {
   font-size: 1.7rem;
   margin-bottom: 0.5rem;
@@ -162,7 +165,7 @@ h1.main-title {
   margin-left: 1.2rem;
 }
 
-/* Cafes Section */
+/* ===================== GOJO SUKUNA CAFE ===================== */
 .cafes-section {
   display: flex;
   justify-content: center;
@@ -200,7 +203,7 @@ article {
   color: #eee;
 }
 
-/* Form Section */
+/* ===================== GOJO SUKUNA FORM ===================== */
 .form-section {
   display: flex;
   justify-content: center;
@@ -270,7 +273,7 @@ button[type="submit"] {
   margin-top: 0.5rem;
 }
 
-/* Quiz Section */
+/* ===================== GOJO SUKUNA QUIZ ===================== */
 .quiz-section {
   text-align: center;
   margin: 3rem 0;
@@ -306,7 +309,7 @@ button[type="submit"] {
   font-weight: bold;
 }
 
-/* Background Stars */
+/* ===================== BACKGROUND STARS ===================== */
 #bgCanvas {
   position: fixed;
   top: 0;
@@ -318,7 +321,7 @@ button[type="submit"] {
 }
 
 
-/* Gojo & Sukuna menu hover glow */
+/* ===================== GOJO SUKUNA MENU HOVER GLOW ===================== */
 #gojo-menu:hover, #sukuna-menu:hover {
   box-shadow: 0 0 25px #6fe3ff, 0 0 40px #6fe3ff66;
   transform: scale(1.02);
@@ -329,7 +332,7 @@ button[type="submit"] {
   box-shadow: 0 0 25px #ff4d92, 0 0 40px #ff4d9266;
 }
 
-/* Glowing text shadows for headers */
+/* ===================== GLOWING TEXT SHADOW FOR HEADERS ===================== */
 h1.main-title {
   text-shadow: 0 0 10px #ff4de7, 0 0 20px #ff4de7;
 }
@@ -345,9 +348,7 @@ h1.main-title {
 }
 
 
-
-
-/* MAGAZINE ARTICLE CONTAINER */
+/* ===================== GOJO SUKUNA MAGAZINE ARTICLE CONTAINER ===================== */
 .magazine-container {
   background-color: #0d0d0d;
   color: #f5f5f5;
@@ -361,7 +362,10 @@ h1.main-title {
   font-family: 'Outfit', sans-serif;
   scrollbar-width: thin;
   scrollbar-color: #ff66cc #1a1a1a;
+  transition: box-shadow 0.3s ease-in-out;
+
 }
+
 
 /* Custom Scrollbar for WebKit */
 .magazine-container::-webkit-scrollbar {
@@ -377,7 +381,7 @@ h1.main-title {
   border-radius: 10px;
 }
 
-/* MAGAZINE HEADER */
+/* ===================== GOJO SUKUNA MAGAZINE HEADER ===================== */
 .mag-title {
   font-family: 'Anton', sans-serif;
   font-size: 2.5rem;
@@ -398,7 +402,7 @@ h1.main-title {
   margin-bottom: 1.5rem;
 }
 
-/* AUTHOR + SOCIAL ICONS */
+/* ===================== GOJO SUKUNA AUTHOR + SOCIAL ICONS ===================== */
 .author {
   text-align: center;
   margin-bottom: 1rem;
@@ -431,12 +435,13 @@ h1.main-title {
   color: #ff66cc;
 }
 
-/* PARAGRAPHS */
+/* ===================== GOJO SUKUNA PARAGRAPHS ===================== */
 .first-paragraph,
 .magazine-container p {
   line-height: 1.6;
   margin-bottom: 1rem;
-  font-size: 1.05rem;
+  font-size: 1.12rem;
+  
 }
 
 .first-paragraph::first-letter {
@@ -448,16 +453,47 @@ h1.main-title {
   font-family: 'Georgia', serif;
 }
 
-/* QUOTE BLOCK */
+/* ===================== GOJO SUKUNA QUOTE BLOCK ===================== */
 .quote {
+  position: relative;
+  font-size: 1.8rem;
   text-align: center;
+  font-family: 'Raleway', sans-serif;
   font-style: italic;
-  color: #00ffff;
-  font-weight: bold;
-  margin: 2rem 0;
+  font-weight: 800;
+  color: #ff66cc;
+  background: linear-gradient(to right, #00ffff, #ff66cc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(255, 102, 204, 0.5);
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
-/* HISTORY SECTION */
+/* ===================== FANCY QUOTE ICON ===================== */
+.quote::before {
+  content: "“";
+  font-size: 3rem;
+  color: #ff66cc;
+  position: absolute;
+  top: -20px;
+  left: -15px;
+}
+
+.quote::after {
+  content: "”";
+  font-size: 3rem;
+  color: #ff66cc;
+  position: absolute;
+  bottom: -20px;
+  right: -1px;
+}
+
+
+/* ===================== GOJO SUKUNA HISTORY ===================== */
 .text-with-images {
   display: flex;
   flex-wrap: wrap;
@@ -503,7 +539,7 @@ h1.main-title {
   margin-bottom: 0.2rem;
 }
 
-/* IMAGE SECTION */
+/* ===================== GOJO SUKUNA IMAGES ===================== */
 .image-wrapper {
   flex: 1 1 45%;
   display: flex;
@@ -526,7 +562,7 @@ h1.main-title {
   margin: 0.5rem 0;
 }
 
-/* QUOTE BOX STYLE */
+/* ===================== GOJO SUKUNA QUOTE BOX STYLE ===================== */
 .highlight-box {
   background-color: #1a1a1a;
   border: 1px solid #ff33aa;
@@ -538,7 +574,7 @@ h1.main-title {
   text-align: center;
 }
 
-/* FIGURE IMAGE STYLES */
+/* ===================== GOJO SUKUNA FIGURE IMAGE STYLES ===================== */
 .magazine-container figure {
   margin: 2rem 0;
   text-align: center;
@@ -566,23 +602,7 @@ h1.main-title {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Fun battle gojo-sukuna */
+/* ===================== GOJO SUKUNA FUN BATTLE ===================== */
 .battle-section {
   text-align: center;
   margin: 3rem 0;
@@ -655,7 +675,7 @@ h1.main-title {
   animation: shake 0.4s ease;
 }
 
-/* Responsive */
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
   .characters-section,
   .cafes-section {
