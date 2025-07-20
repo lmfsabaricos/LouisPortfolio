@@ -1,4 +1,4 @@
-// Setup canvas background
+// ===================== PARTICLE BACKGROUND EFFECT =====================
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 const ctx = canvas.getContext('2d');
@@ -66,7 +66,7 @@ function animate() {
 }
 animate();
 
-// Health setup
+// ===================== BATTLE HEALTH BAR LOGIC =====================
 let gojoHealth = 100;
 let sukunaHealth = 100;
 
@@ -75,7 +75,7 @@ function attack(attacker) {
   const battleContainer = document.getElementById("battle-container");
   const damage = Math.floor(Math.random() * 20) + 5;
 
-  // Flash + shake effect
+// ===================== FLASH SHAKE EFFECT =====================
   battleContainer.classList.add("flash-effect", "shake-effect");
   setTimeout(() => {
     battleContainer.classList.remove("flash-effect", "shake-effect");
@@ -100,7 +100,7 @@ function attack(attacker) {
   }
 }
 
-// Quiz check logic
+// ===================== QUIZ CHECK LOGIC =====================
 function checkGojoQuiz() {
   const answer = document.querySelector('input[name="quiz-answer"]:checked').value;
   const feedback = document.getElementById("quiz-feedback");
@@ -109,12 +109,12 @@ function checkGojoQuiz() {
     : "Nope, that was Gojo. Try again!";
 }
 
-//Fade in on load -->
+// ===================== PAGE FADE-IN ON LOAD =====================
   window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("fade-in");
   });
 
-// Fade-in on scroll
+// ===================== FADE-IN ON SCROLL =====================
 const fadeEls = document.querySelectorAll('.fade-in-scroll');
 
 const fadeObserver = new IntersectionObserver((entries) => {
@@ -131,7 +131,8 @@ const fadeObserver = new IntersectionObserver((entries) => {
 fadeEls.forEach(el => fadeObserver.observe(el));
 
 
-//Toggle Logic -->
+
+// ===================== ANIME MATCHUP TOGGLE LOGIC =====================
 function showMatchup(id) {
   document.querySelectorAll('.matchup-section').forEach(section => {
     section.classList.remove('visible');
@@ -143,7 +144,7 @@ function showMatchup(id) {
   }
 }
 
-//Interactive Form -->
+// ===================== INTERACTIVE VOTING FORM =====================
 const form = document.getElementById("gojoform");
 const resultDiv = document.getElementById("formResult");
 
@@ -165,3 +166,10 @@ form.addEventListener("submit", function (e) {
   }, 500);
 });
 
+// ===================== UNIQUE VISITOR TRACKING =====================
+document.addEventListener("DOMContentLoaded", () => {
+  const hasVisited = localStorage.getItem("visitedAnimePage");
+  if (!hasVisited) {
+    localStorage.setItem("visitedAnimePage", "true");
+  }
+});
