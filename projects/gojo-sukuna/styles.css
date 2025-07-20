@@ -189,8 +189,8 @@ h1.main-title {
 /* ===================== GOJO SUKUNA IMAGES ===================== */
 .gojo2,
 .sukuna2 {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   margin-bottom: 1rem;
   object-fit: cover;
@@ -821,13 +821,12 @@ h1.main-title {
 /* ===================== GOKU & SUPERMAN IMAGE ===================== */
 .goku2,
 .superman2 {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   object-fit: cover;
   object-position: top center;
   border-radius: 50%;
   margin: 0 auto 1rem auto;
-  border: 3px solid #fff;
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(111, 227, 255, 0.4);
   display: block;
@@ -850,16 +849,25 @@ h1.main-title {
 
 /* ===================== GOKU & SUPERMAN CARD TEXT ===================== */
 .goku {
-  color: #00bfff;
+  color: #6fe3ff;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-shadow: 0 0 5px #6fe3ff88; /* subtle aura glow */
+
+
+}
+.superman {
+  color: #ff3c3c; /* Bold heroic red */
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-shadow: 0 0 5px #ff3c3c88; /* subtle glow */
 }
 
-.superman {
-  color: #ffcc00;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
+
+
+/* ===================== GOKU SUPERMAN QUOTES ===================== */
 
 /* Quotes */
 .goku-quote,
@@ -907,7 +915,7 @@ h1.main-title {
 }
 
 /* ===================== GOKU & SUPERMAN BOX GLOW EFFECT ===================== */
-.saiyan.box::before,
+.saiyan-box::before,
 .kryptonian-box::before {
   content: "";
   position: absolute;
@@ -920,6 +928,45 @@ h1.main-title {
   border-radius: 20px;
   background: radial-gradient(circle, #6fe3ff33, transparent 60%);
   animation: pulse 2s infinite ease-in-out;
+
+}
+
+/* ===================== GOKU & SUPERMAN CONTAINERS ===================== */
+.goku-container,
+.superman-container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.goku-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00bfff, 0 0 50px #00bfff;
+}
+
+.superman-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ffcc00, 0 0 50px #ffcc0066;
+}
+
+/* === GOKU HOVER AURA === */
+.saiyan-box:hover {
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #ffffff, #00ffff, #facc15) 1;
+  box-shadow:
+    0 0 15px #00ffff,
+    0 0 30px #ffffff,
+    0 0 45px #facc15;
+  transition: all 0.3s ease-in-out;
+}
+
+/* === SUPERMAN HOVER AURA === */
+.kryptonian-box:hover {
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #ffffff, #1e90ff, #ff3c3c) 1;
+  box-shadow:
+    0 0 15px #1e90ff,
+    0 0 30px #ffffff,
+    0 0 45px #ff3c3c;
+  transition: all 0.3s ease-in-out;
 }
 
 /* ===================== GOKU & SUPERMAN PULSE ANIMATION ===================== */
