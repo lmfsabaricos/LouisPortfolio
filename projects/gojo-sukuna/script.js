@@ -165,11 +165,3 @@ form.addEventListener("submit", function (e) {
     form.style.display = "none";
   }, 500);
 });
-
-// ===================== UNIQUE VISITOR TRACKING =====================
-document.addEventListener("DOMContentLoaded", () => {
-  const hasVisited = localStorage.getItem("visitedAnimePage");
-  if (!hasVisited) {
-    localStorage.setItem("visitedAnimePage", "true");
-  }
-});
