@@ -36,7 +36,6 @@ body.fade-in {
   opacity: 1;
 }
 
-
 /* ===================== HEADINGS ===================== */
 h1.main-title {
   text-align: center;
@@ -986,6 +985,22 @@ h1.main-title {
   50% { opacity: 1; transform: scale(1.05); }
 }
 
+/* === FADE-IN EFFECT FOR ANIME MATCHUP SECTIONS  === */
+.visible {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* ===================== RESPONSIVE MOBILE ===================== */
 @media (max-width: 768px) {
@@ -1051,4 +1066,17 @@ textarea {
   margin: 0 auto;
   box-sizing: border-box;
 }
+
+ .strongest-box,
+  .most-cursed-box,
+  .saiyan-box,
+  .kryptonian-box {
+    width: 100%;
+    /* max-width: 400px;
+    margin: 0 auto; */
+    box-sizing: border-box;
+    min-height: 620px;
+  }
+
+
 }
