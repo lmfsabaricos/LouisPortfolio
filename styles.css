@@ -57,9 +57,6 @@ h1.main-title {
   transform: translateY(0);
 }
 
-
-
-
 /* ===================== VS TOGGLE BUTTONS ===================== */
 .vs-toggle-buttons {
   display: flex;
@@ -107,18 +104,29 @@ h1.main-title {
 }
 .gojo-container:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px #00bfff, 0 0 50px #00bfff;
+  box-shadow:
+    0 0 20px #8b5cf6,
+    0 0 40px #00ffff,
+    0 0 60px #ffffff;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #c084fc, #00ffff, #9333ea) 1;
+  transition: all 0.3s ease-in-out;
 }
 
 .sukuna-container {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
+
 .sukuna-container:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px #ff0040, 0 0 50px #ff0040;
+  box-shadow:
+    0 0 20px #ff0055,
+    0 0 40px #ff66c4,
+    0 0 60px #ffffff;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #ff0055, #ff66c4, #ffffff) 1;
+  transition: all 0.3s ease-in-out;
 }
-
 /* ===================== GOJO SUKUNA CARDS ===================== */
 .characters-section {
   display: flex;
@@ -194,7 +202,8 @@ h1.main-title {
   border-radius: 50%;
   margin-bottom: 1rem;
   object-fit: cover;
-  box-shadow: 0 0 15px rgba(111, 227, 255, 0.3);
+  box-shadow: 0 0 5px rgba(111, 227, 255, 0.3);
+
 }
 /* ===================== GOJO SUKUNA LABELS ===================== */
 .section-title {
@@ -204,15 +213,18 @@ h1.main-title {
 }
 
 .gojo {
-  color: #6fe3ff;
+ color: #8B5CF6;
   font-weight: 700;
   font-size: 1.2rem;
+  text-shadow: 0 0 10px #c084fc;
+    
 }
 
 .sukuna {
-  color: #ff4de7;
+  color: #ff0055;
   font-weight: 700;
   font-size: 1.2rem;
+   text-shadow: 0 0 10px #ff5e8e;
 }
 
 .gojo-quote,
@@ -866,7 +878,6 @@ h1.main-title {
 }
 
 
-
 /* ===================== GOKU SUPERMAN QUOTES ===================== */
 
 /* Quotes */
@@ -931,7 +942,7 @@ h1.main-title {
 
 }
 
-/* ===================== GOKU & SUPERMAN CONTAINERS ===================== */
+/* ===================== GOKU & SUPERMAN HOVERS ===================== */
 .goku-container,
 .superman-container {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
