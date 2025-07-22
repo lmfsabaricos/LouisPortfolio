@@ -36,21 +36,6 @@ body.fade-in {
   opacity: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ===================== HEADINGS ===================== */
 h1.main-title {
   text-align: center;
@@ -58,6 +43,10 @@ h1.main-title {
   color: #ff4de7;
   margin-bottom: 2rem;
 }
+
+
+
+
 
 /* ===================== SCROLL FADE-IN ===================== */
 .fade-in-scroll {
@@ -70,6 +59,8 @@ h1.main-title {
   opacity: 1;
   transform: translateY(0);
 }
+
+
 
 /* ===================== VS TOGGLE BUTTONS ===================== */
 .vs-toggle-buttons {
@@ -104,12 +95,14 @@ h1.main-title {
   transition: opacity 0.6s ease;
   position: absolute;
   width: 100%;
+  display: none;
 }
 
 .matchup-section.visible {
   opacity: 1;
   pointer-events: auto;
   position: relative;
+  display: block;
 }
 
 /* ===================== GOJO SUKUNA HOVERS ===================== */
@@ -158,7 +151,8 @@ h1.main-title {
   border: 2px solid #3f3f66;
   border-radius: 15px;
   padding: 1.5rem;
-  width: 300px;
+  width: 100%;
+  max-width: 400px;
   box-shadow: 0 0 20px rgba(111, 227, 255, 0.3);
   text-align: center;
   flex: 1;
@@ -186,6 +180,17 @@ h1.main-title {
   0%, 100% { opacity: 0.4; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.05); }
 }
+
+.gojo-container .attack-name {
+  color: #00bfff; 
+  text-shadow: 0 0 5px rgba(0, 191, 255, 0.5);
+}
+
+
+.sukuna-container .attack-name {
+  color: #ff3d00;
+}
+
 
 /* ===================== GOJO SUKUNA AUDIO BUTTON ===================== */
 .play-voice {
@@ -229,7 +234,7 @@ h1.main-title {
 .gojo {
  color: #8B5CF6;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-shadow: 0 0 10px #c084fc;
     
 }
@@ -237,7 +242,7 @@ h1.main-title {
 .sukuna {
   color: #ff0055;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
    text-shadow: 0 0 10px #ff5e8e;
 }
 
@@ -278,7 +283,7 @@ h1.main-title {
   background-color: #1d1c3b;
   padding: 1.5rem;
   border-radius: 15px;
-  width: 300px;
+  width: 325px;
   box-shadow: 0 0 15px rgba(255, 77, 231, 0.3);
   text-align: center;
 }
@@ -303,7 +308,7 @@ article {
   color: #eee;
 }
 
-/* ===================== GOJO SUKUNA FORM ===================== */
+/* ===================== GOJO SUKUNA VOTE FORM ===================== */
 .form-section {
   display: flex;
   justify-content: center;
@@ -315,8 +320,8 @@ article {
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
-  width: 90%;
-  max-width: 400px;
+  width: 100%;
+  max-width: 500px;
   border: 2px solid transparent;
   transition: all 0.3s ease;
 }
@@ -402,6 +407,74 @@ button[type="submit"] {
   to { opacity: 1; transform: translateY(0); }
 }
 
+
+
+/* ===================== VOTE COUNT DISPLAY ===================== */
+.vote-counts {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
+
+.vote-counts .vote-box {
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: transform 0.3s ease;
+  width: 150px;
+}
+
+.vote-counts .vote-box:hover {
+  transform: scale(1.05);
+}
+
+.vote-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.vote-box p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Gojo theme */
+.vote-box.gojo {
+  background-color: #101e36;
+  border: 2px solid #00f0ff;
+}
+
+.vote-box.gojo:hover {
+  box-shadow: 0 0 25px 5px rgba(0, 240, 255, 0.6);
+}
+
+.vote-box.gojo h3 {
+  color: #00f0ff;
+}
+
+.vote-box.sukuna {
+  background-color: #3a1a1a;
+  border: 2px solid #ff2a6d;
+}
+
+.vote-box.sukuna:hover {
+  box-shadow: 0 0 25px 5px rgba(255, 42, 109, 0.6);
+}
+
+.vote-box.sukuna h3 {
+  color: #ff0048;
+}
+.vote-box p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+
 /* ========== FORM FADE OUT ========== */
 .strongest-form form.fade-out {
   opacity: 0;
@@ -475,16 +548,6 @@ button[type="submit"] {
   font-size: 1rem;
   color: #7dfc90;
   min-height: 1.5rem;
-}
-/* ===================== BACKGROUND STARS ===================== */
-#bgCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, #0a0a23, #000015);
 }
 
 
@@ -761,13 +824,144 @@ h1.main-title {
   font-style: italic;
 }
 
-/* COLUMN LAYOUT FOR LARGER SCREENS */
 @media (min-width: 768px) {
   .magazine-container article {
     column-count: 2;
     column-gap: 2rem;
   }
 }
+
+
+/* ===================== DEBATE SECTION ===================== */
+.debate-section {
+  background-color: #1a1a2e;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section title */
+.debate-section h2 {
+  color: #ff4de7;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* ===================== PROFILE PIC UPLOAD ===================== */
+.profile-pic-preview {
+  margin-top: 10px;
+}
+
+.debate-profile-pic {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  display: inline-block;
+}
+
+
+/* ===================== FORM STYLES ===================== */
+#debateForm label {
+  display: block;
+  margin: 0.5rem 0;
+  color: #ddd;
+}
+
+#debateForm input,
+#debateForm select,
+#debateForm textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+#debateForm button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #ff4de7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#debateForm button:hover {
+  background: #e044c3;
+}
+
+/* ===================== COMMENT CONTAINER ===================== */
+#debateComments {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+/* ===================== COMMENT BOX ===================== */
+.comment-box {
+  background: #2b2b4b;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-left: 4px solid;
+  border-radius: 8px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  color: #ffffff;
+  box-shadow: none;
+  transition: background 0.3s ease;
+}
+
+.comment-box:hover {
+  background-color: #34345a;
+}
+
+/* ===================== GOJO & SUKUNA STYLES ===================== */
+.comment-box.gojo {
+  border-color: #00bfff;
+}
+
+.comment-box.sukuna {
+  border-color: #ff4d6d;
+}
+
+/* ===================== TEXT STYLING ===================== */
+.comment-box strong {
+  font-weight: 600;
+  color: #d0d0ff;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.comment-box p {
+  margin: 0;
+  color: #e0e0e0;
+}
+
+/* ===================== TIMESTAMP STYLING  ===================== */
+.comment-box .timestamp {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-top: 0.4rem;
+  display: block;
+}
+
+/* ===================== REMOVE GLOW EFFECTS ===================== */
+#debateComments .gojo,
+#debateComments .sukuna,
+#debateComments strong,
+#debateComments p {
+  text-shadow: none !important;
+}
+
 
 /* ===================== GOJO SUKUNA FUN BATTLE ===================== */
 .battle-section {
@@ -865,12 +1059,15 @@ h1.main-title {
   border: 2px solid #3f3f66;
   border-radius: 15px;
   padding: 1.5rem;
-  width: 300px;
+  width: 100%;
+  max-width: 400px;
   box-shadow: 0 0 20px rgba(111, 227, 255, 0.3);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: relative;
+  
 }
 
 /* ===================== GOKU & SUPERMAN CARD TEXT ===================== */
@@ -890,6 +1087,19 @@ h1.main-title {
   font-weight: 700;
   text-shadow: 0 0 5px #ff3c3c88; /* subtle glow */
 }
+
+
+.goku-container .attack-name {
+  color: #00ffff; /* Cyan */
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+}
+
+
+.superman-container .attack-name {
+  color: #ff4500; /* Red-orange */
+  text-shadow: 0 0 5px rgba(255, 69, 0, 0.4);
+}
+
 
 
 /* ===================== GOKU SUPERMAN QUOTES ===================== */
@@ -1017,6 +1227,120 @@ h1.main-title {
 }
 
 
+/* ===================== MUSIC PLAYER BOX ===================== */
+.music-player {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 0.6rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  z-index: 999;
+  width: 55px;
+  height: 55px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#music-select {
+  margin: 0.5rem 0;
+  padding: 0.3rem;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+
+.music-player:hover {
+  width: auto;
+  height: auto;
+  padding: 1rem 1.2rem;
+  transform: scale(1.05);
+}
+
+#song-title {
+  margin: 0;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.music-player button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.music-player button:hover {
+  transform: scale(1.2);
+}
+
+.music-player::before {
+  content: "🎵";
+  font-size: 1.8rem;
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  animation: iconPulse 2s infinite ease-in-out;
+}
+
+#volume-slider {
+  width: 100px;
+  margin-top: 10px;
+  appearance: none;
+  background: #fff;
+  border-radius: 5px;
+  height: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ===================== MUSIC PROGRESS BAR ===================== */
+#progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #ccc;
+  border-radius: 4px;
+  outline: none;
+  margin: 0.5rem 0;
+}
+
+#progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  background: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -3px;
+}
+
+#progress-bar::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  background: #007bff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+@keyframes softGlow {
+  0%, 100% {
+    text-shadow: 0 0 6px #ffffff80, 0 0 12px #ffffff60;
+  }
+  50% {
+    text-shadow: 0 0 12px #ffffffa0, 0 0 18px #ffffff70;
+  }
+}
+
 /* ===================== RESPONSIVE MOBILE ===================== */
 @media (max-width: 768px) {
   .characters-section,
@@ -1087,11 +1411,22 @@ textarea {
   .saiyan-box,
   .kryptonian-box {
     width: 100%;
-    /* max-width: 400px;
-    margin: 0 auto; */
     box-sizing: border-box;
     min-height: 620px;
   }
 
+  .music-player {
+    padding: 0.75rem;
+  }
+
+  #music-controls {
+    gap: 0.4rem;
+  }
+
+  #music-controls button,
+  #music-controls select {
+    font-size: 0.95rem;
+    padding: 0.4rem;
+  }
 
 }
