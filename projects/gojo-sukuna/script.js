@@ -99,14 +99,109 @@ function attack(attacker) {
   }
 }
 
-// ===================== QUIZ CHECK LOGIC =====================
-function checkGojoQuiz() {
-  const answer = document.querySelector('input[name="quiz-answer"]:checked').value;
-  const feedback = document.getElementById("quiz-feedback");
-  feedback.textContent = answer === "Gojo"
-    ? "Correct! Gojo said it."
-    : "Nope, that was Gojo. Try again!";
+// ===================== MULTI-QUESTION TRIVIA GOJO =====================
+const quizData = [
+  {
+    question: "Which technique allows Gojo to slow down time within his Domain Expansion?",
+    choices: ["Reverse Cursed Technique", "Six Eyes", "Infinity", "Limitless: Infinite Void"],
+    answer: "Limitless: Infinite Void"
+  },
+  {
+    question: "What unique trait makes the Six Eyes technique extremely rare?",
+    choices: ["It allows teleportation", "It regenerates cursed energy", "It grants perfect cursed energy perception", "It lets the user copy techniques"],
+    answer: "It grants perfect cursed energy perception"
+  },
+  {
+    question: "Sukuna was originally known as the...",
+    choices: ["King of Sorcery", "First Curse", "King of Curses", "Emperor of Jujutsu"],
+    answer: "King of Curses"
+  },
+  {
+    question: "Which technique does Sukuna use that ignores barriers in a Domain Expansion?",
+    choices: ["Cleave", "Fire Arrow", "Malevolent Shrine", "Disaster Flames"],
+    answer: "Malevolent Shrine"
+  },
+  {
+    question: "Who temporarily took control of Sukuna’s body using a Binding Vow?",
+    choices: ["Gojo", "Megumi", "Yuji", "Geto"],
+    answer: "Yuji"
+  },
+  {
+    question: "What condition does Gojo require to activate Hollow Purple?",
+    choices: ["Fusion of Blue and Red", "Six Eyes activated", "Domain open", "Barrier break"],
+    answer: "Fusion of Blue and Red"
+  }
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+  const questionData = quizData[currentQuestion];
+  const questionEl = document.getElementById("quiz-question");
+  const choicesEl = document.getElementById("quiz-choices");
+
+  questionEl.textContent = questionData.question;
+  choicesEl.innerHTML = "";
+
+  questionData.choices.forEach((choice) => {
+    const label = document.createElement("label");
+    label.innerHTML = `
+      <input type="radio" name="quiz-choice" value="${choice}" />
+      ${choice}
+    `;
+    choicesEl.appendChild(label);
+  });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadQuestion();
+
+  document.getElementById("next-question-btn").addEventListener("click", () => {
+    const selected = document.querySelector('input[name="quiz-choice"]:checked');
+    if (!selected) return alert("Please select an answer!");
+
+    const allChoices = document.querySelectorAll('input[name="quiz-choice"]');
+
+    // Disable all choices to lock the answer
+    allChoices.forEach(input => input.disabled = true);
+
+    const correctAnswer = quizData[currentQuestion].answer;
+
+    // Highlight answers
+    allChoices.forEach(input => {
+      const parentLabel = input.parentElement;
+      if (input.value === correctAnswer) {
+        parentLabel.style.backgroundColor = "#28a745";
+      } else if (input.checked && input.value !== correctAnswer) {
+        parentLabel.style.backgroundColor = "#dc3545";
+      }
+    });
+
+    // Wait before loading next question
+    setTimeout(() => {
+      if (selected.value === correctAnswer) {
+        score++;
+      }
+
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        const questionEl = document.getElementById("quiz-question");
+        const choicesEl = document.getElementById("quiz-choices");
+        const scoreEl = document.getElementById("quiz-score");
+
+        questionEl.textContent = "Quiz Complete!";
+        choicesEl.innerHTML = "";
+        document.getElementById("next-question-btn").style.display = "none";
+        scoreEl.textContent = `🎉 Your Score: ${score} / ${quizData.length}`;
+        scoreEl.classList.remove("hidden");
+      }
+    }, 1400);
+  });
+});
 
 // ===================== PAGE FADE-IN ON LOAD =====================
   window.addEventListener("DOMContentLoaded", () => {
@@ -128,8 +223,6 @@ const fadeObserver = new IntersectionObserver((entries) => {
 });
 
 fadeEls.forEach(el => fadeObserver.observe(el));
-
-
 
 // ===================== ANIME MATCHUP TOGGLE LOGIC =====================
 function showMatchup(id) {
@@ -166,6 +259,8 @@ form.addEventListener("submit", function (e) {
     document.getElementById("sukuna-votes").textContent = sukunaVotes;
   }
 
+  updateVoteChart();
+
   resultDiv.innerHTML = `✅ <strong>Thank you, ${name}!</strong> You voted for <strong>${choice}</strong>.`;
   resultDiv.classList.remove("hidden");
   resultDiv.classList.add("visible");
@@ -176,6 +271,60 @@ form.addEventListener("submit", function (e) {
     form.style.display = "none";
   }, 500);
 });
+
+// ===================== POLL CHART SETUP =====================
+
+let pollChart;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ctxPoll = document.getElementById("pollChart").getContext("2d");
+
+  const gojoVotes = parseInt(localStorage.getItem("gojoVotes") || 0);
+  const sukunaVotes = parseInt(localStorage.getItem("sukunaVotes") || 0);
+
+  pollChart = new Chart(ctxPoll, {
+    type: "bar",
+    data: {
+      labels: ["Gojo", "Sukuna"],
+      datasets: [{
+        label: "Votes",
+        data: [gojoVotes, sukunaVotes],
+        backgroundColor: ["#00f0ff", "#ff0048"]
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          labels: {
+            color: "#fff"
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: "#fff"
+          }
+        },
+        y: {
+          beginAtZero: true,
+          precision: 0,
+          ticks: {
+            color: "#fff"
+          }
+        }
+      }
+    }
+  });
+});
+
+function updateVoteChart() {
+  const gojoVotes = parseInt(localStorage.getItem("gojoVotes") || 0);
+  const sukunaVotes = parseInt(localStorage.getItem("sukunaVotes") || 0);
+  pollChart.data.datasets[0].data = [gojoVotes, sukunaVotes];
+  pollChart.update();
+}
 
 // ===================== INIT VOTE COUNTS =====================
 function initVoteCounts() {
@@ -213,7 +362,7 @@ picInput.addEventListener("change", () => {
   // Load identity if exists
   const savedName = localStorage.getItem("debateName");
   const savedSide = localStorage.getItem("debateSide");
-  const savedPic = localStorage.getItem("debatePic"); 
+  const savedPic = localStorage.getItem("debatePic");
   picInput.value = "";
 
   if (savedName && savedSide) {

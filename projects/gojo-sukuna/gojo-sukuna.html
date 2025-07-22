@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Anton%7CBaskervville%7CRaleway&display=swap" rel="stylesheet" >
   <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" >
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
@@ -116,7 +117,14 @@
         </form>
           <div id="formResult" class="vote-result hidden"></div>
       </div>
-    </section>
+      </section>
+
+    <!-- ========== LIVE POLL ========== -->
+      <section class="poll-section">
+            <h2>Votes:</h2>
+          <canvas id="pollChart" width="400" height="300"></canvas>
+          </section>
+
     <!-- ========== VOTE COUNT DISPLAY ========== -->
 <div class="vote-counts">
   <div class="vote-box gojo">
@@ -152,21 +160,17 @@
       </div>
     </section>
 
-    <!-- ========== QOJO SUKUNA QUIZ ========== -->
-<section class="quiz-section fade-in-scroll">
-      <div id="gojo-sukuna-quiz">
-        <h2>Who Said It?</h2>
-        <form id="quiz-form">
-          <fieldset>
-            <legend>“Throughout Heaven and Earth, I Alone Am The Honored One”</legend>
-            <label for="gojo-choice"><input type="radio" id="gojo-choice" name="quiz-answer" value="Gojo" /> Gojo Satoru</label><br>
-            <label for="sukuna-choice"><input type="radio" id="sukuna-choice" name="quiz-answer" value="Sukuna" /> Ryomen Sukuna</label><br>
-          </fieldset>
-          <button type="button" onclick="checkGojoQuiz()">Submit Answer</button>
-          <p id="quiz-feedback" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
+    <!-- ========== GOJO SUKUNA TRIVIA ========== -->
+<section id="quiz-section">
+  <h2 class="trivia-title">🧠 Trivia Mode: Gojo vs Sukuna</h2>
+  <div id="quiz-container">
+    <div id="quiz-question">Loading...</div>
+    <div id="quiz-choices"></div>
+    <button id="next-question-btn">Next Question</button>
+    <div id="quiz-score" class="hidden"></div>
+  </div>
+</section>
+
 
   <!-- ========== GOJO SUKUNA MAGAZINE ARTICLE SECTION ========== -->
     <section class="magazine-container fade-in-scroll">
@@ -335,7 +339,7 @@
 
 <!-- ========== GOJO SUKUNA DEBATE COMMENT SECTION ========== -->
 <section class="debate-section fade-in-scroll">
-  <h2>💬 Live Comments: Who's Stronger?</h2>
+  <h2>💬 Live Comments</h2>
   <form id="debateForm">
     <div id="identityFields">
       <div class="profile-pic-preview">
@@ -454,9 +458,14 @@
 
 
 
+
+
+
 <!-- ========== SCRIPTS ========== -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="script.js"></script>
+
 
 <!-- ========== AUDIOS ========== -->
 <audio id="gojoAudio" src="assets/audio/gojo.mp3"></audio>
