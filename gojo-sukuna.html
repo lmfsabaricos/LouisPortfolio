@@ -15,16 +15,17 @@
 
 <div id="particles-js"></div>
 
+<!-- ========== MAIN TITLE ========== -->
   <main>
     <h1 class="main-title">Anime Arena</h1>
 
-    <!-- MATCHUP TOGGLE BUTTONS -->
+ <!-- ========== MATCHUP TOGGLE BUTTONS ========== -->
 <div class="vs-toggle-buttons">
   <button onclick="showMatchup('gojo-sukuna')">Gojo vs Sukuna</button>
   <button onclick="showMatchup('goku-superman')">Goku vs Superman</button>
 </div>
 
-    <!-- Gojo Sukuna Character Cards Section -->
+  <!-- ========== GOJO VS SUKUNA SECTION ========== -->
   <div id="gojo-sukuna" class ="matchup-section visible">
   <section class="characters-section vs-matchup">
       <div class="gojo-container">
@@ -32,14 +33,22 @@
         <h2 class="section-title">The Strongest</h2>
         <img class="gojo2" src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/01/infinity-entry-image.jpg" alt="Gojo Satoru">
         <h3 class="gojo">Gojo Satoru</h3>
-        <p class="gojo-quote">“Throughout bugs and broken code, I alone debug the strongest”</p>
-        <h4 class="gojo-techniques">Gojo's Debugging Techniques</h4>
+        <p class="gojo-quote">“Throughout heaven and earth, I alone am the honored one”</p>
+        <h4 class="gojo-techniques">Gojo's Cursed Techniques</h4>
         <ul class="gojo-list">
-          <li>Infinite Loop Defense — Stops endless execution</li>
-          <li>Domain Expansion: Clean Code Edition  — Isolates dirty logic</li>
-          <li>Six Eyes — Detects bugs across huge codebases</li>
-          <li>Hollow Purple — Deletes legacy code</li>
-          <li>Reverse Curse — Turns crashes into clean runs</li>
+          <li><strong class="attack-name">Limitless</strong><br>
+                 Bends the fabric of space itself — distance becomes meaningless.</li>
+          <li><strong class="attack-name">Infinity</strong><br>
+                 An untouchable barrier — attacks freeze before reaching him</li>
+          <li><strong class="attack-name">Six Eyes</strong><br>
+                  Sees the flow of cursed energy with godlike clarity and control.</li>
+          <li><strong class="attack-name">Hollow Purple</strong><br>
+                  A catastrophic collision of energy that erases reality in its path.</li>
+          <li><strong class="attack-name">Red</strong><br>
+                  A repelling force that violently blasts everything away with immense power </li>
+          <li><strong class="attack-name">Domain Expansion: Unlimited Void</strong><br>
+                  Overwhelms with infinite knowledge — rendering anyone powerless </li>
+
         </ul>
         <button class="play-voice" onclick="document.getElementById('gojoAudio').play()">🔊 Gojo's Domain Expansion: Unlimited Void</button>
 
@@ -51,26 +60,34 @@
         <h2 class="section-title">The Most Cursed</h2>
         <img class="sukuna2" src="https://static2.cbrimages.com/wordpress/wp-content/uploads/2021/03/Jujutsu-Kaisen-Sukuna-smile.jpg" alt="Ryomen Sukuna">
         <h3 class="sukuna">Ryomen Sukuna</h3>
-        <p class="sukuna-quote">“Even cursed code bows before me.”</p>
-        <h4 class="sukuna-techniques">Sukuna's Code Destruction Techniques</h4>
+        <p class="sukuna-quote">“Know your place, you fool.”</p>
+        <h4 class="sukuna-techniques">Sukuna's Cursed Techniques</h4>
         <ul class="sukuna-list">
-          <li>Cleave — Shreds useless functions</li>
-          <li>Dismantle — Wipes legacy bugs</li>
-          <li>Reverse Cursed Patch — Fixes cursed logic</li>
-          <li>Domain Expansion — Full Stack Mayhem</li>
-          <li>Binding Vow — One-take deployments</li>
+        <ul class="sukuna-list">
+          <li><strong class="attack-name">Dismantle</strong><br>
+             A cursed slash that tears through matter without resistance</li>
+            <li><strong class="attack-name">Cleave</strong><br>
+             Adjusts to toughness, slicing even the hardest foes with lethal precision..</li>
+            <li><strong class="attack-name">Reverse Cursed Technique</strong><br>
+             Twists cursed energy to regenerate even fatal wounds mid-battle</li>
+            <li><strong class="attack-name">Fire Arrow</strong><br>
+             A blazing bolt of cursed fire that scorches everything in its wake</li>
+            <li><strong class="attack-name">Spiderweb Slash </strong><br>
+             A storm of slashes erupts in all directions — a cursed web that dismembers anything caught inside.</li>
+            <li><strong class="attack-name">Domain Expansion: Malevolent Shrine</strong><br>
+             Unleashes a storm of sure hit area slashes — no defense, no mercy.</li>
+          </ul>
+
         </ul>
         <button class="play-voice" onclick="document.getElementById('sukunaAudio').play()">🔊 Sukuna's Domain Expansion: Malevolent Shrine</button>
       </div>
     </div>
-    
   </section>
 
-
-    <!-- Gojo Sukuna Voting Form -->
+  <!-- ========== VOTING FORM ========== -->
    <section class="form-section fade-in-scroll">
       <div class="strongest-form">
-        <h2>Strongest Form</h2>
+        <h2>Strongest Vote Form</h2>
         <form id ="gojoform" novalidate >
           <fieldset>
             <legend>Who truly is the strongest?</legend>
@@ -93,15 +110,26 @@
             <input id="sukuna" type="radio" name="gojo-sukuna" value="Sukuna">
           </fieldset>
 
-          <textarea name="comments" rows="5" placeholder="Form Submits and is interactive but not yet fully working"></textarea>
+          <textarea name="comments" rows="5" placeholder="Form and Vote Submits and save in local storage and are interactive but not yet fully working.. WIll be live soon!"></textarea>
           <br>
           <button type="submit">Vote</button>
         </form>
           <div id="formResult" class="vote-result hidden"></div>
       </div>
     </section>
+    <!-- ========== VOTE COUNT DISPLAY ========== -->
+<div class="vote-counts">
+  <div class="vote-box gojo">
+    <h3>Gojo Votes</h3>
+    <p id="gojo-votes">0</p>
+  </div>
+  <div class="vote-box sukuna">
+    <h3>Sukuna Votes</h3>
+    <p id="sukuna-votes">0</p>
+  </div>
+</div>
 
-    <!-- Gojo Sukuna Cafes Section -->
+ <!-- ========== GOJO SUKUNA MENU ========== -->
    <section class="cafes-section fade-in-scroll">
       <div class="menu-card" id="gojo-menu">
         <img src="https://cdn3.emoji.gg/emojis/1564-maskedgojode.png" alt="Gojo Icon" />
@@ -124,7 +152,7 @@
       </div>
     </section>
 
-    <!-- Gojo Sukuna Quiz Section -->
+    <!-- ========== QOJO SUKUNA QUIZ ========== -->
 <section class="quiz-section fade-in-scroll">
       <div id="gojo-sukuna-quiz">
         <h2>Who Said It?</h2>
@@ -140,8 +168,8 @@
       </div>
     </section>
 
-<!-- Gojo Sukuna Magazine Section sukuna/gojo -->
-    <section class="magazine-container">
+  <!-- ========== GOJO SUKUNA MAGAZINE ARTICLE SECTION ========== -->
+    <section class="magazine-container fade-in-scroll">
       <h2 class="mag-title">The Clash Chronicle</h2>
       <p class="gojo-sukuna-sub">The strongest sorcerer meets the king of curses
         in a battle beyond code and chaos.</p>
@@ -289,7 +317,7 @@
 />
 
 <img
-    src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/06/gojo-sukuna-shinjuku-showdown.jpg""
+    src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/06/gojo-sukuna-shinjuku-showdown.jpg"
     alt="Clash Of Gods"
     loading="lazy"
     class="image-4"
@@ -304,7 +332,36 @@
 </section>
 </section>
 
-<!-- Gojo Sukuna Battle Section -->
+
+<!-- ========== GOJO SUKUNA DEBATE COMMENT SECTION ========== -->
+<section class="debate-section fade-in-scroll">
+  <h2>💬 Live Comments: Who's Stronger?</h2>
+  <form id="debateForm">
+    <div id="identityFields">
+      <div class="profile-pic-preview">
+  <img id="preview-pic" class="debate-profile-pic" style="display: none;" />
+</div>
+<label>Upload Profile Picture:
+  <input type="file" id="profile-pic" accept="image/*" />
+</label>
+      <label>Name:
+        <input type="text" id="name" required />
+      </label>
+     
+    </div>
+
+    <label>Comment:
+ <textarea id="comment" placeholder="Real-time chat coming soon! For now it's just interactive and save in local storage! Try posting :P" required></textarea>
+    </label>
+
+    <button type="submit">Post</button>
+    <button type="button" id="changeIdentityBtn" class="hidden">Change Identity</button>
+  </form>
+
+  <div id="debateComments"></div>
+</section>
+
+<!-- ========== GOJO SUKUNA BATTLE SECTION ========== -->
 <section class="battle-section fade-in-scroll" id="battle-container">
   <h2>Gojo vs Sukuna: Battle!</h2>
 
@@ -326,25 +383,34 @@
 </section>
 </div>
 
-    <!-- Goku vs Superman Character Cards Section -->
+<!-- Goku vs Superman Character Cards Section -->
 
-<div id="goku-superman" class="matchup-section visible">
+<div id="goku-superman" class="matchup-section ">
   <section class="characters-section vs-matchup">
 
     <div class="goku-container">
       <div class="saiyan-box">
         <h2 class="section-title">The Ultra Saiyan </h2>
         <img class="goku2" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fc099582-35b8-458d-bf7b-afef6cf9e36e/dfwewdy-684a6132-a7ca-45b7-a9f1-48a96478cd61.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2ZjMDk5NTgyLTM1YjgtNDU4ZC1iZjdiLWFmZWY2Y2Y5ZTM2ZVwvZGZ3ZXdkeS02ODRhNjEzMi1hN2NhLTQ1YjctYTlmMS00OGE5NjQ3OGNkNjEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.bhy1ar_-OgUfbZYDcqxNVYa4XRHefef-60Thbof9dwE" alt="Goku">
-        <h3 class="goku">Goku</h3>
-        <p class="goku-quote">“My code gets stronger every time it crashes.”</p>
-        <h4 class="goku-techniques">Goku's Debugging Techniques</h4>
+        <h3 class="goku">Son Goku</h3>
+        <p class="goku-quote">“...And This Is to Go... Even Further Beyond!”</p>
+        <h4 class="goku-techniques">Goku's Saiyan Powers </h4>
         <ul class="goku-list">
-          <li>Ultra Instinct Mode — Autocomplete with 100% accuracy</li>
-          <li>Spirit Bomb — Merges all PRs into one flawless build</li>
-          <li>Kamehameha — Destroys deeply nested bugs</li>
-          <li>Super Saiyan Refactor — Optimizes spaghetti code</li>
-          <li>Instant Transmission — Teleports between dev environments</li>
-        </ul>
+
+          <li><strong class="attack-name">Ultra Instinct</strong><br>
+             God-tier reflexes that let him fight on pure instinct, untouchable and unstoppable..</li>
+          <li><strong class="attack-name">Spirit Bomb</strong><br>
+              A universal attack formed from the energy of all living beings, fueled by hope.</li>
+          <li><strong class="attack-name">Kamehameha</strong><br>
+              A legendary wave of divine ki capable of leveling gods</li>
+          <li><strong class="attack-name">Super Saiyan Transformations</strong><br>
+            From the primal fury of SSJ4 to the divine aura of Super Saiyan God — Goku’s transformations transcend limits, time, and mortality.</li>
+          <li><strong class="attack-name">Instant Transmission</strong><br>
+              Warps across galaxies in a blink of an eye with deadly precision, faster than thought itself.</li>
+          <li><strong class="attack-name">Saiyan Resilience</strong><br>
+              Born in battle, forged by fury — the more he's hurt, the stronger he rises. Damage fuels his evolution.</li>
+                  </ul>
+
         <button class="play-voice" onclick="document.getElementById('gokuAudio').play()">🔊 Goku's Final Deploy: Kamehameha Commit</button>
       </div>
     </div>
@@ -353,16 +419,25 @@
     <div class="kryptonian-box">
         <h2 class="section-title">The Kryptonian </h2>
         <img class="superman2" src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/11/superman-angry-featured.jpg" alt="Superman">
-        <h3 class="superman">Superman</h3>
-        <p class="superman-quote">“Truth, justice, and zero runtime errors.”</p>
-        <h4 class="superman-techniques">Superman's Clean Code Techniques</h4>
-        <ul class="superman-list">
-          <li>Heat Vision — Instantly finds and deletes unused variables</li>
-          <li>Super Strength — Handles the heaviest legacy systems</li>
-          <li>Flight — Escapes infinite loops with elegance</li>
-          <li>X-ray Debugging — Sees through minified JavaScript</li>
-          <li>Freeze Patch — Freezes bugs mid-execution</li>
-        </ul>
+        <h3 class="superman">Kal-El</h3>
+        <p class="superman-quote">“Living in a world made out of cardboard. Always
+          taking constant care not to break something. To break someone”</p>
+        <h4 class="superman-techniques">Superman's Kryptonian Powers </h4>
+       <ul class="superman-list">
+        <li><strong class="attack-name">Heat Vision</strong><br>
+          Blasts beams hotter than the sun, enough to cut through planets</li>
+        <li><strong class="attack-name">Super Speed</strong><br>
+            Moves so fast he breaks reality — outpaces thought, time, and even causality.</li>
+        <li><strong class="attack-name">Freeze Breath</strong><br>
+            Freezes enemies in an instant and shatters steel in seconds</li>
+        <li><strong class="attack-name"> Solar Flare Overcharge</strong><br>
+            Temporarily bathes in the sun to supercharge his cells, returning with a single punch capable of destroying planets.</li>
+        <li><strong class="attack-name">Invulnerability</strong><br>
+            Endures cosmic destruction — tanking black holes, gods, and atomic obliteration without a scratch.</li>
+        <li><strong class="attack-name">Flight</strong><br>
+            Soars past atmospheres, galaxies, and time</li>
+                  </ul>
+
         <button class="play-voice" onclick="document.getElementById('supermanAudio').play()">🔊 Superman’s Hotfix Punch: Zero Downtime</button>
       </div>
     </div>
@@ -370,22 +445,43 @@
   </section>
 </div>
 
-
-
-
-
-
-
   </main>
 
-  <!-- JS Script -->
+
+
+
+
+
+
+
+<!-- ========== SCRIPTS ========== -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="script.js"></script>
- <!-- Audios -->
+
+<!-- ========== AUDIOS ========== -->
 <audio id="gojoAudio" src="assets/audio/gojo.mp3"></audio>
 <audio id="sukunaAudio" src="assets/audio/sukuna.mp3"></audio>
 
-<canvas id="falling-stars-canvas"></canvas>
+<!-- ========== MUSIC PLAYER BOX ========== -->
+<div class="music-player">
+  <button id="toggle-music">🎵</button>
+  <div id="music-controls" class="collapsed">
+    <p id="song-title">🎵 Now Playing: None</p>
+    <select id="music-select"></select>
+
+    <button id="prev-song">⏮️</button>
+    <button id="play-pause">▶️</button>
+    <button id="next-song">⏭️</button>
+
+    <!-- Song Progress Bar -->
+    <input id="progress-bar" type="range" min="0" max="100" value="0">
+
+    <!-- Volume Slider -->
+    <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1">
+  </div>
+</div>
+
+
 
 </body>
 </html>
