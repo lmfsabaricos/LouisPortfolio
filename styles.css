@@ -57,8 +57,6 @@ text-shadow: 0 0 15px rgba(127, 95, 255, 0.6);
   transform: translateY(0);
 }
 
-
-
 /* ===================== VS TOGGLE BUTTONS ===================== */
 .vs-toggle-buttons {
   display: flex;
@@ -131,6 +129,7 @@ text-shadow: 0 0 15px rgba(127, 95, 255, 0.6);
   border-image: linear-gradient(to right, #ff0055, #ff66c4, #ffffff) 1;
   transition: all 0.3s ease-in-out;
 }
+
 /* ===================== GOJO SUKUNA CARDS ===================== */
 .characters-section {
   display: flex;
@@ -188,7 +187,6 @@ text-shadow: 0 0 15px rgba(127, 95, 255, 0.6);
   color: #ff3d00;
 }
 
-
 /* ===================== GOJO SUKUNA AUDIO BUTTON ===================== */
 .play-voice {
   margin-top: 1rem;
@@ -207,9 +205,6 @@ text-shadow: 0 0 15px rgba(127, 95, 255, 0.6);
   background: linear-gradient(to right, #ff66cc, #d36bff);
 }
 
-
-
-
 /* ===================== GOJO SUKUNA IMAGES ===================== */
 .gojo2,
 .sukuna2 {
@@ -221,6 +216,7 @@ text-shadow: 0 0 15px rgba(127, 95, 255, 0.6);
   box-shadow: 0 0 5px rgba(111, 227, 255, 0.3);
 
 }
+
 /* ===================== GOJO SUKUNA LABELS ===================== */
 .section-title {
   font-size: 1.7rem;
@@ -437,7 +433,6 @@ button[type="submit"] {
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
 }
 
-
 /* ===================== VOTE COUNT DISPLAY ===================== */
 .vote-counts {
   display: flex;
@@ -503,7 +498,6 @@ button[type="submit"] {
   color: #fff;
 }
 
-
 /* ========== FORM FADE OUT ========== */
 .strongest-form form.fade-out {
   opacity: 0;
@@ -516,8 +510,6 @@ button[type="submit"] {
   opacity: 1;
   transition: opacity 0.5s ease;
 }
-
-
 
 /* ===================== GOJO SUKUNA QUIZ ===================== */
 .trivia-title {
@@ -587,9 +579,6 @@ button[type="submit"] {
   transition: all 0.3s ease;
 }
 
-
-
-
 /* ===================== GOJO SUKUNA MENU HOVER GLOW ===================== */
 #gojo-menu:hover, #sukuna-menu:hover {
   box-shadow: 0 0 25px #6fe3ff, 0 0 40px #6fe3ff66;
@@ -616,7 +605,6 @@ h1.main-title {
   text-shadow: 0 0 5px #ff4d9288;
 }
 
-
 /* ===================== GOJO SUKUNA MAGAZINE ARTICLE CONTAINER ===================== */
 .magazine-container {
   background-color: #0d0d0d;
@@ -634,7 +622,6 @@ h1.main-title {
   transition: box-shadow 0.3s ease-in-out;
 
 }
-
 
 /* Custom Scrollbar for WebKit */
 .magazine-container::-webkit-scrollbar {
@@ -761,7 +748,6 @@ h1.main-title {
   right: -1px;
 }
 
-
 /* ===================== GOJO SUKUNA HISTORY ===================== */
 .text-with-images {
   display: flex;
@@ -870,7 +856,6 @@ h1.main-title {
   }
 }
 
-
 /* ===================== DEBATE SECTION ===================== */
 .debate-section {
   background-color: #1a1a2e;
@@ -903,7 +888,6 @@ h1.main-title {
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
   display: inline-block;
 }
-
 
 /* ===================== FORM STYLES ===================== */
 #debateForm label {
@@ -1007,7 +991,6 @@ h1.main-title {
   text-shadow: none !important;
 }
 
-
 /* ===================== GOJO SUKUNA FUN BATTLE ===================== */
 .battle-section {
   text-align: center;
@@ -1081,8 +1064,6 @@ h1.main-title {
   animation: shake 0.4s ease;
 }
 
-
-
 /* ===================== GOKU & SUPERMAN IMAGE ===================== */
 .goku2,
 .superman2 {
@@ -1112,7 +1093,7 @@ h1.main-title {
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
-  
+
 }
 
 /* ===================== GOKU & SUPERMAN CARD TEXT ===================== */
@@ -1144,8 +1125,6 @@ h1.main-title {
   color: #ff4500; /* Red-orange */
   text-shadow: 0 0 5px rgba(255, 69, 0, 0.4);
 }
-
-
 
 /* ===================== GOKU SUPERMAN QUOTES ===================== */
 
@@ -1271,7 +1250,6 @@ h1.main-title {
   }
 }
 
-
 /* ===================== MUSIC PLAYER BOX ===================== */
 .music-player {
   position: fixed;
@@ -1375,8 +1353,6 @@ h1.main-title {
   cursor: pointer;
 }
 
-
-
 @keyframes softGlow {
   0%, 100% {
     text-shadow: 0 0 6px #ffffff80, 0 0 12px #ffffff60;
@@ -1386,34 +1362,225 @@ h1.main-title {
   }
 }
 
+/* ===================== SPIRAL LOADER ===================== */
+body.loading {
+  overflow: hidden;
+}
+
+#spiral-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0f0c29;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.e-loadholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 240px;
+  border: 5px solid #1B5F70;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.e-loadholder::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  border: 6px solid transparent;
+  border: 6px dashed #1B5F70;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  animation: outerRotate2 30s linear infinite;
+  transform-origin: center;
+  -webkit-animation: outerRotate2 30s linear infinite;
+}
+
+.m-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border: 5px solid #3BB2D0;
+  border-radius: 50%;
+  text-align: center;
+  color: #888;
+  box-sizing: border-box;
+  z-index: 20;
+  text-transform: uppercase;
+}
+
+.m-loader::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  border: 5px solid transparent;
+  border-right: 5px solid #3BB2D0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation: outerRotate1 15s linear infinite;
+  transform-origin: center;
+}
+
+.e-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  border: 5px solid #56d7f0;
+  border-radius: 50%;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 140px;
+  font-size: 1.4rem;
+  animation: textColour 1s linear alternate infinite;
+  z-index: 20;
+}
+
+.e-text::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  border: 5px solid transparent;
+  border-bottom: 5px solid #56d7f0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation: outerRotate2 3.5s linear infinite;
+  transform-origin: center;
+}
+
+.e-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  border: 5px solid transparent;
+  border-left: 5px solid #56d7f0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation: outerRotate1 8s linear infinite;
+  transform-origin: center;
+}
+
+#main-content {
+  opacity: 0;
+  transition: opacity 1.2s ease-in;
+}
+
+#spiral-loader span {
+  color: #00e0ff;
+  text-shadow: 0 0 10px #00e0ff, 0 0 20px #00e0ff;
+}
+
+/* ===================== KEYFRAMES ===================== */
+@keyframes outerRotate1 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes outerRotate2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg)
+}
+}
+
+@keyframes textColour {
+  0% {
+    color: #fff;
+  }
+  100% {
+    color: #3BB2D0;
+  }
+}
+
+/* ===================== PULSE EFFECT AFTER LOAD ===================== */
+
+#loader-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+#pulse-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+    z-index: 1000;height: 100%;
+}
+
 /* ===================== RESPONSIVE MOBILE ===================== */
 @media (max-width: 768px) {
 html, body {
-overflow-x: hidden;
-padding: 0 1rem;
+ overflow-x: hidden;
+ padding: 0 1rem;
+  }
+.e-loadholder {
+  transform: translate(-50%, -50%) scale(0.85);
   }
 .characters-section,
 .cafes-section {
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
   }
 .strongest-box,
 .most-cursed-box,
 .menu-card {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    box-sizing: border-box;
-    min-height: 620px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-height: 620px;
   }
 .saiyan-box,
 .kryptonian-box {
-    width: 100%;
-    box-sizing: border-box;
-    min-height: 620px;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 620px;
   }
 .main-title {
-    font-size: 2.2rem;
+  font-size: 2.2rem;
   }
 
 #page-wrapper {
@@ -1507,3 +1674,4 @@ textarea {
   }
 }
 }
+

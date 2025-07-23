@@ -8,18 +8,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Anton%7CBaskervville%7CRaleway&display=swap" rel="stylesheet" >
   <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" >
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
+<!-- ========== LOADING ========== -->
+<div id="spiral-loader">
+  <canvas id="loader-canvas"></canvas>
+  <div class="e-loadholder">
+    <div class="m-loader">
+      <div class="e-text">Loading</div>
+    </div>
+  </div>
+</div>
+
 <body>
 
+<canvas id="pulse-canvas"></canvas>
+
+<!-- ========== BACKGROUND PARTICLES ========== -->
 <div id="particles-js"></div>
-
-<!-- ========== MAIN TITLE ========== -->
-  <main>
+  
+  <!-- ========== MAIN TITLE ========== -->
+<div id="main-content">
+<main>
     <h1 class="main-title">Anime Arena</h1>
-
  <!-- ========== MATCHUP TOGGLE BUTTONS ========== -->
 <div class="vs-toggle-buttons">
   <button onclick="showMatchup('gojo-sukuna')">Gojo vs Sukuna</button>
@@ -490,7 +504,7 @@
   </div>
 </div>
 
-
+</div>
 
 </body>
 </html>
