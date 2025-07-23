@@ -6,11 +6,31 @@
         <title>Louis Portfolio </title>
         <link rel ="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
     </head>
     <body>
+
+  <!-- ===================== LOADER SCREEN ===================== -->
+<div id="loader-screen">
+  <div class="card">
+    <div class="loader">
+      <p>loading</p>
+      <div class="words">
+        <span class="word">buttons</span>
+        <span class="word">forms</span>
+        <span class="word">switches</span>
+        <span class="word">cards</span>
+        <span class="word">buttons</span>
+      </div>
+    </div>
+  </div>
+</div>
+<canvas id="pulse-canvas"></canvas>
+ <!-- ========== MAIN CONTENT ========== -->
+  <div id="main-content" style="display: none; opacity: 0;">
+
        <!-- Particle Background Container -->
         <div id="particles-js"></div>
 
@@ -213,16 +233,18 @@ grow this website into something bigger
   <div class="louis-practice-list">
   <div class="side-projects-flex">
 
-  <!-- Gojo vs Sukuna Project -->
+  <!-- Anime Project -->
       <div class="practice-item-wrapper">
     <a href="projects/gojo-sukuna/gojo-sukuna.html" target="_blank">
       <div class="practice-item">
         <span class="project-name">Anime Section Page</span>
-        <p class="project-description">🌀 Designed a responsive HTML/CSS anime page with flexbox, custom layout,
-          and glowing UI effects to compare two iconic characters.</p>
+        <p class="project-description">🌀 Built a stylish HTML/CSS/JS anime page with glowing effects, flexbox layout, 
+          and interactive features like , quizzes, polls, live comments and animated visuals.</p>
         <span class="inline-badge">
-          <img src="images/gojo.png" alt="Gojo">
-          <img src="images/sukuna.png" alt="Sukuna">
+          <img src="images/gojo.png" alt="Gojo" class="character-circle gojo-glow">
+          <img src="images/sukuna.png" alt="Sukuna" class="character-circle sukuna-glow">
+          <img src="images/goku.png" alt="Goku" class="character-circle goku-glow">
+          <img src="images/superman.png" alt="Superman" class="character-circle superman-glow">
         </span>
       </div>
        </a>
@@ -233,11 +255,10 @@ grow this website into something bigger
     <a href="projects/FundMyGamePage/louis-game-hub.html" target="_blank">
       <div class="practice-item">
        <span class="project-name">Louis' Game Hub Page</span>
-        <p class="project-description">🎮 Added on top of CodePath’s starter. 
-          Built DOM features with JavaScript, filtering logic, Chart.js stats, and a responsive layout with Flexbox.</p>
+        <p class="project-description">🎮 Enhanced CodePath's game hub with JavaScript DOM logic, filters, Chart.js stats, and responsive layout using Flexbox.</p>
 
        <span class="inline-badge">
-          <img src="https://icon-library.com/images/game-icon/game-icon-5.jpg" alt="Game Hub Icon">
+         <img src="https://icon-library.com/images/game-icon/game-icon-5.jpg" alt="Game Hub Icon" class="character-circle gamehub-glow">
         </span>
       </div>
       </a>
@@ -279,15 +300,16 @@ grow this website into something bigger
 </main>
 <!-- Particles Background Script -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="script.js"></script>
 <!-- for slideshowing tech stacks -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+
 
 <!-- Footer-->
 <footer class="louis-footer">
   <p>© 2025 Louis Miguel Sabaricos. Made with ❤️. All rights reserved.</p>
 </footer>
-
+</div>
 
 </body>
 
