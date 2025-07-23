@@ -1388,25 +1388,33 @@ h1.main-title {
 
 /* ===================== RESPONSIVE MOBILE ===================== */
 @media (max-width: 768px) {
-  .characters-section,
-  .cafes-section {
+html, body {
+overflow-x: hidden;
+padding: 0 1rem;
+  }
+.characters-section,
+.cafes-section {
     flex-direction: column;
     align-items: center;
   }
-
-  .strongest-box,
-  .most-cursed-box,
-  .menu-card {
-    width: 90%;
+.strongest-box,
+.most-cursed-box,
+.menu-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    min-height: 620px;
   }
-
-  .main-title {
+.saiyan-box,
+.kryptonian-box {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 620px;
+  }
+.main-title {
     font-size: 2.2rem;
   }
-
-body {
-  padding: 0 1rem;
-}
 
 #page-wrapper {
   padding: 0 1rem;
@@ -1429,49 +1437,73 @@ textarea {
 .fighter button {
   width: 100%;
   max-width: 200px;
+  font-size: 0.95rem;
+  padding: 0.6rem 1rem;
 }
+
+.health-bar {
+  width: 80px;
+  }
 
 .text-with-images {
+  flex-direction: column;
+  }
+
+.brief-history,
+.image-wrapper {
+  flex: 1 1 100%;
+  }
+
+.quote {
+    font-size: 1.3rem;
+  }
+
+.mag-title {
+    font-size: 1.8rem;
+}
+
+.first-paragraph,
+.magazine-container p {
+    font-size: 1rem;
+  }
+
+.magazine-container {
+    height: auto;
+    max-height: 80vh;
+  }
+
+.vote-counts {
     flex-direction: column;
+    gap: 1rem;
+    align-items: center;
   }
 
-  .brief-history,
-  .image-wrapper {
-    flex: 1 1 100%;
+.vs-toggle-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+
+.form-section {
+    margin: 2rem 0;
   }
 
+.music-player {
+  padding: 0.75rem;
+  bottom: 20px;
+  left: 10px;
+  }
+
+#music-controls {
+  gap: 0.4rem;
+  }
+.music-player::before {
+    display: none;
+  }
+
+#music-controls button,
+#music-controls select {
+  font-size: 0.95rem;
+  padding: 0.4rem;
+  }
 }
-
-@media (max-width: 768px) {
-.strongest-box,
-.most-cursed-box {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
- .strongest-box,
-  .most-cursed-box,
-  .saiyan-box,
-  .kryptonian-box {
-    width: 100%;
-    box-sizing: border-box;
-    min-height: 620px;
-  }
-
-  .music-player {
-    padding: 0.75rem;
-  }
-
-  #music-controls {
-    gap: 0.4rem;
-  }
-
-  #music-controls button,
-  #music-controls select {
-    font-size: 0.95rem;
-    padding: 0.4rem;
-  }
-
 }
