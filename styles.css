@@ -25,7 +25,7 @@ body {
 .fade-in-section {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1.5s ease-out, transform 3.0s ease-out;
+  transition: opacity 1.2s ease-out, transform 2.6s ease-out;
   will-change: opacity, transform;
 }
 
