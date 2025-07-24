@@ -48,8 +48,8 @@ text-shadow: 0 0 15px rgba(127, 95, 255, 0.6);
 /* ===================== SCROLL FADE-IN ===================== */
 .fade-in-scroll {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 2s ease-out;
 }
 
 .fade-in-scroll.visible {
@@ -309,27 +309,34 @@ article {
 }
 
 .strongest-form {
-  background: linear-gradient(145deg, #241143, #3b1c65);
+  background: radial-gradient(circle at top left, #1f0037, #000000 90%);
   padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 0 30px 5px rgba(148, 0, 211, 0.4), 0 0 60px 10px rgba(255, 0, 128, 0.2);
   width: 100%;
-  max-width: 500px;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
+  max-width: 550px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
 }
 
 .strongest-form:hover {
   border-color: #ffffff;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
-  transform: scale(1.01);
+  box-shadow: 0 0 35px 8px rgba(255, 0, 221, 0.5), 0 0 80px 15px rgba(255, 255, 255, 0.1);
+  transform: scale(1.015);
 }
 
 .strongest-form h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 1rem;
   color: #fff;
+  background: linear-gradient(to right, #00eaff, #ff0077);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
 form {
@@ -339,9 +346,10 @@ form {
 }
 
 fieldset {
-  border: 1px solid #ccc;
-  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.2rem;
   border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 legend {
@@ -354,9 +362,11 @@ label {
   font-size: 0.9rem;
   display: block;
   margin-bottom: 0.25rem;
+  color: #eee;
 }
 
 input[type="text"],
+input[type="email"],
 textarea {
   width: 100%;
   padding: 0.5rem;
@@ -364,17 +374,18 @@ textarea {
   border-radius: 6px;
   font-family: 'Outfit', sans-serif;
   font-size: 1rem;
-   background-color: #f5f5f5;
+  background-color: #1a1a2e;
+  color: #fff;
 }
 
 input[type="radio"] {
   margin-right: 0.4rem;
-   accent-color: #ff66cc;
-  transform: scale(1.1);
+  accent-color: #ff00c8;
+  transform: scale(1.2);
 }
 
 button[type="submit"] {
-   background: linear-gradient(to right, #ff4de7, #b94fff);
+  background: linear-gradient(to right, #00cfff, #ff0090);
   color: white;
   padding: 0.5rem 1rem;
   border: none;
@@ -382,6 +393,10 @@ button[type="submit"] {
   cursor: pointer;
   margin-top: 0.5rem;
   transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  box-shadow: 0 0 20px 5px rgba(255, 0, 221, 0.6);
 }
 
 .vote-result {
@@ -705,7 +720,7 @@ h1.main-title {
   font-size: 3rem;
   line-height: 1;
   padding-right: 0.2rem;
-  color: #ff3c78; /* or any color you want */
+  color: #ff3c78;
   font-family: 'Georgia', serif;
 }
 
@@ -1065,6 +1080,9 @@ h1.main-title {
 }
 
 /* ===================== GOKU & SUPERMAN IMAGE ===================== */
+
+
+
 .goku2,
 .superman2 {
   width: 130px;
@@ -1102,27 +1120,27 @@ h1.main-title {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
-  text-shadow: 0 0 5px #6fe3ff88; /* subtle aura glow */
+  text-shadow: 0 0 5px #6fe3ff88;
 
 
 }
 .superman {
-  color: #ff3c3c; /* Bold heroic red */
+  color: #ff3c3c;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
-  text-shadow: 0 0 5px #ff3c3c88; /* subtle glow */
+  text-shadow: 0 0 5px #ff3c3c88;
 }
 
 
 .goku-container .attack-name {
-  color: #00ffff; /* Cyan */
+  color: #00ffff;
   text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
 }
 
 
 .superman-container .attack-name {
-  color: #ff4500; /* Red-orange */
+  color: #ff4500;
   text-shadow: 0 0 5px rgba(255, 69, 0, 0.4);
 }
 
@@ -1249,6 +1267,66 @@ h1.main-title {
     transform: translateY(0);
   }
 }
+
+
+/* ===================== LIVE POLL CHART GOKU SUPERMAN ===================== */
+#gokuPollChart {
+  max-width: 100%;
+  height: 300px !important;
+  display: block;
+}
+
+/* ===================== VOTE COUNT DISPLAY GOKU SUPERMAN ===================== */
+.vote-box.goku {
+  background-color: #1e1f3b;
+  border: 2px solid #ffa500; /* orange */
+}
+
+.vote-box.goku:hover {
+  box-shadow: 0 0 25px 5px rgba(255, 165, 0, 0.6);
+}
+
+.vote-box.goku h3 {
+  color: #ffa500;
+}
+
+.vote-box.superman {
+  background-color: #1a2a3a;
+  border: 2px solid #0044ff;
+}
+
+.vote-box.superman:hover {
+  box-shadow: 0 0 25px 5px rgba(0, 68, 255, 0.6);
+}
+
+.vote-box.superman h3 {
+  color: #0044ff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ===================== MUSIC PLAYER BOX ===================== */
 .music-player {
