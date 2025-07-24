@@ -74,7 +74,29 @@ function animate() {
 }
 animate();
 
-// ===================== BATTLE HEALTH BAR LOGIC =====================
+// ===================== PAGE FADE-IN ON LOAD =====================
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+// ===================== FADE-IN & OUT ON SCROLL =====================
+const fadeEls = document.querySelectorAll('.fade-in-scroll');
+
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+fadeEls.forEach(el => fadeObserver.observe(el));
+
+// ===================== BATTLE HEALTH BAR GOJO SUKUNA LOGIC =====================
 let gojoHealth = 100;
 let sukunaHealth = 100;
 
@@ -83,7 +105,7 @@ function attack(attacker) {
   const battleContainer = document.getElementById("battle-container");
   const damage = Math.floor(Math.random() * 20) + 5;
 
-// ===================== FLASH SHAKE EFFECT =====================
+// ===================== FLASH SHAKE EFFECT  GOJO SUKUNA =====================
   battleContainer.classList.add("flash-effect", "shake-effect");
   setTimeout(() => {
     battleContainer.classList.remove("flash-effect", "shake-effect");
@@ -108,7 +130,7 @@ function attack(attacker) {
   }
 }
 
-// ===================== MULTI-QUESTION TRIVIA GOJO =====================
+// ===================== MULTI-QUESTION TRIVIA GOJO SUKUNA =====================
 const quizData = [
   {
     question: "Which technique allows Gojo to slow down time within his Domain Expansion?",
@@ -141,7 +163,6 @@ const quizData = [
     answer: "Fusion of Blue and Red"
   }
 ];
-
 
 let currentQuestion = 0;
 let score = 0;
@@ -212,40 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ===================== PAGE FADE-IN ON LOAD =====================
-  window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("fade-in");
-  });
-
-// ===================== FADE-IN ON SCROLL =====================
-const fadeEls = document.querySelectorAll('.fade-in-scroll');
-
-const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      fadeObserver.unobserve(entry.target); // remove this line if you want repeated animation
-    }
-  });
-}, {
-  threshold: 0.1
-});
-
-fadeEls.forEach(el => fadeObserver.observe(el));
-
-// ===================== ANIME MATCHUP TOGGLE LOGIC =====================
-function showMatchup(id) {
-  document.querySelectorAll('.matchup-section').forEach(section => {
-    section.classList.remove('visible');
-  });
-
-  const selected = document.getElementById(id);
-  if (selected) {
-    selected.classList.add('visible');
-  }
-}
-
-// ===================== INTERACTIVE VOTING FORM =====================
+// ===================== INTERACTIVE VOTING FORM GOJO SUKUNA =====================
 const form = document.getElementById("gojoform");
 const resultDiv = document.getElementById("formResult");
 
@@ -270,7 +258,7 @@ form.addEventListener("submit", function (e) {
 
   updateVoteChart();
 
-  resultDiv.innerHTML = `✅ <strong>Thank you, ${name}!</strong> You voted for <strong>${choice}</strong>.`;
+  resultDiv.innerHTML = `✅ <strong>Thank you ${name}!</strong> You voted for <strong>${choice}</strong>.`;
   resultDiv.classList.remove("hidden");
   resultDiv.classList.add("visible");
 
@@ -281,7 +269,7 @@ form.addEventListener("submit", function (e) {
   }, 500);
 });
 
-// ===================== POLL CHART SETUP =====================
+// ===================== POLL CHART SETUP GOJO SUKUNA  =====================
 
 let pollChart;
 
@@ -335,7 +323,7 @@ function updateVoteChart() {
   pollChart.update();
 }
 
-// ===================== INIT VOTE COUNTS =====================
+// ===================== INIT VOTE COUNTS GOJO SUKUNA =====================
 function initVoteCounts() {
   const gojoVotes = localStorage.getItem("gojoVotes") || 0;
   const sukunaVotes = localStorage.getItem("sukunaVotes") || 0;
@@ -344,7 +332,7 @@ function initVoteCounts() {
 }
 initVoteCounts();
 
-// ===================== DEBATE SECTION =====================
+// ===================== DEBATE SECTION  GOJO SUKUNA =====================
 document.addEventListener("DOMContentLoaded", () => {
   const debateform = document.getElementById("debateForm");
   const commentsContainer = document.getElementById("debateComments");
@@ -444,6 +432,18 @@ function saveComment(name, side, comment, pic) {
 
 });
 
+
+// ===================== ANIME MATCHUP TOGGLE LOGIC =====================
+function showMatchup(id) {
+  document.querySelectorAll('.matchup-section').forEach(section => {
+    section.classList.remove('visible');
+  });
+
+  const selected = document.getElementById(id);
+  if (selected) {
+    selected.classList.add('visible');
+  }
+}
 
 // ===================== BACKGROUND SONGS SECTION =====================
 document.addEventListener("DOMContentLoaded", function () {
@@ -723,3 +723,93 @@ setTimeout(() => {
     }, 800);
   }
 }, 4800);
+
+
+
+// ===================== INTERACTIVE VOTING FORM GOKU SUPERMAN =====================
+const gokuForm = document.getElementById("gokuform");
+const gokuResultDiv = document.getElementById("formResultGoku");
+
+gokuForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("first-name").value;
+  const choice = document.querySelector('input[name="goku-superman"]:checked').value;
+
+  if (choice === "Goku") {
+    let gokuVotes = parseInt(localStorage.getItem("gokuVotes") || 0);
+    gokuVotes++;
+    localStorage.setItem("gokuVotes", gokuVotes);
+    document.getElementById("goku-votes").textContent = gokuVotes;
+  } else if (choice === "Superman") {
+    let supermanVotes = parseInt(localStorage.getItem("supermanVotes") || 0);
+    supermanVotes++;
+    localStorage.setItem("supermanVotes", supermanVotes);
+    document.getElementById("superman-votes").textContent = supermanVotes;
+  }
+
+  updateGokuPollChart();
+
+  gokuResultDiv.innerHTML = `✅ <strong>Thank you ${name}!</strong> You voted for <strong>${choice}</strong>.`;
+  gokuResultDiv.classList.remove("hidden");
+  gokuResultDiv.classList.add("visible");
+
+  gokuForm.classList.add("fade-out");
+  setTimeout(() => {
+    gokuForm.style.display = "none";
+  }, 500);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // initialize vote counts
+  initGokuVoteCounts();
+
+  // initialize chart
+  const ctxGokuPoll = document.getElementById("gokuPollChart").getContext("2d");
+
+  const gokuVotes = parseInt(localStorage.getItem("gokuVotes") || 0);
+  const supermanVotes = parseInt(localStorage.getItem("supermanVotes") || 0);
+
+  gokuPollChart = new Chart(ctxGokuPoll, {
+    type: "bar",
+    data: {
+      labels: ["Goku", "Superman"],
+      datasets: [{
+        label: "Votes",
+        data: [gokuVotes, supermanVotes],
+        backgroundColor: ["#00f0ff", "#ff0048"]
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          labels: {
+            color: "#fff"
+          }
+        }
+      },
+      scales: {
+        x: { ticks: { color: "#fff" } },
+        y: { beginAtZero: true, precision: 0, ticks: { color: "#fff" } }
+      }
+    }
+  });
+});
+
+// ===================== UPDATE CHART FUNCTION =====================
+function updateGokuPollChart() {
+  const gokuVotes = parseInt(localStorage.getItem("gokuVotes") || 0);
+  const supermanVotes = parseInt(localStorage.getItem("supermanVotes") || 0);
+  gokuPollChart.data.datasets[0].data = [gokuVotes, supermanVotes];
+  gokuPollChart.update();
+}
+
+// ===================== INIT VOTE COUNTS ON LOAD =====================
+function initGokuVoteCounts() {
+  const gokuVotes = localStorage.getItem("gokuVotes") || 0;
+  const supermanVotes = localStorage.getItem("supermanVotes") || 0;
+  document.getElementById("goku-votes").textContent = gokuVotes;
+  document.getElementById("superman-votes").textContent = supermanVotes;
+}
+document.addEventListener("DOMContentLoaded", initGokuVoteCounts);

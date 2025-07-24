@@ -52,17 +52,17 @@
         <h4 class="gojo-techniques">Gojo's Cursed Techniques</h4>
         <ul class="gojo-list">
           <li><strong class="attack-name">Limitless</strong><br>
-                 Bends the fabric of space itself — distance becomes meaningless.</li>
+                 Manipulate space. Virtually making him invincible against attacks</li>
           <li><strong class="attack-name">Infinity</strong><br>
-                 An untouchable barrier — attacks freeze before reaching him</li>
+                 An untouchable barrier. Slows down everything approaching him, rendering him untouchable</li>
           <li><strong class="attack-name">Six Eyes</strong><br>
-                  Sees the flow of cursed energy with godlike clarity and control.</li>
+                  Divine vision that analyzes everything at once and sees cursed energy in godlike clarity and control. Allowing him fight endlessly</li>
           <li><strong class="attack-name">Hollow Purple</strong><br>
-                  A catastrophic collision of energy that erases reality in its path.</li>
+                  A fusion of Red and Blue that erases everything in its path</li>
           <li><strong class="attack-name">Red</strong><br>
                   A repelling force that violently blasts everything away with immense power </li>
           <li><strong class="attack-name">Domain Expansion: Unlimited Void</strong><br>
-                  Overwhelms with infinite knowledge — rendering anyone powerless </li>
+                  Overwhelms with infinite knowledge. Rendering anyone powerless </li>
 
         </ul>
         <button class="play-voice" onclick="document.getElementById('gojoAudio').play()">🔊 Gojo's Domain Expansion: Unlimited Void</button>
@@ -80,9 +80,9 @@
         <ul class="sukuna-list">
         <ul class="sukuna-list">
           <li><strong class="attack-name">Dismantle</strong><br>
-             A cursed slash that tears through matter without resistance</li>
+             A cursed slash that cuts through anything with ease</li>
             <li><strong class="attack-name">Cleave</strong><br>
-             Adjusts to toughness, slicing even the hardest foes with lethal precision..</li>
+             Adjusts to how strong the enemy is, the stronger the foe the more lethal it becomes</li>
             <li><strong class="attack-name">Reverse Cursed Technique</strong><br>
              Twists cursed energy to regenerate even fatal wounds mid-battle</li>
             <li><strong class="attack-name">Fire Arrow</strong><br>
@@ -134,13 +134,13 @@
       </section>
 
     <!-- ========== LIVE POLL ========== -->
-      <section class="poll-section">
+      <section class="poll-section fade-in-scroll">
             <h2>Votes:</h2>
           <canvas id="pollChart" width="400" height="300"></canvas>
           </section>
 
     <!-- ========== VOTE COUNT DISPLAY ========== -->
-<div class="vote-counts">
+<div class="vote-counts fade-in-scroll">
   <div class="vote-box gojo">
     <h3>Gojo Votes</h3>
     <p id="gojo-votes">0</p>
@@ -175,7 +175,7 @@
     </section>
 
     <!-- ========== GOJO SUKUNA TRIVIA ========== -->
-<section id="quiz-section">
+<section class="quiz-section fade-in-scroll">
   <h2 class="trivia-title">🧠 Trivia Mode: Gojo vs Sukuna</h2>
   <div id="quiz-container">
     <div id="quiz-question">Loading...</div>
@@ -401,7 +401,7 @@
 </section>
 </div>
 
-<!-- Goku vs Superman Character Cards Section -->
+<!-- ========== GOKU SUPERMAN SECTION ========== -->
 
 <div id="goku-superman" class="matchup-section ">
   <section class="characters-section vs-matchup">
@@ -461,17 +461,62 @@
     </div>
 
   </section>
+
+<!-- ========== VOTING GOKU SUPERMAN FORM ========== -->
+<section class="form-section fade-in-scroll">
+  <div class="strongest-form">
+    <h2>Strongest Vote Form</h2>
+    <form id="gokuform" novalidate>
+      <fieldset>
+        <legend>Who truly is the strongest?</legend>
+        <label for="first-name">Enter Your First Name:
+          <input id="first-name" type="text" name="first-name" required />
+        </label>
+
+        <label for="last-name">Enter Your Last Name:
+          <input id="last-name" type="text" name="last-name" required />
+        </label>
+
+        <label for="email">Enter Your Email:
+          <input id="email" type="text" name="email" required />
+        </label>
+
+        <label for="goku">Goku</label>
+        <input id="goku" type="radio" name="goku-superman" value="Goku" checked>
+
+        <label for="superman">Superman</label>
+        <input id="superman" type="radio" name="goku-superman" value="Superman">
+      </fieldset>
+
+      <textarea name="comments" rows="5" placeholder="Form and Vote Submits and save in local storage and are interactive but not yet fully working... Will be live soon!"></textarea>
+      <br>
+      <button type="submit">Vote</button>
+    </form>
+    <div id="formResultGoku" class="vote-result hidden"></div>
+  </div>
+</section>
+
+    <!-- ========== LIVE POLL GOKU SUPERMAN========== -->
+      <section class="poll-section fade-in-scroll">
+            <h2>Votes:</h2>
+          <canvas id="gokuPollChart" width="400" height="300"></canvas>
+          </section>
+
+    <!-- ========== VOTE COUNT DISPLAY GOKU SUPERMAN ========== -->
+<div class="vote-counts fade-in-scroll">
+  <div class="vote-box goku">
+    <h3>Goku Votes</h3>
+    <p id="goku-votes">0</p>
+  </div>
+  <div class="vote-box superman">
+    <h3>Superman Votes</h3>
+    <p id="superman-votes">0</p>
+  </div>
+</div>
+
 </div>
 
   </main>
-
-
-
-
-
-
-
-
 
 
 
