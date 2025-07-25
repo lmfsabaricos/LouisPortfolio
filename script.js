@@ -86,7 +86,7 @@ const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      fadeObserver.unobserve(entry.target);
     }
   });
 }, {
@@ -239,7 +239,20 @@ const resultDiv = document.getElementById("formResult");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const name = document.getElementById("first-name").value;
+  const firstNameEl = document.getElementById("first-name");
+  const lastNameEl = document.getElementById("last-name");
+  const emailEl = document.getElementById("email");
+
+  const firstName = firstNameEl.value.trim();
+  const lastName = lastNameEl.value.trim();
+  const email = emailEl.value.trim();
+
+  if (!firstName || !lastName || !email || !emailEl.checkValidity()) {
+    alert("Please fill in all fields correctly before submitting.");
+    return;
+  }
+
+  const name = firstName;
   const choice = document.querySelector('input[name="gojo-sukuna"]:checked').value;
 
   //  Update vote counts
@@ -330,106 +343,6 @@ function initVoteCounts() {
   document.getElementById("sukuna-votes").textContent = sukunaVotes;
 }
 initVoteCounts();
-
-// ===================== DEBATE SECTION  GOJO SUKUNA =====================
-document.addEventListener("DOMContentLoaded", () => {
-  const debateform = document.getElementById("debateForm");
-  const commentsContainer = document.getElementById("debateComments");
-  const identityFields = document.getElementById("identityFields");
-  const changeIdentityBtn = document.getElementById("changeIdentityBtn");
-
-  const nameInput = document.getElementById("name");
-  const sideInput = document.getElementById("side");
-  const commentInput = document.getElementById("comment");
-  const picInput = document.getElementById("profile-pic");
-  const previewImg = document.getElementById("preview-pic");
-
-picInput.addEventListener("change", () => {
-  if (picInput.files && picInput.files[0]) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      previewImg.src = e.target.result;
-      previewImg.style.display = "inline-block";
-    };
-    reader.readAsDataURL(picInput.files[0]);
-  }
-});
-
-  // Load identity if exists
-  const savedName = localStorage.getItem("debateName");
-  const savedSide = localStorage.getItem("debateSide");
-  const savedPic = localStorage.getItem("debatePic");
-  picInput.value = "";
-
-  if (savedName && savedSide) {
-    nameInput.value = savedName;
-    sideInput.value = savedSide;
-    identityFields.style.display = "none";
-    changeIdentityBtn.classList.remove("hidden");
-  }
-
-  const loadComments = () => {
-    const comments = JSON.parse(localStorage.getItem("debateComments") || "[]");
-    commentsContainer.innerHTML = "";
-    comments.forEach(({ name, side, comment, pic }) => {
-      const div = document.createElement("div");
-      div.className = `comment-box ${side.toLowerCase()}`;
-      div.innerHTML = `
-      ${pic ? `<img src="${pic}" class="debate-profile-pic" />` : ""}
-      <strong>${name} (${side})</strong>
-      <p>${comment}</p>
-  `;
-  commentsContainer.appendChild(div);
-});
-
-  };
-
-  debateform.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = nameInput.value.trim();
-    const side = "Weeb";
-    //const side = sideInput.value;//
-    const comment = commentInput.value.trim();
-
-     if (name && side && comment) {
-      if (picInput && picInput.files.length > 0) {
-        const reader = new FileReader();
-        reader.onload = function () {
-          const pic = reader.result;
-          localStorage.setItem("debatePic", pic);
-          saveComment(name, side, comment, pic);
-        };
-        reader.readAsDataURL(picInput.files[0]);
-      } else {
-        const savedPic = localStorage.getItem("debatePic") || "";
-        saveComment(name, side, comment, savedPic);
-      }
-    }
-
-  });
-
-  changeIdentityBtn.addEventListener("click", () => {
-    identityFields.style.display = "block";
-    changeIdentityBtn.classList.add("hidden");
-     loadComments();
-  });
-
-function saveComment(name, side, comment, pic) {
-  const newComment = { name, side, comment, pic };
-  const comments = JSON.parse(localStorage.getItem("debateComments") || "[]");
-  comments.push(newComment);
-  localStorage.setItem("debateComments", JSON.stringify(comments));
-  localStorage.setItem("debateName", name);
-  localStorage.setItem("debateSide", side);
-  commentInput.value = "";
-
-  identityFields.style.display = "none";
-  changeIdentityBtn.classList.remove("hidden");
-
-  loadComments();
-}
-
-});
 
 
 // ===================== ANIME MATCHUP TOGGLE LOGIC =====================
@@ -724,7 +637,6 @@ setTimeout(() => {
 }, 4800);
 
 
-
 // ===================== INTERACTIVE VOTING FORM GOKU SUPERMAN =====================
 const gokuForm = document.getElementById("gokuform");
 const gokuResultDiv = document.getElementById("formResultGoku");
@@ -732,9 +644,26 @@ const gokuResultDiv = document.getElementById("formResultGoku");
 gokuForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const name = document.getElementById("first-name").value;
+  // Get input elements
+  const firstNameEl = document.getElementById("goku-first-name");
+  const lastNameEl = document.getElementById("goku-last-name");
+  const emailEl = document.getElementById("goku-email");
+
+  // Get and trim values
+  const firstName = firstNameEl.value.trim();
+  const lastName = lastNameEl.value.trim();
+  const email = emailEl.value.trim();
+
+  // Simple validation check
+  if (!firstName || !lastName || !email || !emailEl.checkValidity()) {
+    alert("Please fill in all fields correctly before submitting.");
+    return;
+  }
+
+  const name = firstName;
   const choice = document.querySelector('input[name="goku-superman"]:checked').value;
 
+  // Update vote counts
   if (choice === "Goku") {
     let gokuVotes = parseInt(localStorage.getItem("gokuVotes") || 0);
     gokuVotes++;
@@ -749,21 +678,26 @@ gokuForm.addEventListener("submit", function (e) {
 
   updateGokuPollChart();
 
+  // Show result message
   gokuResultDiv.innerHTML = `✅ <strong>Thank you ${name}!</strong> You voted for <strong>${choice}</strong>.`;
   gokuResultDiv.classList.remove("hidden");
   gokuResultDiv.classList.add("visible");
 
+  // Fade out form
   gokuForm.classList.add("fade-out");
   setTimeout(() => {
     gokuForm.style.display = "none";
   }, 500);
 });
 
+// ===================== GOKU SUPERMAN POLL CHART SETUP =====================
+let gokuPollChart;
+
 document.addEventListener("DOMContentLoaded", () => {
-  // initialize vote counts
+  // Initialize vote count display
   initGokuVoteCounts();
 
-  // initialize chart
+  // Setup poll chart
   const ctxGokuPoll = document.getElementById("gokuPollChart").getContext("2d");
 
   const gokuVotes = parseInt(localStorage.getItem("gokuVotes") || 0);
@@ -789,8 +723,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       },
       scales: {
-        x: { ticks: { color: "#fff" } },
-        y: { beginAtZero: true, precision: 0, ticks: { color: "#fff" } }
+        x: {
+          ticks: { color: "#fff" }
+        },
+        y: {
+          beginAtZero: true,
+          precision: 0,
+          ticks: { color: "#fff" }
+        }
       }
     }
   });
@@ -813,3 +753,102 @@ function initGokuVoteCounts() {
 }
 document.addEventListener("DOMContentLoaded", initGokuVoteCounts);
 
+// ===================== DEBATE SECTION =====================
+document.addEventListener("DOMContentLoaded", () => {
+  //const sideInput = document.getElementById("side");
+  const debateform = document.getElementById("debateForm");
+  const commentsContainer = document.getElementById("debateComments");
+  const identityFields = document.getElementById("identityFields");
+  const changeIdentityBtn = document.getElementById("changeIdentityBtn");
+
+  const nameInput = document.getElementById("name");
+  const commentInput = document.getElementById("comment");
+  const picInput = document.getElementById("profile-pic");
+  const previewImg = document.getElementById("preview-pic");
+
+picInput.addEventListener("change", () => {
+  if (picInput.files && picInput.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      previewImg.src = e.target.result;
+      previewImg.style.display = "inline-block";
+    };
+    reader.readAsDataURL(picInput.files[0]);
+  }
+});
+
+  // Load identity if exists
+  const savedName = localStorage.getItem("debateName");
+  const savedSide = localStorage.getItem("debateSide");
+  const savedPic = localStorage.getItem("debatePic");
+  picInput.value = "";
+
+  if (savedName && savedSide) {
+    nameInput.value = savedName;
+    //sideInput.value = savedSide;
+    identityFields.style.display = "none";
+    changeIdentityBtn.classList.remove("hidden");
+  }
+
+  const loadComments = () => {
+    const comments = JSON.parse(localStorage.getItem("debateComments") || "[]");
+    commentsContainer.innerHTML = "";
+    comments.forEach(({ name, side, comment, pic }) => {
+      const div = document.createElement("div");
+      div.className = `comment-box ${side.toLowerCase()}`;
+      div.innerHTML = `
+      ${pic ? `<img src="${pic}" class="debate-profile-pic" />` : ""}
+      <strong>${name} (${side})</strong>
+      <p>${comment}</p>
+  `;
+  commentsContainer.appendChild(div);
+});
+
+  };
+
+  debateform.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = nameInput.value.trim();
+    const side = "Weeb";
+    //const side = sideInput.value;//
+    const comment = commentInput.value.trim();
+
+     if (name && side && comment) {
+      if (picInput && picInput.files.length > 0) {
+        const reader = new FileReader();
+        reader.onload = function () {
+          const pic = reader.result;
+          localStorage.setItem("debatePic", pic);
+          saveComment(name, side, comment, pic);
+        };
+        reader.readAsDataURL(picInput.files[0]);
+      } else {
+        const savedPic = localStorage.getItem("debatePic") || "";
+        saveComment(name, side, comment, savedPic);
+      }
+    }
+
+  });
+
+  changeIdentityBtn.addEventListener("click", () => {
+    identityFields.style.display = "block";
+    changeIdentityBtn.classList.add("hidden");
+     loadComments();
+  });
+
+function saveComment(name, side, comment, pic) {
+  const newComment = { name, side, comment, pic };
+  const comments = JSON.parse(localStorage.getItem("debateComments") || "[]");
+  comments.push(newComment);
+  localStorage.setItem("debateComments", JSON.stringify(comments));
+  localStorage.setItem("debateName", name);
+  localStorage.setItem("debateSide", side);
+  commentInput.value = "";
+
+  identityFields.style.display = "none";
+  changeIdentityBtn.classList.remove("hidden");
+
+  loadComments();
+}
+
+});

@@ -57,8 +57,6 @@ text-shadow: 0 0 15px rgba(127, 95, 255, 0.6);
   transform: translateY(0);
 }
 
-
-
 /* ===================== VS TOGGLE BUTTONS ===================== */
 .vs-toggle-buttons {
   display: flex;
@@ -102,7 +100,6 @@ input[type="email"]:valid {
   border-color: #00ff99;
   box-shadow: 0 0 8px #00ff99;
 }
-
 
 /* ===================== GOKU SUPERMAN EMAIL INTERACTIVE ===================== */
 
@@ -448,6 +445,15 @@ button[type="submit"]:hover {
 .hidden {
   display: none;
 }
+
+/* ===================== FORM ERROR MESSAGES ===================== */
+.error-message {
+  color: #ff4d6d;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  display: block;
+}
+
 
 /* ===================== LIVE POLL CHART ===================== */
 .poll-section {
@@ -1327,8 +1333,6 @@ h1.main-title {
   animation: fadeIn 0.4s ease-in-out;
 }
 
-
-
 /* ===================== GOKU SUPERMAN VOTE FORM ===================== */
 .goku-form-section {
   display: flex;
@@ -1819,126 +1823,157 @@ body.loading {
 
 /* ===================== RESPONSIVE MOBILE ===================== */
 @media (max-width: 768px) {
-html, body {
- overflow-x: hidden;
- padding: 0 1rem;
-  }
-.e-loadholder {
-  transform: translate(-50%, -50%) scale(0.85);
-  }
-.characters-section,
-.cafes-section {
-  flex-direction: column;
-  align-items: center;
-  }
-.strongest-box,
-.most-cursed-box,
-.menu-card {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  min-height: 620px;
-  }
-.saiyan-box,
-.kryptonian-box {
-  width: 100%;
-  box-sizing: border-box;
-  min-height: 620px;
-  }
-.main-title {
-  font-size: 2.2rem;
+
+  /* General layout fixes */
+  html, body {
+    overflow-x: hidden;
+    padding: 0 1rem;
   }
 
-#page-wrapper {
-  padding: 0 1rem;
-}
-
-form, fieldset {
-  width: 100%;
-}
-
-input[type="text"],
-textarea {
-  width: 100%;
-  max-width: 100%;
-}
-
-.fighter img {
-  width: 80px;
-}
-
-.fighter button {
-  width: 100%;
-  max-width: 200px;
-  font-size: 0.95rem;
-  padding: 0.6rem 1rem;
-}
-
-.health-bar {
-  width: 80px;
+  #page-wrapper {
+    padding: 0 1rem;
   }
 
-.text-with-images {
-  flex-direction: column;
+  /* Loader scaling */
+  .e-loadholder {
+    transform: translate(-50%, -50%) scale(0.85);
   }
 
-.brief-history,
-.image-wrapper {
-  flex: 1 1 100%;
+  /* Flexbox column stacks */
+  .characters-section,
+  .cafes-section,
+  .vote-counts,
+  .vs-toggle-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 
-.quote {
+  .vs-toggle-buttons {
+    margin: 2rem 0;
+  }
+
+  .form-section {
+    margin: 2rem 0;
+  }
+
+  /* Content boxes (Gojo, Sukuna, Goku, etc.) */
+  .strongest-box,
+  .most-cursed-box,
+  .menu-card,
+  .saiyan-box,
+  .kryptonian-box {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    min-height: 620px;
+  }
+
+  /* Main title */
+  .main-title {
+    font-size: 2.2rem;
+  }
+
+  /* Form and input scaling */
+  form, fieldset {
+    width: 100%;
+  }
+
+  input[type="text"],
+  textarea {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  form button,
+  .vote-result button {
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem auto;
+  }
+
+  /* Fighters section */
+  .fighter img {
+    width: 80px;
+  }
+
+  .fighter button {
+    width: 100%;
+    max-width: 200px;
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .health-bar {
+    width: 80px;
+  }
+
+  /* Debate and comments */
+  .debate-section,
+  .comment-box {
+    width: 100%;
+    padding: 1rem;
+    word-break: break-word;
+    box-sizing: border-box;
+  }
+
+  /* Magazine layout */
+  .text-with-images {
+    flex-direction: column;
+  }
+
+  .brief-history,
+  .image-wrapper {
+    flex: 1 1 100%;
+  }
+
+  .quote {
     font-size: 1.3rem;
   }
 
-.mag-title {
+  .mag-title {
     font-size: 1.8rem;
-}
+  }
 
-.first-paragraph,
-.magazine-container p {
+  .first-paragraph,
+  .magazine-container p {
     font-size: 1rem;
   }
 
-.magazine-container {
+  .magazine-container {
     height: auto;
     max-height: 80vh;
   }
 
-.vote-counts {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
+  /* Music player */
+  .music-player {
+    padding: 0.75rem;
+    bottom: 20px;
+    left: 10px;
   }
 
-.vs-toggle-buttons {
-    flex-direction: column;
-    gap: 1rem;
-    margin: 2rem 0;
-
-.form-section {
-    margin: 2rem 0;
-  }
-
-.music-player {
-  padding: 0.75rem;
-  bottom: 20px;
-  left: 10px;
-  }
-
-#music-controls {
-  gap: 0.4rem;
-  }
-.music-player::before {
+  .music-player::before {
     display: none;
   }
 
-#music-controls button,
-#music-controls select {
-  font-size: 0.95rem;
-  padding: 0.4rem;
+  #music-controls {
+    gap: 0.4rem;
   }
+
+  #music-controls button,
+  #music-controls select {
+    font-size: 0.95rem;
+    padding: 0.4rem;
+  }
+
+  /* Poll chart canvas */
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+  }
+
 }
-}
+
 
