@@ -57,6 +57,8 @@ text-shadow: 0 0 15px rgba(127, 95, 255, 0.6);
   transform: translateY(0);
 }
 
+
+
 /* ===================== VS TOGGLE BUTTONS ===================== */
 .vs-toggle-buttons {
   display: flex;
@@ -82,6 +84,25 @@ text-shadow: 0 0 15px rgba(127, 95, 255, 0.6);
   background: linear-gradient(135deg, #8e2de2, #6f00ff);
   transform: scale(1.05);
 }
+
+/* ===================== EMAIL INTERACTIVE ===================== */
+
+input[type="email"]:invalid {
+  border-color: #ff0048;
+  box-shadow: 0 0 8px #ff0048;
+}
+input[type="email"]:focus {
+  border-color: #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+  outline: none;
+  background-color: #111c2b;
+}
+
+input[type="email"]:valid {
+  border-color: #00ff99;
+  box-shadow: 0 0 8px #00ff99;
+}
+
 
 /* ===================== MATCHUP SECTION TOGGLE ===================== */
 .matchup-section {
@@ -186,6 +207,8 @@ text-shadow: 0 0 15px rgba(127, 95, 255, 0.6);
 .sukuna-container .attack-name {
   color: #ff3d00;
 }
+
+
 
 /* ===================== GOJO SUKUNA AUDIO BUTTON ===================== */
 .play-voice {
@@ -376,6 +399,7 @@ textarea {
   font-size: 1rem;
   background-color: #1a1a2e;
   color: #fff;
+  transition: 0.3s ease;
 }
 
 input[type="radio"] {
@@ -386,17 +410,19 @@ input[type="radio"] {
 
 button[type="submit"] {
   background: linear-gradient(to right, #00cfff, #ff0090);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
   color: white;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   margin-top: 0.5rem;
-  transition: background 0.3s ease;
+  transition: all 0.35s ease;
 }
 
 button[type="submit"]:hover {
   box-shadow: 0 0 20px 5px rgba(255, 0, 221, 0.6);
+  transform: scale(1.05);
 }
 
 .vote-result {
@@ -872,14 +898,18 @@ h1.main-title {
 }
 
 /* ===================== DEBATE SECTION ===================== */
+
+
 .debate-section {
   background-color: #1a1a2e;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 16px;
   margin-top: 3rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow:    0 0 20px rgba(127, 79, 255, 0.2),    0 0 40px rgba(0, 240, 255, 0.2);
+  animation: formAura 3s ease-in-out infinite alternate;
 }
 
 /* Section title */
@@ -887,21 +917,49 @@ h1.main-title {
   color: #fff;
   text-align: center;
   margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #d42626;
 }
 
 /* ===================== PROFILE PIC UPLOAD ===================== */
+
 .profile-pic-preview {
   margin-top: 10px;
 }
 
 .debate-profile-pic {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #00ffff;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
   display: inline-block;
+}
+
+
+
+
+/* Style for file input */
+#debateForm input[type="file"] {
+  background-color: #2b2b4b;
+  color: #ccc;
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#debateForm input[type="file"]::file-selector-button {
+  background: linear-gradient(90deg, #7f4fff, #b154f6);
+  border: none;
+  padding: 0.3rem 0.7rem;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* ===================== FORM STYLES ===================== */
@@ -911,15 +969,39 @@ h1.main-title {
   color: #ddd;
 }
 
-#debateForm input,
-#debateForm select,
-#debateForm textarea {
-  width: 100%;
+#debateForm input:not([type="file"]) {
   padding: 0.5rem;
   margin-top: 0.2rem;
-  border-radius: 5px;
-  border: none;
+  border-radius: 6px;
   font-size: 1rem;
+  color: #fff;
+  background-color: #1e1e2e;
+  border: 2px solid #555;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#debateForm select {
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #1e1e2e;
+  border: 2px solid #555;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#debateForm textarea {
+  resize: none;
+  min-height: 120px;
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #1e1e2e;
+  border: 2px solid #555;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 #debateForm button {
@@ -931,15 +1013,12 @@ h1.main-title {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0 0 10px rgba(200, 120, 255, 0.4);
   transition: background 0.3s ease, transform 0.2s ease;
-  -webkit-transition: background 0.3s ease, transform 0.2s ease;
-  -moz-transition: background 0.3s ease, transform 0.2s ease;
-  -ms-transition: background 0.3s ease, transform 0.2s ease;
-  -o-transition: background 0.3s ease, transform 0.2s ease;
 }
 
 #debateForm button:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
     box-shadow: 0 0 15px rgba(191, 120, 255, 0.6);
 }
 
@@ -948,6 +1027,7 @@ h1.main-title {
   font-family: 'Roboto', sans-serif;
   font-size: 0.95rem;
   color: #ffffff;
+  margin-top: 2rem;
 }
 
 /* ===================== COMMENT BOX ===================== */
