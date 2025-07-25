@@ -86,8 +86,7 @@ const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-    } else {
-      entry.target.classList.remove('visible');
+      observer.unobserve(entry.target);
     }
   });
 }, {
@@ -694,8 +693,8 @@ function triggerPulseEffect() {
     });
 
     ctx.globalAlpha = 1;
-    radius += 15;
-    alpha -= 0.02;
+    radius += 25;
+    alpha -= 0.0035;
 
     if (alpha > 0) {
       requestAnimationFrame(draw);
@@ -797,6 +796,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+
+
+
 // ===================== UPDATE CHART FUNCTION =====================
 function updateGokuPollChart() {
   const gokuVotes = parseInt(localStorage.getItem("gokuVotes") || 0);
@@ -813,3 +816,4 @@ function initGokuVoteCounts() {
   document.getElementById("superman-votes").textContent = supermanVotes;
 }
 document.addEventListener("DOMContentLoaded", initGokuVoteCounts);
+

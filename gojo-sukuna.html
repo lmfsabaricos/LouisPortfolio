@@ -103,7 +103,7 @@
    <section class="form-section fade-in-scroll">
       <div class="strongest-form">
         <h2>Strongest Vote Form</h2>
-        <form id ="gojoform" novalidate >
+        <form id ="gojoform" >
           <fieldset>
             <legend>Who truly is the strongest?</legend>
             <label for="first-name">Enter Your First Name:
@@ -115,7 +115,9 @@
             </label>
 
             <label for="email">Enter Your Email:
-              <input id="email" type="text" name="email" required />
+              <input id="email" type="email" name="email" required />
+               <small id="emailError" class="error-message"></small>
+
             </label>
 
             <label for="gojo">Gojo Satoru</label>
