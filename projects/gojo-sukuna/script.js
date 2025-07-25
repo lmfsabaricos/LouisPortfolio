@@ -796,10 +796,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-
-
 // ===================== UPDATE CHART FUNCTION =====================
 function updateGokuPollChart() {
   const gokuVotes = parseInt(localStorage.getItem("gokuVotes") || 0);
