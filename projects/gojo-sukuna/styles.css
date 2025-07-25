@@ -48,8 +48,8 @@ text-shadow: 0 0 15px rgba(127, 95, 255, 0.6);
 /* ===================== SCROLL FADE-IN ===================== */
 .fade-in-scroll {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 2s ease-out;
+  transform: translateY(20px);
+  transition: opacity 8.5s ease-out, transform 8s ease-out;
 }
 
 .fade-in-scroll.visible {

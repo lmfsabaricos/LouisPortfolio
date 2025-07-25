@@ -172,9 +172,10 @@ body {
   padding: 20px 40px;
   display: flex;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
   z-index: 1000;
+  border-radius: 12px; 
 }
 
 .louis-navbar ul {
@@ -228,6 +229,12 @@ nav a:hover {
   border-bottom: 2px solid #00ffff;
   display: inline-block;
 }
+
+.tech-stack {
+  color: #00ffff;
+  font-weight: 600;
+}
+
 
 #about p {
   margin-bottom: 1.5rem;
@@ -479,7 +486,6 @@ color: #e0f7f7;
 .practice-item-wrapper {
   max-width: 500px;
 }
-
 /* ===================== FOOTER ===================== */
 .louis-footer {
   text-align: center;
@@ -505,8 +511,8 @@ color: #e0f7f7;
 
 /* ===================== ANIME SECTION GLOW BADGES ===================== */
 .character-circle {
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   vertical-align: middle;
   margin-left: 6px;
@@ -787,21 +793,23 @@ box-shadow: 0 0 6px #4dc3ff88;
 .hamburger {
     display: flex;
     flex-direction:column;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     cursor: pointer;
     color: #00ffff;
-    padding: 10px;
+    padding: 6px 8px;
     z-index: 10001;
     right: 16px;
- width: fit-content;
-  }
+    width: fit-content;
+    border-radius: 8px;
+    
+}
 
 /* Hamburger lines */
 .hamburger span {
   display: block;
-  width: 25px;
-  height: 3px;
-  margin: 4px 0;
+  width: 20px;
+  height: 2.5px;
+  margin: 3px 0;
   background-color: #00ffff;
   border-radius: 4px;
   transition: all 0.3s ease-in-out;
@@ -894,7 +902,7 @@ box-shadow: 0 0 6px #4dc3ff88;
   }
 
   .louis-practice-list a {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
   }
 }
 
