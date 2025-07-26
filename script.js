@@ -60,7 +60,7 @@ class Particle {
 }
 
 const particles = [];
-for (let i = 0; i < 160; i++) {
+for (let i = 0; i < 60; i++) {
   particles.push(new Particle());
 }
 
@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
       datasets: [{
         label: "Votes",
         data: [gojoVotes, sukunaVotes],
-        backgroundColor: ["#00f0ff", "#ff0048"]
+        backgroundColor: ["#00f0ff", "#ff0055"]
       }]
     },
     options: {
@@ -530,7 +530,7 @@ if (loaderCanvas) {
   }
 
   const loaderParticles = [];
-  for (let i = 0; i < 120; i++) {
+  for (let i = 0; i < 100; i++) {
     loaderParticles.push(new LoaderParticle(true));
   }
 
@@ -606,8 +606,8 @@ function triggerPulseEffect() {
     });
 
     ctx.globalAlpha = 1;
-    radius += 25;
-    alpha -= 0.0035;
+    radius += 40;
+    alpha -= 0.02;
 
     if (alpha > 0) {
       requestAnimationFrame(draw);
@@ -710,7 +710,7 @@ document.addEventListener("DOMContentLoaded", () => {
       datasets: [{
         label: "Votes",
         data: [gokuVotes, supermanVotes],
-        backgroundColor: ["#00f0ff", "#ff0048"]
+        backgroundColor: ["#f7b733", "#0076ce"]
       }]
     },
     options: {
