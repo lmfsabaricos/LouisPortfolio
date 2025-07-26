@@ -15,7 +15,7 @@
 </head>
 
 <!-- ========== LOADING ========== -->
-<div id="spiral-loader">
+<div id="spiral-loader" aria-hidden="true">
   <canvas id="loader-canvas"></canvas>
   <div class="e-loadholder">
     <div class="m-loader">
@@ -30,9 +30,9 @@
 
 <!-- ========== BACKGROUND PARTICLES ========== -->
 <div id="particles-js"></div>
-  
+
   <!-- ========== MAIN TITLE ========== -->
-<div id="main-content">
+<div id="main-content" role="main">
 <main>
     <h1 class="main-title">Anime Arena</h1>
  <!-- ========== MATCHUP TOGGLE BUTTONS ========== -->
@@ -73,7 +73,7 @@
       </div>
     <div class="sukuna-container">
       <div class="most-cursed-box">
-        <h2 class="section-title">The Most Cursed</h2>
+        <h2 class="section-title">The King Of Curses</h2>
         <img class="sukuna2" src="https://static2.cbrimages.com/wordpress/wp-content/uploads/2021/03/Jujutsu-Kaisen-Sukuna-smile.jpg" alt="Ryomen Sukuna" loading="lazy">
         <h3 class="sukuna">Ryomen Sukuna</h3>
         <p class="sukuna-quote">“Know your place, you fool.”</p>
@@ -101,23 +101,27 @@
   </section>
 
   <!-- ========== GOJO SUKUNA VOTING FORM ========== -->
-   <section class="form-section fade-in-scroll">
-      <div class="strongest-form">
-        <h2>Strongest Vote Form</h2>
-        <form id ="gojoform" >
-          <fieldset>
+  <section class="form-section fade-in-scroll">
+  <div class="strongest-form">
+    <h2 id="gojo-form-label">Strongest Vote Form</h2>
+    <form role="form" id="gojoform" aria-labelledby="gojo-form-label">
+
+      <fieldset>
             <legend>Who truly is the strongest?</legend>
             <label for="first-name">Enter Your First Name:
-              <input id="first-name" type="text" name="first-name" />
+              <input id="first-name" type="text" name="first-name" aria-label="First name" />
             </label>
 
             <label for="last-name">Enter Your Last Name:
-              <input id="last-name" type="text" name="last-name" />
+              <input id="last-name" type="text" name="last-name" aria-label="Last name"/>
             </label>
 
             <label for="email">Enter Your Email:
-              <input id="email" type="email" name="email" required />
+              <input id="email" type="email" name="email" required aria-label="Email address" />
             </label>
+
+            <div role="radiogroup" aria-labelledby="gojo-sukuna-radio-label">
+          <p id="gojo-sukuna-radio-label" class="sr-only">Choose between Gojo Satoru or Ryomen Sukuna</p>
 
             <label for="gojo">Gojo Satoru</label>
             <input id="gojo" type="radio" name="gojo-sukuna" value="Gojo" checked>
@@ -126,11 +130,11 @@
             <input id="sukuna" type="radio" name="gojo-sukuna" value="Sukuna">
           </fieldset>
 
-          <textarea name="comments" rows="5" placeholder="Form and Vote Submits and save in local storage and are interactive but not yet fully working.. WIll be live soon!"></textarea>
+          <textarea name="comments" rows="5" placeholder="Form and Vote Submits and save in local storage and are interactive but not yet fully working.. WIll be live soon!" aria-label="Additional comments"></textarea>
           <br>
           <button type="submit">Vote</button>
         </form>
-          <div id="formResult" class="vote-result hidden"></div>
+          <div id="formResult" class="vote-result hidden" aria-live="polite"></div>
       </div>
       </section>
 
@@ -179,16 +183,15 @@
 <section class="quiz-section fade-in-scroll">
   <h2 class="trivia-title">🧠 Trivia Mode: Gojo vs Sukuna</h2>
   <div id="quiz-container">
-    <div id="quiz-question">Loading...</div>
+    <div id="quiz-question" aria-live="polite">>Loading...</div>
     <div id="quiz-choices"></div>
     <button id="next-question-btn">Next Question</button>
-    <div id="quiz-score" class="hidden"></div>
+    <div id="quiz-score" class="hidden" aria-live="polite"></div>
   </div>
 </section>
 
-
   <!-- ========== GOJO SUKUNA MAGAZINE ARTICLE SECTION ========== -->
-    <section class="magazine-container fade-in-scroll">
+    <article class="magazine-container fade-in-scroll">
       <h2 class="mag-title">The Clash Chronicle</h2>
       <p class="gojo-sukuna-sub">The strongest sorcerer meets the king of curses
         in a battle beyond code and chaos.</p>
@@ -336,7 +339,7 @@
   />
 </aside>
 </section>
-</section>
+</article>
 
 <!-- ========== DEBATE COMMENT SECTION ========== -->
 <section class="debate-section fade-in-scroll">
@@ -344,7 +347,7 @@
   <form id="debateForm">
     <div id="identityFields">
       <div class="profile-pic-preview">
-  <img id="preview-pic" class="debate-profile-pic" style="display: none;" />
+  <img id="preview-pic" class="debate-profile-pic" style="display: none;" alt="" aria-hidden="true">
 </div>
 <label>Upload Profile Picture:
   <input type="file" id="profile-pic" accept="image/*" />
@@ -362,12 +365,12 @@
     <button type="button" id="changeIdentityBtn" class="hidden">Change Identity</button>
   </form>
 
-  <div id="debateComments"></div>
+  <div id="debateComments" role="region" aria-label="User Debate Comments"></div>
 </section>
 
 <!-- ========== GOJO SUKUNA BATTLE SECTION ========== -->
-<section class="battle-section fade-in-scroll" id="battle-container">
-  <h2>Gojo vs Sukuna: Battle!</h2>
+<section class="battle-section fade-in-scroll" id="battle-container" aria-labelledby="gojo-sukuna-heading">
+  <h2 id="gojo-sukuna-heading">Gojo vs Sukuna: Battle!</h2>
 
   <div class="battle-characters">
     <div class="fighter gojo-fighter">
@@ -385,8 +388,8 @@
     </div>
   </div>
 
-  <p id="battle-result" class="battle-result">Choose your attack!</p>
-  <button id="gojo-sukuna-restart" onclick="restartGojoSukunaBattle()" class="hidden">
+  <p id="battle-result" class="battle-result" aria-live="polite">Choose your attack!</p>
+  <button id="gojo-sukuna-restart" onclick="restartGojoSukunaBattle()" class="hidden" aria-label="Restart Gojo vs Sukuna Battle">
   Restart Battle
 </button>
 </section>
@@ -456,21 +459,24 @@
 <!-- ========== VOTING GOKU SUPERMAN FORM ========== -->
 <section class="form-section fade-in-scroll">
   <div class="goku-strongest-form">
-    <h2>Strongest Vote Form</h2>
-    <form id="gokuform">
+    <h2 id="goku-form-label">Strongest Vote Form</h2>
+    <form role="form" id="gokuform" aria-labelledby="goku-form-label">
       <fieldset>
         <legend>Who truly is the strongest?</legend>
         <label for="goku-first-name">Enter Your First Name:
-          <input id="goku-first-name" type="text" name="first-name" />
+          <input id="goku-first-name" type="text" name="first-name" aria-label="First name"/>
         </label>
 
         <label for="goku-last-name">Enter Your Last Name:
-          <input id="goku-last-name" type="text" name="last-name" />
+          <input id="goku-last-name" type="text" name="last-name" aria-label="Last name"/>
         </label>
 
         <label for="goku-email">Enter Your Email:
-          <input id="goku-email" type="email" name="email" required />
+          <input id="goku-email" type="email" name="email" required aria-label="Email address"/>
         </label>
+
+         <div role="radiogroup" aria-labelledby="goku-superman-radio-label">
+          <p id="goku-superman-radio-label" class="sr-only">Choose between Goku or Superman</p>
 
         <label for="goku">Goku</label>
         <input id="goku" type="radio" name="goku-superman" value="Goku" checked>
@@ -479,11 +485,11 @@
         <input id="superman" type="radio" name="goku-superman" value="Superman">
       </fieldset>
 
-      <textarea name="comments" rows="5" placeholder="Form and Vote Submits and save in local storage and are interactive but not yet fully working... Will be live soon!"></textarea>
+      <textarea name="comments" rows="5" placeholder="Form and Vote Submits and save in local storage and are interactive but not yet fully working... Will be live soon!" aria-label="Additional comments"></textarea>
       <br>
       <button type="submit">Vote</button>
     </form>
-    <div id="formResultGoku" class="vote-result hidden"></div>
+    <div id="formResultGoku" class="vote-result hidden" aria-live="polite"></div>
   </div>
 </section>
 
@@ -534,19 +540,12 @@
 <section class="quiz-section fade-in-scroll">
   <h2 class="trivia-title">🧠 Trivia Mode: Goku vs Superman</h2>
   <div id="goku-superman-quiz-container">
-    <div id="goku-superman-quiz-question">Loading...</div>
+    <div id="goku-superman-quiz-question"aria-live="polite">Loading...</div>
     <div id="goku-superman-quiz-choices"></div>
     <button id="goku-superman-next-question-btn">Next Question</button>
-    <div id="goku-superman-quiz-score" class="hidden"></div>
+    <div id="goku-superman-quiz-score" class="hidden" aria-live="polite"></div>
   </div>
 </section>
-
-
-
-
-
-
-
 
 <!-- ========== SUPERMAN VS GOKU MAGAZINE ARTICLE SECTION ========== -->
 <section class="magazine-container goku-superman fade-in-scroll">
@@ -638,13 +637,13 @@
 <aside class="goku-superman-image-wrapper">
   <img
     src="https://wallpaperbat.com/img/87423487-best-goku-4k-wallpaper-ultra-4k-.jpg"
-    alt="Gojo Satoru using Infinity"
+    alt="Goku looking at the kryptonian"
     loading="lazy"
     class="image-1"
   />
   <img
     src="https://i.pinimg.com/1200x/db/f1/cc/dbf1cc3139fb057d16f539a1d1cdb652.jpg"
-    alt="Sukuna smirking before battle"
+    alt="Superman seeing goku"
     loading="lazy"
     class="image-2"
   />
@@ -657,7 +656,7 @@
   </blockquote>
   <img
   src="https://i.pinimg.com/736x/0b/db/cf/0bdbcf0cc37f13aa65f57a27fb82bea9.jpg"
-  alt="Battle of the Domains"
+  alt="Intense goku and superman battle occuring"
   loading="lazy"
   class="image-3"
 />
@@ -678,10 +677,9 @@
 </section>
 </section>
 
-
 <!-- ========== GOKU SUPERMAN BATTLE SECTION ========== -->
-<section class="battle-section fade-in-scroll" id="goku-superman-battle-container">
-  <h2>Goku vs Superman: Battle!</h2>
+<section class="battle-section fade-in-scroll" id="goku-superman-battle-container" aria-labelledy="goku-superman-heading">
+  <h2 id="goku-superman-heading">Goku vs Superman: Battle!</h2>
 
   <div class="battle-characters">
     <div class="fighter goku-fighter">
@@ -701,27 +699,10 @@
     </div>
   </div>
 
-  <p id="goku-superman-result" class="battle-result">Choose your attack!</p>
-  <button id="goku-superman-restart" onclick="restartGokuSupermanBattle()" class="hidden">
+  <p id="goku-superman-result" class="battle-result" aria-live="polite">Choose your attack!</p>
+  <button id="goku-superman-restart" onclick="restartGokuSupermanBattle()" class="hidden" aria-label="Restart Goku vs Superman Battle">
   Restart Battle
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -755,9 +736,9 @@
     <p id="song-title">🎵 Now Playing: None</p>
     <select id="music-select"></select>
 
-    <button id="prev-song">⏮️</button>
-    <button id="play-pause">▶️</button>
-    <button id="next-song">⏭️</button>
+    <button id="prev-song" aria-label="Previous song">⏮️</button>
+    <button id="play-pause" aria-label="Play or pause">▶️</button>
+    <button id="next-song" aria-label="Next song">⏭️</button>
 
     <!-- Song Progress Bar -->
     <input id="progress-bar" type="range" min="0" max="100" value="0">

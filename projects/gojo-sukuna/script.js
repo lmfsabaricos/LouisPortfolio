@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         questionEl.textContent = "Quiz Complete!";
         choicesEl.innerHTML = "";
-        document.getElementById("next-question-btn").style.display = "none";
+        document.getElementById("next-question-btn").classList.add("hidden");
         scoreEl.textContent = `🎉 Your Score: ${score} / ${quizData.length}`;
         scoreEl.classList.remove("hidden");
       }
@@ -291,7 +291,7 @@ form.addEventListener("submit", function (e) {
   form.classList.add("fade-out");
 
   setTimeout(() => {
-    form.style.display = "none";
+    form.classList.add("hidden");
   }, 500);
 });
 
@@ -571,11 +571,11 @@ setTimeout(() => {
 
     setTimeout(() => {
       stopParticles = true;
-      loader.style.display = 'none';
+      loader.classList.add('hidden');
 
       if (content) {
         content.style.opacity = '0';
-        content.style.display = 'block';
+        content.classList.remove('hidden');
         content.style.transition = 'opacity 1s ease';
         setTimeout(() => {
           content.style.opacity = '1';
@@ -644,14 +644,15 @@ setTimeout(() => {
     loader.style.opacity = '0';
 
     setTimeout(() => {
-      loader.style.display = 'none';
-      if (content) content.style.opacity = '1';
+      loader.classList.add('hidden');
+
+      if (content) {
+        content.classList.remove('hidden');
+        content.style.opacity = '1';
+      }
     }, 800);
   }
 }, 4800);
-
-
-
 
 // ===================== MULTI-QUESTION TRIVIA GOKU SUPERMAN =====================
 const gokuSupermanQuizData = [
@@ -744,7 +745,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         questionEl.textContent = "Quiz Complete!";
         choicesEl.innerHTML = "";
-        document.getElementById("goku-superman-next-question-btn").style.display = "none";
+        document.getElementById("goku-superman-next-question-btn").classList.add("hidden");
         scoreEl.textContent = `🎉 Your Score: ${gokuSupermanScore} / ${gokuSupermanQuizData.length}`;
         scoreEl.classList.remove("hidden");
       }
@@ -801,7 +802,7 @@ gokuForm.addEventListener("submit", function (e) {
   // Fade out form
   gokuForm.classList.add("fade-out");
   setTimeout(() => {
-    gokuForm.style.display = "none";
+    gokuForm.classList.add("hidden");
   }, 500);
 });
 
@@ -886,7 +887,7 @@ picInput.addEventListener("change", () => {
     const reader = new FileReader();
     reader.onload = function (e) {
       previewImg.src = e.target.result;
-      previewImg.style.display = "inline-block";
+      previewImg.classList.add("inline-block");
     };
     reader.readAsDataURL(picInput.files[0]);
   }
@@ -901,7 +902,7 @@ picInput.addEventListener("change", () => {
   if (savedName && savedSide) {
     nameInput.value = savedName;
     //sideInput.value = savedSide;
-    identityFields.style.display = "none";
+    identityFields.classList.add("hidden");
     changeIdentityBtn.classList.remove("hidden");
   }
 
@@ -946,7 +947,7 @@ picInput.addEventListener("change", () => {
   });
 
   changeIdentityBtn.addEventListener("click", () => {
-    identityFields.style.display = "block";
+    identityFields.classList.remove("hidden");
     changeIdentityBtn.classList.add("hidden");
      loadComments();
   });
@@ -960,22 +961,13 @@ function saveComment(name, side, comment, pic) {
   localStorage.setItem("debateSide", side);
   commentInput.value = "";
 
-  identityFields.style.display = "none";
+  identityFields.classList.add("hidden");
   changeIdentityBtn.classList.remove("hidden");
 
   loadComments();
 }
 
 });
-
-
-
-
-
-
-
-
-
 
 let gokuHealth = 100;
 let supermanHealth = 100;
