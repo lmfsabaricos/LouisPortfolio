@@ -373,17 +373,22 @@
     <div class="fighter gojo-fighter">
       <img src="https://cdn3.emoji.gg/emojis/1564-maskedgojode.png" alt="Gojo">
       <button onclick="attack('Gojo')">Hollow Purple</button>
-      <div class="health-bar" id="gojo-health"></div>
+      <div class="health-bar"
+      <div class="health-fill" id="gojo-health"></div>
     </div>
 
     <div class="fighter sukuna-fighter">
       <img src="https://cdn3.emoji.gg/emojis/9491-sukunade.png" alt="Sukuna">
       <button onclick="attack('Sukuna')">Dismantle</button>
-      <div class="health-bar" id="sukuna-health"></div>
+      <div class="health-bar"
+      <div class="health-fill" id="sukuna-health"></div>
     </div>
   </div>
 
   <p id="battle-result" class="battle-result">Choose your attack!</p>
+  <button id="gojo-sukuna-restart" onclick="restartGojoSukunaBattle()" class="hidden">
+  Restart Battle
+</button>
 </section>
 </div>
 
@@ -525,6 +530,17 @@
 
 
 
+<!-- ========== GOKU SUPERMAN TRIVIA ========== -->
+<section class="quiz-section fade-in-scroll">
+  <h2 class="trivia-title">🧠 Trivia Mode: Goku vs Superman</h2>
+  <div id="goku-superman-quiz-container">
+    <div id="goku-superman-quiz-question">Loading...</div>
+    <div id="goku-superman-quiz-choices"></div>
+    <button id="goku-superman-next-question-btn">Next Question</button>
+    <div id="goku-superman-quiz-score" class="hidden"></div>
+  </div>
+</section>
+
 
 
 
@@ -661,19 +677,34 @@
 </aside>
 </section>
 </section>
-</div>
 
 
+<!-- ========== GOKU SUPERMAN BATTLE SECTION ========== -->
+<section class="battle-section fade-in-scroll" id="goku-superman-battle-container">
+  <h2>Goku vs Superman: Battle!</h2>
 
+  <div class="battle-characters">
+    <div class="fighter goku-fighter">
+      <img src="https://www.pngarts.com/files/18/Dragon-Ball-Goku-Download-PNG-Image.png" alt="Goku">
+      <button onclick="gokuSupermanAttack('Goku')">Kamehameha</button>
+      <div class="health-bar">
+        <div class="health-fill" id="goku-health"></div>
+      </div>
+    </div>
 
+    <div class="fighter superman-fighter">
+      <img src="https://th.bing.com/th/id/R.ee308f550c00cf962b57029420bd2568?rik=wBVEy1XLZerT6Q&riu=http%3a%2f%2fpngimg.com%2fuploads%2fsuperman%2fsuperman_PNG5.png&ehk=eBK86EEAS8M87WP21lsApLLxKAhkEAWqyY4d2uWlWvw%3d&risl=&pid=ImgRaw&r=0" alt="Superman">
+      <button onclick="gokuSupermanAttack('Superman')">Heat Vision</button>
+      <div class="health-bar">
+        <div class="health-fill" id="superman-health"></div>
+      </div>
+    </div>
+  </div>
 
-
-
-
-
-
-
-
+  <p id="goku-superman-result" class="battle-result">Choose your attack!</p>
+  <button id="goku-superman-restart" onclick="restartGokuSupermanBattle()" class="hidden">
+  Restart Battle
+</section>
 
 
 
