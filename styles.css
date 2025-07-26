@@ -295,7 +295,7 @@ input[type="email"]:valid {
   margin-left: 1.2rem;
 }
 
-/* ===================== GOJO SUKUNA CAFE ===================== */
+/* ===================== GOJO SUKUNA MENU ===================== */
 .cafes-section {
   display: flex;
   justify-content: center;
@@ -331,6 +331,17 @@ article {
   justify-content: space-between;
   margin: 0.5rem 0;
   color: #eee;
+}
+
+/* ===================== GOJO SUKUNA MENU HOVER GLOW ===================== */
+#gojo-menu:hover, #sukuna-menu:hover {
+  box-shadow: 0 0 25px #6fe3ff, 0 0 40px #6fe3ff66;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+#sukuna-menu:hover {
+  box-shadow: 0 0 25px #ff4d92, 0 0 40px #ff4d9266;
 }
 
 /* ===================== GOJO SUKUNA VOTE FORM ===================== */
@@ -524,15 +535,15 @@ button[type="submit"]:hover {
 /* Gojo theme */
 .vote-box.gojo {
   background-color: #101e36;
-  border: 2px solid #00f0ff;
+  border: 2px solid #7f38ff;
 }
 
 .vote-box.gojo:hover {
-  box-shadow: 0 0 25px 5px rgba(0, 240, 255, 0.6);
+  box-shadow: 0 0 25px 5px rgba(103, 5, 201, 0.6);
 }
 
 .vote-box.gojo h3 {
-  color: #00f0ff;
+  color: #b374ea;
 }
 
 .vote-box.sukuna {
@@ -545,7 +556,7 @@ button[type="submit"]:hover {
 }
 
 .vote-box.sukuna h3 {
-  color: #ff0048;
+  color: #f3366b;
 }
 .vote-box p {
   font-size: 2rem;
@@ -632,17 +643,6 @@ button[type="submit"]:hover {
   box-shadow: 0 0 30px rgba(127, 95, 255, 0.6);
   border-color: #a84fff;
   transition: all 0.3s ease;
-}
-
-/* ===================== GOJO SUKUNA MENU HOVER GLOW ===================== */
-#gojo-menu:hover, #sukuna-menu:hover {
-  box-shadow: 0 0 25px #6fe3ff, 0 0 40px #6fe3ff66;
-  transform: scale(1.02);
-  transition: all 0.3s ease;
-}
-
-#sukuna-menu:hover {
-  box-shadow: 0 0 25px #ff4d92, 0 0 40px #ff4d9266;
 }
 
 /* ===================== GLOWING TEXT SHADOW FOR HEADERS ===================== */
@@ -1461,7 +1461,7 @@ h1.main-title {
 /* ===================== VOTE COUNT DISPLAY GOKU SUPERMAN ===================== */
 .vote-box.goku {
   background-color: #1e1f3b;
-  border: 2px solid #ffa500; /* orange */
+  border: 2px solid #ffa500;
 }
 
 .vote-box.goku:hover {
@@ -1469,20 +1469,20 @@ h1.main-title {
 }
 
 .vote-box.goku h3 {
-  color: #ffa500;
+  color: #f3af30;
 }
 
 .vote-box.superman {
   background-color: #1a2a3a;
-  border: 2px solid #0044ff;
+  border: 2px solid #ae1515;
 }
 
 .vote-box.superman:hover {
-  box-shadow: 0 0 25px 5px rgba(0, 68, 255, 0.6);
+  box-shadow: 0 0 25px 5px rgba(226, 11, 11, 0.6);
 }
 
 .vote-box.superman h3 {
-  color: #0044ff;
+  color: #f02a2a;
 }
 
 
@@ -2253,4 +2253,86 @@ body.loading {
     column-count: 2;
     column-gap: 2rem;
   }
+}
+
+
+/* ===================== GOKU SUPERMAN MENU ===================== */
+
+.cafes-section {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+}
+
+#goku-menu {
+  background-color: #1e1a2e;
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 325px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); /* Yellow glow */
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+#goku-menu:hover {
+  box-shadow: 0 0 30px #ffd700, 0 0 50px #ffd700aa;
+  transform: scale(1.03);
+}
+
+#goku-menu img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+#goku-menu h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+#goku-menu article {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  color: #eee;
+}
+
+/* Superman Card */
+#superman-menu {
+  background-color: #1a1d2e;
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 325px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+#superman-menu:hover {
+  box-shadow: 0 0 30px #e10707, 0 0 50px #6d0202;
+  transform: scale(1.03);
+}
+
+#superman-menu img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+#superman-menu h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+#superman-menu article {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  color: #eee;
 }
