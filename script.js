@@ -98,8 +98,10 @@ fadeEls.forEach(el => fadeObserver.observe(el));
 // ===================== BATTLE HEALTH BAR GOJO SUKUNA LOGIC =====================
 let gojoHealth = 100;
 let sukunaHealth = 100;
+let gojoSukunaGameOver= false;
 
 function attack(attacker) {
+  if (gojoSukunaGameOver) return;
   const resultText = document.getElementById("battle-result");
   const battleContainer = document.getElementById("battle-container");
   const damage = Math.floor(Math.random() * 20) + 5;
@@ -126,7 +128,19 @@ function attack(attacker) {
 
   if (gojoHealth === 0 || sukunaHealth === 0) {
     resultText.textContent += ` ${gojoHealth === 0 ? "Sukuna wins!" : "Gojo wins!"}`;
+    gojoSukunaGameOver = true;
+    document.getElementById("gojo-sukuna-restart").classList.remove("hidden");
   }
+}
+function restartGojoSukunaBattle() {
+  gojoHealth = 100;
+  sukunaHealth = 100;
+  gojoSukunaGameOver = false;
+
+  document.getElementById("gojo-health").style.width = "100%";
+  document.getElementById("sukuna-health").style.width = "100%";
+  document.getElementById("battle-result").textContent = "Choose your attack!";
+  document.getElementById("gojo-sukuna-restart").classList.add("hidden");
 }
 
 // ===================== MULTI-QUESTION TRIVIA GOJO SUKUNA =====================
@@ -637,6 +651,107 @@ setTimeout(() => {
 }, 4800);
 
 
+
+
+// ===================== MULTI-QUESTION TRIVIA GOKU SUPERMAN =====================
+const gokuSupermanQuizData = [
+  {
+    question: "Where does Superman get his power from?",
+    choices: ["Red Sun", "Yellow Sun", "Kryptonite", "Moonlight"],
+    answer: "Yellow Sun"
+  },
+  {
+    question: "Which transformation allows Goku to react without thinking?",
+    choices: ["Super Saiyan God", "Super Saiyan 3", "Ultra Instinct", "Kaio-Ken"],
+    answer: "Ultra Instinct"
+  },
+  {
+    question: "What is Superman’s only known weakness?",
+    choices: ["Gold", "Magic", "Kryptonite", "Darkness"],
+    answer: "Kryptonite"
+  },
+  {
+    question: "Which technique does Goku use to create a powerful energy ball from life energy?",
+    choices: ["Final Flash", "Destructo Disc", "Spirit Bomb", "Big Bang Attack"],
+    answer: "Spirit Bomb"
+  },
+  {
+    question: "What is the name of Superman's secret identity?",
+    choices: ["Bruce Wayne", "Peter Parker", "Clark Kent", "Barry Allen"],
+    answer: "Clark Kent"
+  },
+  {
+    question: "Who trained Goku during his time in the afterlife?",
+    choices: ["Whis", "Master Roshi", "King Kai", "Vegeta"],
+    answer: "King Kai"
+  }
+];
+
+let gokuSupermanCurrentQuestion = 0;
+let gokuSupermanScore = 0;
+
+function loadGokuSupermanQuestion() {
+  const questionData = gokuSupermanQuizData[gokuSupermanCurrentQuestion];
+  const questionEl = document.getElementById("goku-superman-quiz-question");
+  const choicesEl = document.getElementById("goku-superman-quiz-choices");
+
+  questionEl.textContent = questionData.question;
+  choicesEl.innerHTML = "";
+
+  questionData.choices.forEach((choice) => {
+    const label = document.createElement("label");
+    label.innerHTML = `
+      <input type="radio" name="goku-superman-quiz-choice" value="${choice}" />
+      ${choice}
+    `;
+    choicesEl.appendChild(label);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadGokuSupermanQuestion();
+
+  document.getElementById("goku-superman-next-question-btn").addEventListener("click", () => {
+    const selected = document.querySelector('input[name="goku-superman-quiz-choice"]:checked');
+    if (!selected) return alert("Please select an answer!");
+
+    const allChoices = document.querySelectorAll('input[name="goku-superman-quiz-choice"]');
+    allChoices.forEach(input => input.disabled = true);
+
+    const correctAnswer = gokuSupermanQuizData[gokuSupermanCurrentQuestion].answer;
+
+    allChoices.forEach(input => {
+      const parentLabel = input.parentElement;
+      if (input.value === correctAnswer) {
+        parentLabel.style.backgroundColor = "#28a745";
+      } else if (input.checked && input.value !== correctAnswer) {
+        parentLabel.style.backgroundColor = "#dc3545";
+      }
+    });
+
+    setTimeout(() => {
+      if (selected.value === correctAnswer) {
+        gokuSupermanScore++;
+      }
+
+      gokuSupermanCurrentQuestion++;
+      if (gokuSupermanCurrentQuestion < gokuSupermanQuizData.length) {
+        loadGokuSupermanQuestion();
+      } else {
+        const questionEl = document.getElementById("goku-superman-quiz-question");
+        const choicesEl = document.getElementById("goku-superman-quiz-choices");
+        const scoreEl = document.getElementById("goku-superman-quiz-score");
+
+        questionEl.textContent = "Quiz Complete!";
+        choicesEl.innerHTML = "";
+        document.getElementById("goku-superman-next-question-btn").style.display = "none";
+        scoreEl.textContent = `🎉 Your Score: ${gokuSupermanScore} / ${gokuSupermanQuizData.length}`;
+        scoreEl.classList.remove("hidden");
+      }
+    }, 1400);
+  });
+});
+
 // ===================== INTERACTIVE VOTING FORM GOKU SUPERMAN =====================
 const gokuForm = document.getElementById("gokuform");
 const gokuResultDiv = document.getElementById("formResultGoku");
@@ -852,3 +967,61 @@ function saveComment(name, side, comment, pic) {
 }
 
 });
+
+
+
+
+
+
+
+
+
+
+let gokuHealth = 100;
+let supermanHealth = 100;
+let gokuSupermanGameOver = false;
+
+function gokuSupermanAttack(attacker) {
+  if (gokuSupermanGameOver) return;
+
+  const resultText = document.getElementById("goku-superman-result");
+  const battleContainer = document.getElementById("goku-superman-battle-container");
+  const damage = Math.floor(Math.random() * 20) + 5;
+
+  // Flash + shake effect
+  battleContainer.classList.add("flash-effect", "shake-effect");
+  setTimeout(() => {
+    battleContainer.classList.remove("flash-effect", "shake-effect");
+  }, 400);
+
+  if (attacker === "Goku") {
+    supermanHealth -= damage;
+    resultText.textContent = `Goku uses Kamehameha! Superman takes ${damage} damage.`;
+  } else {
+    gokuHealth -= damage;
+    resultText.textContent = `Superman uses Heat Vision! Goku takes ${damage} damage.`;
+  }
+
+  gokuHealth = Math.max(0, gokuHealth);
+  supermanHealth = Math.max(0, supermanHealth);
+
+  document.getElementById("goku-health").style.width = `${gokuHealth}%`;
+  document.getElementById("superman-health").style.width = `${supermanHealth}%`;
+
+  if (gokuHealth === 0 || supermanHealth === 0) {
+    gokuSupermanGameOver = true;
+    resultText.textContent += gokuHealth === 0 ? " Superman wins!" : " Goku wins!";
+    document.getElementById("goku-superman-restart").classList.remove("hidden");
+  }
+}
+
+function restartGokuSupermanBattle() {
+  gokuHealth = 100;
+  supermanHealth = 100;
+  gokuSupermanGameOver = false;
+
+  document.getElementById("goku-health").style.width = "100%";
+  document.getElementById("superman-health").style.width = "100%";
+  document.getElementById("goku-superman-result").textContent = "Choose your attack!";
+  document.getElementById("goku-superman-restart").classList.add("hidden");
+}
