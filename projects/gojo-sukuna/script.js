@@ -419,6 +419,19 @@ document.addEventListener("DOMContentLoaded", function () {
     playCurrentSong();
   }
 
+// ========== Toggle Music Panel ==========
+const toggleMusicBtn = document.getElementById("toggle-music");
+const closeMusicBtn = document.getElementById("close-music-btn");
+const musicControls = document.getElementById("music-controls");
+
+toggleMusicBtn.addEventListener("click", () => {
+  musicControls.classList.toggle("collapsed");
+});
+
+closeMusicBtn.addEventListener("click", () => {
+  musicControls.classList.add("collapsed");
+});
+
   // ========== Button Events ==========
   playPauseBtn.addEventListener("click", () => {
     audio.paused ? playCurrentSong() : pauseSong();
@@ -620,7 +633,7 @@ function triggerPulseEffect() {
     });
 
     ctx.globalAlpha = 1;
-    radius += 40;
+    radius += 20;
     alpha -= 0.02;
 
     if (alpha > 0) {
@@ -882,6 +895,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const picInput = document.getElementById("profile-pic");
   const previewImg = document.getElementById("preview-pic");
 
+  // Profile picture preview
 picInput.addEventListener("change", () => {
   if (picInput.files && picInput.files[0]) {
     const reader = new FileReader();
@@ -906,6 +920,7 @@ picInput.addEventListener("change", () => {
     changeIdentityBtn.classList.remove("hidden");
   }
 
+  // Load comments
   const loadComments = () => {
     const comments = JSON.parse(localStorage.getItem("debateComments") || "[]");
     commentsContainer.innerHTML = "";
@@ -919,9 +934,11 @@ picInput.addEventListener("change", () => {
   `;
   commentsContainer.appendChild(div);
 });
-
+  commentsContainer.scrollTop = commentsContainer.scrollHeight;
   };
+ loadComments();
 
+  // Submit comment
   debateform.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = nameInput.value.trim();
@@ -946,12 +963,26 @@ picInput.addEventListener("change", () => {
 
   });
 
+ // Change identity
   changeIdentityBtn.addEventListener("click", () => {
     identityFields.classList.remove("hidden");
     changeIdentityBtn.classList.add("hidden");
      loadComments();
   });
 
+  // For clearing local storage commments
+    const clearCommentsBtn = document.getElementById("clearCommentsBtn");
+  if (clearCommentsBtn) {
+    clearCommentsBtn.addEventListener("click", () => {
+      const confirmClear = confirm("Are you sure you want to delete all comments?");
+      if (confirmClear) {
+        localStorage.removeItem("debateComments");
+        commentsContainer.innerHTML = "";
+      }
+    });
+  }
+
+  // Save comments
 function saveComment(name, side, comment, pic) {
   const newComment = { name, side, comment, pic };
   const comments = JSON.parse(localStorage.getItem("debateComments") || "[]");
@@ -969,6 +1000,7 @@ function saveComment(name, side, comment, pic) {
 
 });
 
+// ===================== GOKU SUPERMAN BATTLE SECTION =====================
 let gokuHealth = 100;
 let supermanHealth = 100;
 let gokuSupermanGameOver = false;

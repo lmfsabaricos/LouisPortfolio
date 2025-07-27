@@ -67,6 +67,7 @@ body {
   opacity: 0;
   transition: opacity 1.5s ease;
   overflow-x: hidden;
+  
 }
 
 body.fade-in {
@@ -969,6 +970,30 @@ h1.main-title {
   letter-spacing: 1px;
   text-shadow: 0 0 10px #d42626;
 }
+#debateComments {
+  max-height: 350px; /* Adjust as needed */
+  overflow-y: auto;
+  margin-top: 1.5rem;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #00ffff #1a1a2e;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+}
+/* ===================== DEBATE COMMENTS SCROLL ===================== */
+#debateComments::-webkit-scrollbar {
+  width: 8px;
+}
+
+#debateComments::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+#debateComments::-webkit-scrollbar-thumb {
+  background-color: #00ffff;
+  border-radius: 10px;
+}
 
 /* ===================== PROFILE PIC UPLOAD ===================== */
 
@@ -1491,44 +1516,6 @@ h1.main-title {
 #gokuFormContainer .hidden {
   display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===================== LIVE POLL CHART GOKU SUPERMAN ===================== */
 #gokuPollChart {
@@ -2097,6 +2084,15 @@ h1.main-title {
   border-radius: 5px;
 }
 
+#music-controls {
+  position: relative;
+
+}
+
+/* ========== MUSIC COLLAPSE FIX ========== */
+#music-controls.collapsed {
+  display: none;
+}
 
 .music-player:hover {
   width: auto;
@@ -2141,6 +2137,18 @@ h1.main-title {
   height: 5px;
   outline: none;
   cursor: pointer;
+}
+
+#close-music-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
 }
 
 /* ===================== MUSIC PROGRESS BAR ===================== */
@@ -2348,7 +2356,7 @@ body.loading {
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   20%, 60% { transform: translateX(-10px); }
-  40%, 80% { transform: translateX(10px); }
+  40%, 80% { transform: translateX(10px); -webkit-transform: translateX(10px); -moz-transform: translateX(10px); -ms-transform: translateX(10px); -o-transform: translateX(10px); }
 }
 
 /* === GENERAL PULSE === */
@@ -2456,7 +2464,6 @@ body.loading {
   /* Content boxes (Gojo, Sukuna, Goku, etc.) */
   .strongest-box,
   .most-cursed-box,
-  .menu-card,
   .saiyan-box,
   .kryptonian-box {
     width: 100%;
@@ -2589,3 +2596,4 @@ body.loading {
   }
 
 }
+

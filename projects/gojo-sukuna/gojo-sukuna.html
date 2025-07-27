@@ -29,7 +29,7 @@
 <canvas id="pulse-canvas"></canvas>
 
 <!-- ========== BACKGROUND PARTICLES ========== -->
-<div id="particles-js"></div>
+<div id="particles-js"></div> 
 
   <!-- ========== MAIN TITLE ========== -->
 <div id="main-content" role="main">
@@ -191,7 +191,7 @@
 </section>
 
   <!-- ========== GOJO SUKUNA MAGAZINE ARTICLE SECTION ========== -->
-    <article class="magazine-container fade-in-scroll">
+   <section class="magazine-container fade-in-scroll">
       <h2 class="mag-title">The Clash Chronicle</h2>
       <p class="gojo-sukuna-sub">The strongest sorcerer meets the king of curses
         in a battle beyond code and chaos.</p>
@@ -339,7 +339,7 @@
   />
 </aside>
 </section>
-</article>
+   </section>
 
 <!-- ========== DEBATE COMMENT SECTION ========== -->
 <section class="debate-section fade-in-scroll">
@@ -367,6 +367,13 @@
 
   <div id="debateComments" role="region" aria-label="User Debate Comments"></div>
 </section>
+
+<!-- ========== CLEAR DEBATE COMMENT LOCAL STORAGE BUTTON ========== -->
+<div style="text-align: right; margin-top: 1rem;">
+  <button id="clearCommentsBtn" style="background-color: #ff4d6d; color: white; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer;">
+    🗑️ Clear Comments (Local Storage)
+  </button>
+</div>
 
 <!-- ========== GOJO SUKUNA BATTLE SECTION ========== -->
 <section class="battle-section fade-in-scroll" id="battle-container" aria-labelledby="gojo-sukuna-heading">
@@ -733,6 +740,7 @@
 <div class="music-player">
   <button id="toggle-music">🎵</button>
   <div id="music-controls" class="collapsed">
+    <button id="close-music-btn" aria-label="Close">✖</button>
     <p id="song-title">🎵 Now Playing: None</p>
     <select id="music-select"></select>
 
