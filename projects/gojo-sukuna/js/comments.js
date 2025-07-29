@@ -39,20 +39,31 @@ picInput.addEventListener("change", () => {
 
   // Load comments
   const loadComments = () => {
-    const comments = JSON.parse(localStorage.getItem("debateComments") || "[]");
-    commentsContainer.innerHTML = "";
-    comments.forEach(({ name, side, comment, pic }) => {
-      const div = document.createElement("div");
-      div.className = `comment-box ${side.toLowerCase()}`;
-      div.innerHTML = `
+  console.log("🔁 Loading comments...");
+  let comments = [];
+
+  try {
+    comments = JSON.parse(localStorage.getItem("debateComments") || "[]");
+  } catch (err) {
+    console.error("❌ Failed to parse comments:", err);
+    return;
+  }
+
+  commentsContainer.innerHTML = "";
+  comments.forEach(({ name, side, comment, pic }) => {
+    const div = document.createElement("div");
+    div.className = `comment-box ${side.toLowerCase()}`;
+    div.innerHTML = `
       ${pic ? `<img src="${pic}" class="debate-profile-pic" />` : ""}
-      <strong>${name} (${side})</strong>
-      <p>${comment}</p>
-  `;
-  commentsContainer.appendChild(div);
-});
+      <strong>${escapeHTML(name)} (${escapeHTML(side)})</strong>
+      <p>${escapeHTML(comment)}</p>
+    `;
+    commentsContainer.appendChild(div);
+  });
+
   commentsContainer.scrollTop = commentsContainer.scrollHeight;
-  };
+};
+
  loadComments();
 
   // Submit comment
@@ -101,19 +112,39 @@ picInput.addEventListener("change", () => {
 
   // Save comments
 function saveComment(name, side, comment, pic) {
-  const newComment = { name, side, comment, pic };
-  const comments = JSON.parse(localStorage.getItem("debateComments") || "[]");
-  comments.push(newComment);
-  localStorage.setItem("debateComments", JSON.stringify(comments));
-  localStorage.setItem("debateName", name);
-  localStorage.setItem("debateSide", side);
-  commentInput.value = "";
+  const newComment = {
+    name: escapeHTML(name),
+    side: escapeHTML(side),
+    comment: escapeHTML(comment),
+    pic
+  };
 
+  let comments = [];
+  try {
+    comments = JSON.parse(localStorage.getItem("debateComments") || "[]");
+  } catch (err) {
+    console.error("❌ Failed to load existing comments:", err);
+  }
+
+  comments.push(newComment);
+
+  try {
+    localStorage.setItem("debateComments", JSON.stringify(comments));
+    localStorage.setItem("debateName", newComment.name);
+    localStorage.setItem("debateSide", newComment.side);
+    console.log("💾 Comment saved successfully!");
+  } catch (err) {
+    console.error("❌ Failed to save comment:", err);
+    alert("⚠️ Unable to save comment. Try clearing localStorage or free up space.");
+    return;
+  }
+
+  commentInput.value = "";
   identityFields.classList.add("hidden");
   changeIdentityBtn.classList.remove("hidden");
-
   loadComments();
 }
+
 
 });
 

@@ -210,9 +210,18 @@ setTimeout(() => {
 // ===================== PULSE CANVAS EFFECT =====================
 function triggerPulseEffect() {
   const canvas = document.getElementById('pulse-canvas');
-  if (!canvas) return;
+  if (!canvas) {
+  console.error("❌ Canvas element #pulse-canvas not found.");
+  return;
+}
 
-  const ctx = canvas.getContext('2d');
+const ctx = canvas.getContext("2d");
+if (!ctx) {
+  console.error("❌ Failed to get 2D context for canvas.");
+  return;
+}
+
+  console.log("✅ Canvas and context initialized successfully.");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 

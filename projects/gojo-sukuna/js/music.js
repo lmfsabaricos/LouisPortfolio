@@ -28,11 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ========== Play ==========
-  function playCurrentSong() {
-    audio.play();
+ function playCurrentSong() {
+  audio.play().then(() => {
     playPauseBtn.textContent = "⏸️";
     updateSongTitle();
-  }
+  }).catch((err) => {
+    console.error("⚠️ Failed to play the song:", err);
+    alert("⚠️ Could not play this track. Please try another.");
+  });
+}
 
   // ========== Pause ==========
   function pauseSong() {

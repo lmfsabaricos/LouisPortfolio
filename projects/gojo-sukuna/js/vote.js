@@ -20,6 +20,11 @@ form.addEventListener("submit", function (e) {
 
   const name = firstName;
   const choice = document.querySelector('input[name="gojo-sukuna"]:checked').value;
+if (localStorage.getItem("gojoSukunaVoted")) {
+  alert("⚠️ You've already voted!");
+  
+  return;
+}
 
   //  Update vote counts
   if (choice === "Gojo") {
@@ -34,9 +39,12 @@ form.addEventListener("submit", function (e) {
     document.getElementById("sukuna-votes").textContent = sukunaVotes;
   }
 
-  updateVoteChart();
+    localStorage.setItem("gojoSukunaVoted", "true"); //  Avoid duplicate votes
 
-  resultDiv.innerHTML = `✅ <strong>Thank you ${name}!</strong> You voted for <strong>${choice}</strong>.`;
+  updateVoteChart();
+  const safeName = escapeHTML(name);
+  const safeChoice = escapeHTML(choice);
+  resultDiv.innerHTML = `✅ <strong>Thank you ${safeName}!</strong> You voted for <strong>${safeChoice}</strong>.`;
   resultDiv.classList.remove("hidden");
   resultDiv.classList.add("visible");
 
@@ -112,9 +120,6 @@ function initVoteCounts() {
 initVoteCounts();
 
 
-
-
-
 // ===================== INTERACTIVE VOTING FORM GOKU SUPERMAN =====================
 const gokuForm = document.getElementById("gokuform");
 const gokuResultDiv = document.getElementById("formResultGoku");
@@ -140,6 +145,10 @@ gokuForm.addEventListener("submit", function (e) {
 
   const name = firstName;
   const choice = document.querySelector('input[name="goku-superman"]:checked').value;
+  if (localStorage.getItem("gokuSupermanVoted")) {
+  alert("⚠️ You've already voted!");
+  return;
+}
 
   // Update vote counts
   if (choice === "Goku") {
@@ -154,10 +163,14 @@ gokuForm.addEventListener("submit", function (e) {
     document.getElementById("superman-votes").textContent = supermanVotes;
   }
 
+  localStorage.setItem("gokuSupermanVoted", "true");
+
   updateGokuPollChart();
 
   // Show result message
-  gokuResultDiv.innerHTML = `✅ <strong>Thank you ${name}!</strong> You voted for <strong>${choice}</strong>.`;
+  const safeName = escapeHTML(name);
+  const safeChoice = escapeHTML(choice);
+  gokuResultDiv.innerHTML = `✅ <strong>Thank you ${safeName}!</strong> You voted for <strong>${safeChoice}</strong>.`;
   gokuResultDiv.classList.remove("hidden");
   gokuResultDiv.classList.add("visible");
 
@@ -231,3 +244,15 @@ function initGokuVoteCounts() {
 }
 document.addEventListener("DOMContentLoaded", initGokuVoteCounts);
 
+// ===================== SECURITY: ESCAPE USER INPUT =====================
+function escapeHTML(str) {
+  return str.replace(/[&<>"']/g, function (char) {
+    return ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    })[char];
+  });
+}
