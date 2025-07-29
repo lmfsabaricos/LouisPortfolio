@@ -51,7 +51,7 @@ textarea:focus {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  background: radial-gradient(circle at center, #0a0a23, #000015);
+  background: radial-gradient(circle at center, #0a0a23, #000015); 
 }
 
 /* ===================== HTML & BODY ===================== */
