@@ -37,10 +37,10 @@ Currently, I'm focused on leveling up my full-stack development skills, explorin
 <p align="center">🔗 LinkedIn: <a href="https://www.linkedin.com/in/louis-miguel-sabaricos-048a23368/" target="_blank">Louis Miguel Sabaricos</a> Email: lmfsabaricos@yahoo.com</p>
 
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/512px-YouTube_full-color_icon_%282017%29.svg.png" alt="" align="center" width="225" height="150"><h1 align="center">My Portfolio</h1>
+<img src="images/louis.png" alt="" align="center" width="225" height="150"><h1 align="center">My Portfolio</h1>
 <p align="center"><a href="#project-description">Project Description</a> - <a href="#key-features">Key Features</a> - <a href="#technology-stack">Tech Stack</a></p>
 
-<img src="https://repolaunch.vercel.app/assets/img/yt.webp" alt="" align="center" width="auto" height="auto">
+<img src="images/portfolio.png" alt="" align="center" width="auto" height="auto">
 
 ## Project Description
 
