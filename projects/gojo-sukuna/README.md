@@ -1,7 +1,7 @@
-<img src="../../images/louis.png" alt="Louis" width="225" height="150"><h1 align="center">Anime Arena</h1>
+<img src="assets/images/louis.png" alt="Louis" width="225" height="150"><h1 align="center">Anime Arena</h1>
 <p align="center"><a href="#project-description">Project Description</a> - <a href="#key-features">Key Features</a> - <a href="#technology-stack">Tech Stack</a></p>
 
-<img src="../../images/gojosukuna.png" alt="Gojo vs Sukuna" width="auto" height="auto" align="center">
+<img src="assets/images/gojosukuna.png" align="center" width="auto" height="auto">
 
 ## Project Description
 
@@ -35,7 +35,7 @@ More features coming soon, including backend integration.
 
 ## Tech Stack
 
-**Frontend**: HTML, CSS, JavaScript  
-**Libraries**: Chart.js, Font Awesome, Custom Canvas  
-**Web APIs**: DOM Manipulation, Local Storage, Intersection Observer  
+**Frontend**: HTML, CSS, JavaScript
+**Libraries**: Chart.js, Font Awesome, Custom Canvas
+**Web APIs**: DOM Manipulation, Local Storage, Intersection Observer
 **Tools**: VS Code, Git, GitHub
