@@ -430,7 +430,7 @@
               Born in battle, forged by fury — the more he's hurt, the stronger he rises. Damage fuels his evolution.</li>
                   </ul>
 
-        <button class="play-voice" onclick="document.getElementById('gokuAudio').play()">🔊 Goku's Final Deploy: Kamehameha Commit</button>
+        <button class="play-voice" onclick="document.getElementById('gokuAudio').play()">🔊 Goku's Super Kamehameha</button>
       </div>
     </div>
 
@@ -457,7 +457,7 @@
             Soars past atmospheres, galaxies, and time</li>
                   </ul>
 
-        <button class="play-voice" onclick="document.getElementById('supermanAudio').play()">🔊 Superman’s Hotfix Punch: Zero Downtime</button>
+        <button class="play-voice" onclick="document.getElementById('supermanAudio').play()">🔊 Superman’s Speech of Holding Back</button>
       </div>
     </div>
 
@@ -726,15 +726,17 @@
 
   </main>
 
-<!-- ========== SCRIPTS ========== -->
+<!-- ========== CDN LIBRARIES ========== -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="script.js"></script>
-
 
 <!-- ========== AUDIOS ========== -->
 <audio id="gojoAudio" src="assets/audio/gojo.mp3"></audio>
 <audio id="sukunaAudio" src="assets/audio/sukuna.mp3"></audio>
+<audio id="gokuAudio" src="assets/audio/goku.mp3"></audio>
+<audio id="supermanAudio" src="assets/audio/superman.mp3"></audio>
+<audio id="backgroundAudio"></audio>
+
 
 <!-- ========== MUSIC PLAYER BOX ========== -->
 <div class="music-player">
@@ -755,8 +757,16 @@
     <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1">
   </div>
 </div>
-
 </div>
+
+<!-- ========== PROJECT JS ========== -->
+<script src="js/loader.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/vote.js"></script>
+<script src="js/comments.js"></script>
+<script src="js/music.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
