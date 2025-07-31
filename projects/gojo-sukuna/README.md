@@ -14,23 +14,23 @@ The Anime Arena Project was created as a way to practice and sharpen my frontend
 
 The site includes a custom loader, animated particle background, and smooth fade-in effects to elevate the presentation. Core features like the live voting chart, battle simulation with health bars, music player, and debate comment section to make it feel like a complete and immersive anime showdown. There's also a responsive quiz section and toggleable matchups — all built to be mobile-friendly and visually rich.
 
-More features coming soon, including backend integration.
+More features coming soon, including backend integration and a plan of making it to a fully fledge full stack anime page!
 
 ## Key Features
 
-**⚔️ Battle System**: Interactive health bars and custom attacks for Gojo and Sukuna
+**⚔️ Battle System**: Interactive health bars and custom attacks for each matchups
 
-**🗳️ Live Poll Chart**: Dynamic vote tracker with Chart.js
+**🗳️ Live Poll Chart**: Dynamic vote tracker with live poll chart from Chart.js
 
-**💬 Debate Comments**: Comment system with profile identity and side selection
+**💬 Debate Comments**: Comment system with an option to upload a profile picture and an option to change it anytime
 
 **🎧 Music Player**: Toggleable themed music with playlist, volume, and progress control
 
 **🎇 Spiral Loader**: Canvas-based animated spiral loader with pulse effect
 
-**🌀 Background Particles**: Canvas particle background for visual effect
+**🌀 Background Particles**: Canvas moving particle background for visual effect
 
-**📦 Persistent Storage**: Uses `localStorage` to retain vote state and comment identity
+**📦 Persistent Storage**: Uses `localStorage` to keep votes and comment name saved even after refreshing the page
 
 **✨ Scroll Animations**: Fade-in content triggered by Intersection Observer
 

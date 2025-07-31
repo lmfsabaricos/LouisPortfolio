@@ -109,7 +109,7 @@ function showMatchup(id) {
 }
 
 
-// ===================== SPIRAL LOADER PARTICLE EFFECT =====================
+// ===================== LOADER PARTICLE EFFECT =====================
 const loaderCanvas = document.getElementById('loader-canvas');
 if (loaderCanvas) {
   const loaderCtx = loaderCanvas.getContext('2d');
@@ -251,8 +251,8 @@ if (!ctx) {
     });
 
     ctx.globalAlpha = 1;
-    radius += 40;
-    alpha -= 0.03;
+    radius += 22;
+    alpha -= 0.02;
 
     if (alpha > 0) {
       requestAnimationFrame(draw);
