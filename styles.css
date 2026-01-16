@@ -409,29 +409,71 @@ color: #e0f7f7;
   text-shadow: 0 0 6px #ff0099, 0 0 12px #ff0099;
   transition: text-shadow 0.3s ease-in-out;
 }
-.cert-image-box{
-  max-width: 500px;
-  margin: auto;
-  padding: 15px;
-  background: #111;
-  border-radius: 10px;
-  transition: 0.3s ease;
+
+/* ===================== CERTIFICATIONS GRID LAYOUT ===================== */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 20px auto 0;
+  align-items: start;
+}
+
+/* ===================== CERT CARD (BOX) ===================== */
+.cert-image-box {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 12px;
+  background: rgba(17, 17, 17, 0.95);
+  border-radius: 14px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+  transform-origin: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .cert-image-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px #00ffff50;
+  transform: scale(1.12) translateY(-6px);
+  z-index: 20;
+  box-shadow:
+    0 0 18px rgba(0, 255, 255, 0.35),
+    0 0 38px rgba(255, 0, 153, 0.25);
 }
 
+/* ===================== CERT IMAGE ===================== */
 .cert-image {
   width: 100%;
-  border-radius: 6px;
+  height: 260px;
+  object-fit: contain;
+  border-radius: 10px;
+
+  transition: transform 0.4s ease;
 }
 
+.cert-image-box:hover .cert-image {
+  transform: scale(1.08);
+}
+.cert-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* ===================== CERT CAPTION ===================== */
 .cert-caption {
-  margin-top: 8px;
+  margin-top: 10px;
   color: #ff0099;
   font-size: 0.95rem;
+  transition: transform 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.cert-image-box:hover .cert-caption {
+  transform: translateY(4px);
+  letter-spacing: 0.4px;
 }
 
 /* ===================== SIDE PROJECTS SECTION ===================== */
@@ -758,7 +800,7 @@ box-shadow: 0 0 6px #4dc3ff88;
   pointer-events: none;
 }
 
-/* Mobile Fix Layout*/
+/* ===================== MOBILE FIX LAYOUT===================== */
 @media (max-width: 768px) {
   .louis-main {
     padding-left: 20px;
@@ -801,7 +843,6 @@ box-shadow: 0 0 6px #4dc3ff88;
     right: 16px;
     width: fit-content;
     border-radius: 8px;
-    
 }
 
 /* Hamburger lines */
@@ -906,4 +947,37 @@ box-shadow: 0 0 6px #4dc3ff88;
   }
 }
 
+@media (max-width: 1024px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+  }
 
+  .cert-image {
+    height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  .cert-image {
+    height: 220px;
+  }
+  .cert-image-box:hover {
+    transform: none;
+    box-shadow: 0 5px 15px #00ffff50;
+  }
+
+  .cert-image-box:hover .cert-image {
+    transform: none;
+  }
+
+  .cert-image-box:hover .cert-caption {
+    transform: none;
+    letter-spacing: normal;
+  }
+}
